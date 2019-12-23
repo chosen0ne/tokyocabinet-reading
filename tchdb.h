@@ -46,6 +46,9 @@ typedef struct {                         /* type of structure for a hash databas
   uint8_t type;                          /* database type */
   uint8_t flags;                         /* additional flags */
   uint64_t bnum;                         /* number of the bucket array */
+  // <MM>
+  // 默认apow = 4
+  // </MM>
   uint8_t apow;                          /* power of record alignment */
   uint8_t fpow;                          /* power of free block pool number */
   uint8_t opts;                          /* options */
@@ -67,11 +70,27 @@ typedef struct {                         /* type of structure for a hash databas
   uint32_t runit;                        /* record reading unit */
   bool zmode;                            /* whether compression is used */
   int32_t fbpmax;                        /* maximum number of the free block pool */
+  // <MM>
+  // 内存数据结构，存储HDBFB数组，记录所有的free block
+  // 会根据磁盘db文件中进行加载得到
+  // </MM>
   void *fbpool;                          /* free block pool */
   int32_t fbpnum;                        /* number of the free block pool */
   int32_t fbpmis;                        /* number of missing retrieval of the free block pool */
   bool async;                            /* whether asynchronous storing is called */
+  // <MM>
+  // 用于存储bucket二叉树新增节点序列化后的buffer
+  // 优化的原理是：当有多个节点新增后会被序列化到一个buffer
+  // 只会进行一次顺序io
+  //
+  // 所以在进行async操作时，尽量多的保证新增节点更多，会有更好的性能
+  // </MM>
   TCXSTR *drpool;                        /* delayed record pool */
+  // <MM>
+  // 用于存储bucket二叉树中已有节点的变更，即async操作中不能存放到
+  // delayed record pool中的节点，最后会在flush时依次调用tchdbputimpl
+  // 加入bucket中
+  // </MM>
   TCXSTR *drpdef;                        /* deferred records of the delayed record pool */
   uint64_t drpoff;                       /* offset of the delayed record pool */
   TCMDB *recc;                           /* cache for records */

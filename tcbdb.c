@@ -308,6 +308,9 @@ bool tcbdbsetdfunit(TCBDB *bdb, int32_t dfunit){
 bool tcbdbopen(TCBDB *bdb, const char *path, int omode){
   assert(bdb && path);
   if(!BDBLOCKMETHOD(bdb, true)) return false;
+  // <MM>
+  // 内部hdb应该是非open状态
+  // </MM>
   if(bdb->open){
     tcbdbsetecode(bdb, TCEINVALID, __FILE__, __LINE__, __func__);
     BDBUNLOCKMETHOD(bdb);
@@ -1925,11 +1928,23 @@ static bool tcbdbleafsave(TCBDB *bdb, BDBLEAF *leaf){
   llnum = leaf->next;
   TCSETVNUMBUF64(step, wp, llnum);
   wp += step;
+  // <MM>
+  // 将prev，next追加到rbuf
+  // </MM>
   TCXSTRCAT(rbuf, hbuf, wp - hbuf);
   TCPTRLIST *recs = leaf->recs;
   int ln = TCPTRLISTNUM(recs);
+  // <MM>
+  // 将leaf节点下所有的record序列化，并追加到buffer
+  // </MM>
   for(int i = 0; i < ln; i++){
+    // <MM>
+    // BDBREC是一条记录的header，随后是key和value
+    // </MM>
     BDBREC *rec = TCPTRLISTVAL(recs, i);
+    // <MM>
+    // 指向data，即key和value
+    // </MM>
     char *dbuf = (char *)rec + sizeof(*rec);
     int lnum;
     wp = hbuf;
@@ -1939,6 +1954,9 @@ static bool tcbdbleafsave(TCBDB *bdb, BDBLEAF *leaf){
     lnum = rec->vsiz;
     TCSETVNUMBUF(step, wp, lnum);
     wp += step;
+    // <MM>
+    // rest是指一个key可以对应多个value？
+    // </MM>
     TCLIST *rest = rec->rest;
     int rnum = rest ? TCLISTNUM(rest) : 0;
     TCSETVNUMBUF(step, wp, rnum);
@@ -1956,9 +1974,18 @@ static bool tcbdbleafsave(TCBDB *bdb, BDBLEAF *leaf){
     }
   }
   bool err = false;
+  // <MM>
+  // 将leaf的整型id转换成字符串
+  // </MM>
   step = sprintf(hbuf, "%llx", (unsigned long long)leaf->id);
+  // <MM>
+  // 如果leaf节点不包含record，则将这个节点从hdb中删除
+  // </MM>
   if(ln < 1 && !tchdbout(bdb->hdb, hbuf, step) && tchdbecode(bdb->hdb) != TCENOREC)
     err = true;
+  // <MM>
+  // 非dead情况下，将leaf节点序列化后的结果存入hdb，key为ID字符串
+  // </MM>
   if(!leaf->dead && !tchdbput(bdb->hdb, hbuf, step, TCXSTRPTR(rbuf), TCXSTRSIZE(rbuf)))
     err = true;
   tcxstrdel(rbuf);
@@ -2500,6 +2527,9 @@ static bool tcbdbnodesave(TCBDB *bdb, BDBNODE *node){
    The return value is the node object or `NULL' on failure. */
 static BDBNODE *tcbdbnodeload(TCBDB *bdb, uint64_t id){
   assert(bdb && id > BDBNODEIDBASE);
+  // <MM>
+  // 先从node cache中，以node id获取对应的node
+  // </MM>
   bool clk = BDBLOCKCACHE(bdb);
   int rsiz;
   BDBNODE *node = (BDBNODE *)tcmapget3(bdb->nodec, &id, sizeof(id), &rsiz);
@@ -2508,6 +2538,9 @@ static BDBNODE *tcbdbnodeload(TCBDB *bdb, uint64_t id){
     return node;
   }
   if(clk) BDBUNLOCKCACHE(bdb);
+  // <MM>
+  // node cache中未命中，从磁盘加载
+  // </MM>
   TCDODEBUG(bdb->cnt_loadnode++);
   char hbuf[(sizeof(uint64_t)+1)*2];
   int step;
@@ -2515,6 +2548,9 @@ static BDBNODE *tcbdbnodeload(TCBDB *bdb, uint64_t id){
   char *rbuf = NULL;
   char wbuf[BDBPAGEBUFSIZ];
   const char *rp = NULL;
+  // <MM>
+  // 从hdb中，以node id获取对应node
+  // </MM>
   rsiz = tchdbget3(bdb->hdb, hbuf, step, wbuf, BDBPAGEBUFSIZ);
   if(rsiz < 1){
     tcbdbsetecode(bdb, TCEMISC, __FILE__, __LINE__, __func__);
@@ -2522,6 +2558,9 @@ static BDBNODE *tcbdbnodeload(TCBDB *bdb, uint64_t id){
   } else if(rsiz < BDBPAGEBUFSIZ){
     rp = wbuf;
   } else {
+    // <MM>
+    // 节点大小大于BDBPAGEBUFSIZ时
+    // </MM>
     if(!(rbuf = tchdbget(bdb->hdb, hbuf, step, &rsiz))){
       tcbdbsetecode(bdb, TCEMISC, __FILE__, __LINE__, __func__);
       return NULL;
@@ -2569,6 +2608,9 @@ static BDBNODE *tcbdbnodeload(TCBDB *bdb, uint64_t id){
     return NULL;
   }
   clk = BDBLOCKCACHE(bdb);
+  // <MM>
+  // 回填node cache
+  // </MM>
   if(!tcmapputkeep(bdb->nodec, &(nent.id), sizeof(nent.id), &nent, sizeof(nent))){
     int ln = TCPTRLISTNUM(nent.idxs);
     for(int i = 0; i < ln; i++){
@@ -2717,7 +2759,14 @@ static uint64_t tcbdbsearchleaf(TCBDB *bdb, const char *kbuf, int ksiz){
   uint64_t pid = bdb->root;
   int hnum = 0;
   bdb->hleaf = 0;
+  // <MM>
+  // BDBNODEIDBASE大于所有leaf节点的id
+  // 当pid < BDBNODEIDBASE时，节点为叶节点
+  // </MM>
   while(pid > BDBNODEIDBASE){
+    // <MM>
+    // 从node cache或者hdb中，根据node id获取node
+    // </MM>
     BDBNODE *node = tcbdbnodeload(bdb, pid);
     if(!node){
       tcbdbsetecode(bdb, TCEMISC, __FILE__, __LINE__, __func__);
@@ -2727,6 +2776,9 @@ static uint64_t tcbdbsearchleaf(TCBDB *bdb, const char *kbuf, int ksiz){
     TCPTRLIST *idxs = node->idxs;
     int ln = TCPTRLISTNUM(idxs);
     if(ln > 0){
+      // <MM>
+      // 二分查找合适的idx
+      // </MM>
       int left = 0;
       int right = ln;
       int i = (left + right) / 2;
@@ -2942,6 +2994,9 @@ static void tcbdbcachepurge(TCBDB *bdb){
    If successful, the return value is true, else, it is false. */
 static bool tcbdbopenimpl(TCBDB *bdb, const char *path, int omode){
   assert(bdb && path);
+  // <MM>
+  // 根据omode，设置hdb的打开选项
+  // </MM>
   int homode = HDBOREADER;
   if(omode & BDBOWRITER){
     homode = HDBOWRITER;
@@ -2954,6 +3009,9 @@ static bool tcbdbopenimpl(TCBDB *bdb, const char *path, int omode){
   if(omode & BDBONOLCK) homode |= HDBONOLCK;
   if(omode & BDBOLCKNB) homode |= HDBOLCKNB;
   if(omode & BDBOTSYNC) homode |= HDBOTSYNC;
+  // <MM>
+  // hdb的type设置为btree
+  // </MM>
   tchdbsettype(bdb->hdb, TCDBTBTREE);
   if(!tchdbopen(bdb->hdb, path, homode)) return false;
   bdb->root = 0;
@@ -2962,10 +3020,22 @@ static bool tcbdbopenimpl(TCBDB *bdb, const char *path, int omode){
   bdb->lnum = 0;
   bdb->nnum = 0;
   bdb->rnum = 0;
+  // <MM>
+  // hdb header的128 - 256字节用来干什么？
+  // </MM>
   bdb->opaque = tchdbopaque(bdb->hdb);
+  // <MM>
+  // 叶节点以及内部节点的cache，就是一个Map：id => 对应节点
+  // </MM>
   bdb->leafc = tcmapnew2(bdb->lcnum * 2 + 1);
   bdb->nodec = tcmapnew2(bdb->ncnum * 2 + 1);
+  // <MM>
+  // DB为空的情况，新建一个叶节点
+  // </MM>
   if(bdb->wmode && tchdbrnum(bdb->hdb) < 1){
+    // <MM>
+    // 新建一个叶节点，并将其放入leaf cache
+    // </MM>
     BDBLEAF *leaf = tcbdbleafnew(bdb, 0, 0);
     bdb->root = leaf->id;
     bdb->first = leaf->id;
@@ -2977,7 +3047,15 @@ static bool tcbdbopenimpl(TCBDB *bdb, const char *path, int omode){
       bdb->cmp = tccmplexical;
       bdb->cmpop = NULL;
     }
+    // <MM>
+    // meta data dump到bdb->opaque
+    // bdb->opaque对应的是bdb->hdb的header的128-256字节部分
+    // 通过mmap访问，最终会写入hdb的数据文件的header部分
+    // </MM>
     tcbdbdumpmeta(bdb);
+    // <MM>
+    // 将leaf节点序列化为字节数组，并添加到hdb，key为节点的id
+    // </MM>
     if(!tcbdbleafsave(bdb, leaf)){
       tcmapdel(bdb->nodec);
       tcmapdel(bdb->leafc);
@@ -3002,6 +3080,9 @@ static bool tcbdbopenimpl(TCBDB *bdb, const char *path, int omode){
     tchdbclose(bdb->hdb);
     return false;
   }
+  // <MM>
+  // 标记底层hdb已打开
+  // </MM>
   bdb->open = true;
   uint8_t hopts = tchdbopts(bdb->hdb);
   uint8_t opts = 0;

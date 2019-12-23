@@ -4,31 +4,31 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ACTGET	tcawmgr.c	/^  ACTGET                                 \/\/ get a record$/;"	e	enum:__anon11	file:
-ACTLIST	tcawmgr.c	/^  ACTLIST,                               \/\/ list records$/;"	e	enum:__anon11	file:
-ACTLISTVAL	tcawmgr.c	/^  ACTLISTVAL,                            \/\/ list records with values$/;"	e	enum:__anon11	file:
-ACTOUT	tcawmgr.c	/^  ACTOUT,                                \/\/ remove a record$/;"	e	enum:__anon11	file:
-ACTPUT	tcawmgr.c	/^  ACTPUT,                                \/\/ put a record$/;"	e	enum:__anon11	file:
+ACTGET	tcawmgr.c	/^  ACTGET                                 \/\/ get a record$/;"	e	enum:__anon23	file:
+ACTLIST	tcawmgr.c	/^  ACTLIST,                               \/\/ list records$/;"	e	enum:__anon23	file:
+ACTLISTVAL	tcawmgr.c	/^  ACTLISTVAL,                            \/\/ list records with values$/;"	e	enum:__anon23	file:
+ACTOUT	tcawmgr.c	/^  ACTOUT,                                \/\/ remove a record$/;"	e	enum:__anon23	file:
+ACTPUT	tcawmgr.c	/^  ACTPUT,                                \/\/ put a record$/;"	e	enum:__anon23	file:
 ADBDIRMODE	tcadb.c	25;"	d	file:
-ADBMAPBDB	tcadb.c	/^} ADBMAPBDB;$/;"	t	typeref:struct:__anon3	file:
+ADBMAPBDB	tcadb.c	/^} ADBMAPBDB;$/;"	t	typeref:struct:__anon21	file:
 ADBMAPPROC	tcadb.h	/^typedef bool (*ADBMAPPROC)(void *map, const char *kbuf, int ksiz, const char *vbuf, int vsiz,$/;"	t
-ADBMUL	tcadb.c	/^} ADBMUL;$/;"	t	typeref:struct:__anon2	file:
+ADBMUL	tcadb.c	/^} ADBMUL;$/;"	t	typeref:struct:__anon20	file:
 ADBMULPREFIX	tcadb.c	26;"	d	file:
-ADBOBDB	tcadb.h	/^  ADBOBDB,                               \/* B+ tree database *\/$/;"	e	enum:__anon5
-ADBOFDB	tcadb.h	/^  ADBOFDB,                               \/* fixed-length database *\/$/;"	e	enum:__anon5
-ADBOHDB	tcadb.h	/^  ADBOHDB,                               \/* hash database *\/$/;"	e	enum:__anon5
-ADBOMDB	tcadb.h	/^  ADBOMDB,                               \/* on-memory hash database *\/$/;"	e	enum:__anon5
-ADBONDB	tcadb.h	/^  ADBONDB,                               \/* on-memory tree database *\/$/;"	e	enum:__anon5
-ADBOSKEL	tcadb.h	/^  ADBOSKEL                               \/* skeleton database *\/$/;"	e	enum:__anon5
-ADBOTDB	tcadb.h	/^  ADBOTDB,                               \/* table database *\/$/;"	e	enum:__anon5
-ADBOVOID	tcadb.h	/^  ADBOVOID,                              \/* not opened *\/$/;"	e	enum:__anon5
-ADBSKEL	tcadb.h	/^} ADBSKEL;$/;"	t	typeref:struct:__anon6
+ADBOBDB	tcadb.h	/^  ADBOBDB,                               \/* B+ tree database *\/$/;"	e	enum:__anon69
+ADBOFDB	tcadb.h	/^  ADBOFDB,                               \/* fixed-length database *\/$/;"	e	enum:__anon69
+ADBOHDB	tcadb.h	/^  ADBOHDB,                               \/* hash database *\/$/;"	e	enum:__anon69
+ADBOMDB	tcadb.h	/^  ADBOMDB,                               \/* on-memory hash database *\/$/;"	e	enum:__anon69
+ADBONDB	tcadb.h	/^  ADBONDB,                               \/* on-memory tree database *\/$/;"	e	enum:__anon69
+ADBOSKEL	tcadb.h	/^  ADBOSKEL                               \/* skeleton database *\/$/;"	e	enum:__anon69
+ADBOTDB	tcadb.h	/^  ADBOTDB,                               \/* table database *\/$/;"	e	enum:__anon69
+ADBOVOID	tcadb.h	/^  ADBOVOID,                              \/* not opened *\/$/;"	e	enum:__anon69
+ADBSKEL	tcadb.h	/^} ADBSKEL;$/;"	t	typeref:struct:__anon70
 BDBCACHEOUT	tcbdb.c	27;"	d	file:
 BDBCMP	tcutil.h	4168;"	d
-BDBCPAFTER	tcbdb.h	/^  BDBCPAFTER                             \/* after *\/$/;"	e	enum:__anon23
-BDBCPBEFORE	tcbdb.h	/^  BDBCPBEFORE,                           \/* before *\/$/;"	e	enum:__anon23
-BDBCPCURRENT	tcbdb.h	/^  BDBCPCURRENT,                          \/* current *\/$/;"	e	enum:__anon23
-BDBCUR	tcbdb.h	/^} BDBCUR;$/;"	t	typeref:struct:__anon22
+BDBCPAFTER	tcbdb.h	/^  BDBCPAFTER                             \/* after *\/$/;"	e	enum:__anon76
+BDBCPBEFORE	tcbdb.h	/^  BDBCPBEFORE,                           \/* before *\/$/;"	e	enum:__anon76
+BDBCPCURRENT	tcbdb.h	/^  BDBCPCURRENT,                          \/* current *\/$/;"	e	enum:__anon76
+BDBCUR	tcbdb.h	/^} BDBCUR;$/;"	t	typeref:struct:__anon75
 BDBDEFAPOW	tcbdb.c	34;"	d	file:
 BDBDEFBNUM	tcbdb.c	33;"	d	file:
 BDBDEFFPOW	tcbdb.c	35;"	d	file:
@@ -37,10 +37,10 @@ BDBDEFLMEMB	tcbdb.c	29;"	d	file:
 BDBDEFLSMAX	tcbdb.c	38;"	d	file:
 BDBDEFNCNUM	tcbdb.c	37;"	d	file:
 BDBDEFNMEMB	tcbdb.c	31;"	d	file:
-BDBFFATAL	tcbdb.h	/^  BDBFFATAL = HDBFFATAL                  \/* whether with fatal error *\/$/;"	e	enum:__anon19
-BDBFOPEN	tcbdb.h	/^  BDBFOPEN = HDBFOPEN,                   \/* whether opened *\/$/;"	e	enum:__anon19
-BDBIDX	tcbdb.c	/^} BDBIDX;$/;"	t	typeref:struct:__anon14	file:
-BDBLEAF	tcbdb.c	/^} BDBLEAF;$/;"	t	typeref:struct:__anon13	file:
+BDBFFATAL	tcbdb.h	/^  BDBFFATAL = HDBFFATAL                  \/* whether with fatal error *\/$/;"	e	enum:__anon72
+BDBFOPEN	tcbdb.h	/^  BDBFOPEN = HDBFOPEN,                   \/* whether opened *\/$/;"	e	enum:__anon72
+BDBIDX	tcbdb.c	/^} BDBIDX;$/;"	t	typeref:struct:__anon16	file:
+BDBLEAF	tcbdb.c	/^} BDBLEAF;$/;"	t	typeref:struct:__anon15	file:
 BDBLEFTOPQSIZ	tcbdb.c	23;"	d	file:
 BDBLEVELMAX	tcbdb.c	26;"	d	file:
 BDBLOCKCACHE	tcbdb.c	92;"	d	file:
@@ -48,33 +48,33 @@ BDBLOCKMETHOD	tcbdb.c	88;"	d	file:
 BDBMINLMEMB	tcbdb.c	30;"	d	file:
 BDBMINLSMAX	tcbdb.c	39;"	d	file:
 BDBMINNMEMB	tcbdb.c	32;"	d	file:
-BDBNODE	tcbdb.c	/^} BDBNODE;$/;"	t	typeref:struct:__anon15	file:
+BDBNODE	tcbdb.c	/^} BDBNODE;$/;"	t	typeref:struct:__anon17	file:
 BDBNODEIDBASE	tcbdb.c	25;"	d	file:
-BDBOCREAT	tcbdb.h	/^  BDBOCREAT = 1 << 2,                    \/* writer creating *\/$/;"	e	enum:__anon21
-BDBOLCKNB	tcbdb.h	/^  BDBOLCKNB = 1 << 5,                    \/* lock without blocking *\/$/;"	e	enum:__anon21
-BDBONOLCK	tcbdb.h	/^  BDBONOLCK = 1 << 4,                    \/* open without locking *\/$/;"	e	enum:__anon21
+BDBOCREAT	tcbdb.h	/^  BDBOCREAT = 1 << 2,                    \/* writer creating *\/$/;"	e	enum:__anon74
+BDBOLCKNB	tcbdb.h	/^  BDBOLCKNB = 1 << 5,                    \/* lock without blocking *\/$/;"	e	enum:__anon74
+BDBONOLCK	tcbdb.h	/^  BDBONOLCK = 1 << 4,                    \/* open without locking *\/$/;"	e	enum:__anon74
 BDBOPAQUESIZ	tcbdb.c	22;"	d	file:
-BDBOREADER	tcbdb.h	/^  BDBOREADER = 1 << 0,                   \/* open as a reader *\/$/;"	e	enum:__anon21
-BDBOTRUNC	tcbdb.h	/^  BDBOTRUNC = 1 << 3,                    \/* writer truncating *\/$/;"	e	enum:__anon21
-BDBOTSYNC	tcbdb.h	/^  BDBOTSYNC = 1 << 6                     \/* synchronize every transaction *\/$/;"	e	enum:__anon21
-BDBOWRITER	tcbdb.h	/^  BDBOWRITER = 1 << 1,                   \/* open as a writer *\/$/;"	e	enum:__anon21
+BDBOREADER	tcbdb.h	/^  BDBOREADER = 1 << 0,                   \/* open as a reader *\/$/;"	e	enum:__anon74
+BDBOTRUNC	tcbdb.h	/^  BDBOTRUNC = 1 << 3,                    \/* writer truncating *\/$/;"	e	enum:__anon74
+BDBOTSYNC	tcbdb.h	/^  BDBOTSYNC = 1 << 6                     \/* synchronize every transaction *\/$/;"	e	enum:__anon74
+BDBOWRITER	tcbdb.h	/^  BDBOWRITER = 1 << 1,                   \/* open as a writer *\/$/;"	e	enum:__anon74
 BDBPAGEBUFSIZ	tcbdb.c	24;"	d	file:
-BDBPDADDDBL	tcbdb.c	/^  BDBPDADDDBL,                           \/\/ add a real number$/;"	e	enum:__anon16	file:
-BDBPDADDINT	tcbdb.c	/^  BDBPDADDINT,                           \/\/ add an integer$/;"	e	enum:__anon16	file:
-BDBPDCAT	tcbdb.c	/^  BDBPDCAT,                              \/\/ concatenate values$/;"	e	enum:__anon16	file:
-BDBPDDUP	tcbdb.c	/^  BDBPDDUP,                              \/\/ allow duplication of keys$/;"	e	enum:__anon16	file:
-BDBPDDUPB	tcbdb.c	/^  BDBPDDUPB,                             \/\/ allow backward duplication$/;"	e	enum:__anon16	file:
-BDBPDKEEP	tcbdb.c	/^  BDBPDKEEP,                             \/\/ keep the existing value$/;"	e	enum:__anon16	file:
-BDBPDOVER	tcbdb.c	/^  BDBPDOVER,                             \/\/ overwrite an existing value$/;"	e	enum:__anon16	file:
-BDBPDPROC	tcbdb.c	/^  BDBPDPROC                              \/\/ process by a callback function$/;"	e	enum:__anon16	file:
-BDBPDPROCOP	tcbdb.c	/^} BDBPDPROCOP;$/;"	t	typeref:struct:__anon17	file:
-BDBREC	tcbdb.c	/^} BDBREC;$/;"	t	typeref:struct:__anon12	file:
-BDBTBZIP	tcbdb.h	/^  BDBTBZIP = 1 << 2,                     \/* compress each record with BZIP2 *\/$/;"	e	enum:__anon20
-BDBTDEFLATE	tcbdb.h	/^  BDBTDEFLATE = 1 << 1,                  \/* compress each page with Deflate *\/$/;"	e	enum:__anon20
-BDBTEXCODEC	tcbdb.h	/^  BDBTEXCODEC = 1 << 4                   \/* compress each record with outer functions *\/$/;"	e	enum:__anon20
+BDBPDADDDBL	tcbdb.c	/^  BDBPDADDDBL,                           \/\/ add a real number$/;"	e	enum:__anon18	file:
+BDBPDADDINT	tcbdb.c	/^  BDBPDADDINT,                           \/\/ add an integer$/;"	e	enum:__anon18	file:
+BDBPDCAT	tcbdb.c	/^  BDBPDCAT,                              \/\/ concatenate values$/;"	e	enum:__anon18	file:
+BDBPDDUP	tcbdb.c	/^  BDBPDDUP,                              \/\/ allow duplication of keys$/;"	e	enum:__anon18	file:
+BDBPDDUPB	tcbdb.c	/^  BDBPDDUPB,                             \/\/ allow backward duplication$/;"	e	enum:__anon18	file:
+BDBPDKEEP	tcbdb.c	/^  BDBPDKEEP,                             \/\/ keep the existing value$/;"	e	enum:__anon18	file:
+BDBPDOVER	tcbdb.c	/^  BDBPDOVER,                             \/\/ overwrite an existing value$/;"	e	enum:__anon18	file:
+BDBPDPROC	tcbdb.c	/^  BDBPDPROC                              \/\/ process by a callback function$/;"	e	enum:__anon18	file:
+BDBPDPROCOP	tcbdb.c	/^} BDBPDPROCOP;$/;"	t	typeref:struct:__anon19	file:
+BDBREC	tcbdb.c	/^} BDBREC;$/;"	t	typeref:struct:__anon14	file:
+BDBTBZIP	tcbdb.h	/^  BDBTBZIP = 1 << 2,                     \/* compress each record with BZIP2 *\/$/;"	e	enum:__anon73
+BDBTDEFLATE	tcbdb.h	/^  BDBTDEFLATE = 1 << 1,                  \/* compress each page with Deflate *\/$/;"	e	enum:__anon73
+BDBTEXCODEC	tcbdb.h	/^  BDBTEXCODEC = 1 << 4                   \/* compress each record with outer functions *\/$/;"	e	enum:__anon73
 BDBTHREADYIELD	tcbdb.c	96;"	d	file:
-BDBTLARGE	tcbdb.h	/^  BDBTLARGE = 1 << 0,                    \/* use 64-bit bucket array *\/$/;"	e	enum:__anon20
-BDBTTCBS	tcbdb.h	/^  BDBTTCBS = 1 << 3,                     \/* compress each page with TCBS *\/$/;"	e	enum:__anon20
+BDBTLARGE	tcbdb.h	/^  BDBTLARGE = 1 << 0,                    \/* use 64-bit bucket array *\/$/;"	e	enum:__anon73
+BDBTTCBS	tcbdb.h	/^  BDBTTCBS = 1 << 3,                     \/* compress each page with TCBS *\/$/;"	e	enum:__anon73
 BDBUNLOCKCACHE	tcbdb.c	94;"	d	file:
 BDBUNLOCKMETHOD	tcbdb.c	90;"	d	file:
 BIG_CACHESIZE	bros/bdbtest.c	19;"	d	file:
@@ -125,17 +125,17 @@ FALSE	bros/tdbtest.c	15;"	d	file:
 FALSE	bros/tdbtest.c	16;"	d	file:
 FDBDEFLIMSIZ	tcfdb.c	37;"	d	file:
 FDBDEFWIDTH	tcfdb.c	36;"	d	file:
-FDBFFATAL	tcfdb.h	/^  FDBFFATAL = 1 << 1                     \/* whether with fatal error *\/$/;"	e	enum:__anon33
+FDBFFATAL	tcfdb.h	/^  FDBFFATAL = 1 << 1                     \/* whether with fatal error *\/$/;"	e	enum:__anon65
 FDBFILEMODE	tcfdb.c	21;"	d	file:
 FDBFLAGSOFF	tcfdb.c	27;"	d	file:
-FDBFOPEN	tcfdb.h	/^  FDBFOPEN = 1 << 0,                     \/* whether opened *\/$/;"	e	enum:__anon33
+FDBFOPEN	tcfdb.h	/^  FDBFOPEN = 1 << 0,                     \/* whether opened *\/$/;"	e	enum:__anon65
 FDBFSIZOFF	tcfdb.c	29;"	d	file:
 FDBHEADSIZ	tcfdb.c	25;"	d	file:
 FDBIDARYUNIT	tcfdb.c	40;"	d	file:
-FDBIDMAX	tcfdb.h	/^  FDBIDMAX = -3,                         \/* maximum number *\/$/;"	e	enum:__anon35
-FDBIDMIN	tcfdb.h	/^  FDBIDMIN = -1,                         \/* minimum number *\/$/;"	e	enum:__anon35
-FDBIDNEXT	tcfdb.h	/^  FDBIDNEXT = -4                         \/* greater by one than the miximum *\/$/;"	e	enum:__anon35
-FDBIDPREV	tcfdb.h	/^  FDBIDPREV = -2,                        \/* less by one than the minimum *\/$/;"	e	enum:__anon35
+FDBIDMAX	tcfdb.h	/^  FDBIDMAX = -3,                         \/* maximum number *\/$/;"	e	enum:__anon67
+FDBIDMIN	tcfdb.h	/^  FDBIDMIN = -1,                         \/* minimum number *\/$/;"	e	enum:__anon67
+FDBIDNEXT	tcfdb.h	/^  FDBIDNEXT = -4                         \/* greater by one than the miximum *\/$/;"	e	enum:__anon67
+FDBIDPREV	tcfdb.h	/^  FDBIDPREV = -2,                        \/* less by one than the minimum *\/$/;"	e	enum:__anon67
 FDBIOBUFSIZ	tcfdb.c	22;"	d	file:
 FDBLIMSIZOFF	tcfdb.c	31;"	d	file:
 FDBLOCKALLRECORDS	tcfdb.c	71;"	d	file:
@@ -146,21 +146,21 @@ FDBLOCKWAL	tcfdb.c	75;"	d	file:
 FDBMAGICDATA	tcfdb.c	24;"	d	file:
 FDBMAXOFF	tcfdb.c	33;"	d	file:
 FDBMINOFF	tcfdb.c	32;"	d	file:
-FDBOCREAT	tcfdb.h	/^  FDBOCREAT = 1 << 2,                    \/* writer creating *\/$/;"	e	enum:__anon34
-FDBOLCKNB	tcfdb.h	/^  FDBOLCKNB = 1 << 5,                    \/* lock without blocking *\/$/;"	e	enum:__anon34
-FDBONOLCK	tcfdb.h	/^  FDBONOLCK = 1 << 4,                    \/* open without locking *\/$/;"	e	enum:__anon34
+FDBOCREAT	tcfdb.h	/^  FDBOCREAT = 1 << 2,                    \/* writer creating *\/$/;"	e	enum:__anon66
+FDBOLCKNB	tcfdb.h	/^  FDBOLCKNB = 1 << 5,                    \/* lock without blocking *\/$/;"	e	enum:__anon66
+FDBONOLCK	tcfdb.h	/^  FDBONOLCK = 1 << 4,                    \/* open without locking *\/$/;"	e	enum:__anon66
 FDBOPAQUEOFF	tcfdb.c	34;"	d	file:
-FDBOREADER	tcfdb.h	/^  FDBOREADER = 1 << 0,                   \/* open as a reader *\/$/;"	e	enum:__anon34
-FDBOTRUNC	tcfdb.h	/^  FDBOTRUNC = 1 << 3,                    \/* writer truncating *\/$/;"	e	enum:__anon34
-FDBOTSYNC	tcfdb.h	/^  FDBOTSYNC = 1 << 6                     \/* synchronize every transaction *\/$/;"	e	enum:__anon34
-FDBOWRITER	tcfdb.h	/^  FDBOWRITER = 1 << 1,                   \/* open as a writer *\/$/;"	e	enum:__anon34
-FDBPDADDDBL	tcfdb.c	/^  FDBPDADDDBL,                           \/\/ add a real number$/;"	e	enum:__anon30	file:
-FDBPDADDINT	tcfdb.c	/^  FDBPDADDINT,                           \/\/ add an integer$/;"	e	enum:__anon30	file:
-FDBPDCAT	tcfdb.c	/^  FDBPDCAT,                              \/\/ concatenate values$/;"	e	enum:__anon30	file:
-FDBPDKEEP	tcfdb.c	/^  FDBPDKEEP,                             \/\/ keep the existing value$/;"	e	enum:__anon30	file:
-FDBPDOVER	tcfdb.c	/^  FDBPDOVER,                             \/\/ overwrite an existing value$/;"	e	enum:__anon30	file:
-FDBPDPROC	tcfdb.c	/^  FDBPDPROC                              \/\/ process by a callback function$/;"	e	enum:__anon30	file:
-FDBPDPROCOP	tcfdb.c	/^} FDBPDPROCOP;$/;"	t	typeref:struct:__anon31	file:
+FDBOREADER	tcfdb.h	/^  FDBOREADER = 1 << 0,                   \/* open as a reader *\/$/;"	e	enum:__anon66
+FDBOTRUNC	tcfdb.h	/^  FDBOTRUNC = 1 << 3,                    \/* writer truncating *\/$/;"	e	enum:__anon66
+FDBOTSYNC	tcfdb.h	/^  FDBOTSYNC = 1 << 6                     \/* synchronize every transaction *\/$/;"	e	enum:__anon66
+FDBOWRITER	tcfdb.h	/^  FDBOWRITER = 1 << 1,                   \/* open as a writer *\/$/;"	e	enum:__anon66
+FDBPDADDDBL	tcfdb.c	/^  FDBPDADDDBL,                           \/\/ add a real number$/;"	e	enum:__anon1	file:
+FDBPDADDINT	tcfdb.c	/^  FDBPDADDINT,                           \/\/ add an integer$/;"	e	enum:__anon1	file:
+FDBPDCAT	tcfdb.c	/^  FDBPDCAT,                              \/\/ concatenate values$/;"	e	enum:__anon1	file:
+FDBPDKEEP	tcfdb.c	/^  FDBPDKEEP,                             \/\/ keep the existing value$/;"	e	enum:__anon1	file:
+FDBPDOVER	tcfdb.c	/^  FDBPDOVER,                             \/\/ overwrite an existing value$/;"	e	enum:__anon1	file:
+FDBPDPROC	tcfdb.c	/^  FDBPDPROC                              \/\/ process by a callback function$/;"	e	enum:__anon1	file:
+FDBPDPROCOP	tcfdb.c	/^} FDBPDPROCOP;$/;"	t	typeref:struct:__anon2	file:
 FDBRMTXNUM	tcfdb.c	38;"	d	file:
 FDBRNUMOFF	tcfdb.c	28;"	d	file:
 FDBTHREADYIELD	tcfdb.c	79;"	d	file:
@@ -187,62 +187,62 @@ HDBDEFXMSIZ	tchdb.c	43;"	d	file:
 HDBDFRSRAT	tchdb.c	53;"	d	file:
 HDBDRPLAT	tchdb.c	52;"	d	file:
 HDBDRPUNIT	tchdb.c	51;"	d	file:
-HDBFB	tchdb.c	/^} HDBFB;$/;"	t	typeref:struct:__anon42	file:
+HDBFB	tchdb.c	/^} HDBFB;$/;"	t	typeref:struct:__anon96	file:
 HDBFBMAXSIZ	tchdb.c	54;"	d	file:
 HDBFBPALWRAT	tchdb.c	47;"	d	file:
 HDBFBPBSIZ	tchdb.c	48;"	d	file:
 HDBFBPESIZ	tchdb.c	49;"	d	file:
 HDBFBPMGFREQ	tchdb.c	50;"	d	file:
-HDBFFATAL	tchdb.h	/^  HDBFFATAL = 1 << 1                     \/* whether with fatal error *\/$/;"	e	enum:__anon47
+HDBFFATAL	tchdb.h	/^  HDBFFATAL = 1 << 1                     \/* whether with fatal error *\/$/;"	e	enum:__anon46
 HDBFILEMODE	tchdb.c	22;"	d	file:
 HDBFLAGSOFF	tchdb.c	28;"	d	file:
-HDBFOPEN	tchdb.h	/^  HDBFOPEN = 1 << 0,                     \/* whether opened *\/$/;"	e	enum:__anon47
+HDBFOPEN	tchdb.h	/^  HDBFOPEN = 1 << 0,                     \/* whether opened *\/$/;"	e	enum:__anon46
 HDBFPOWOFF	tchdb.c	30;"	d	file:
 HDBFRECOFF	tchdb.c	35;"	d	file:
 HDBFSIZOFF	tchdb.c	34;"	d	file:
 HDBHEADSIZ	tchdb.c	26;"	d	file:
 HDBIOBUFSIZ	tchdb.c	23;"	d	file:
-HDBLOCKALLRECORDS	tchdb.c	108;"	d	file:
-HDBLOCKDB	tchdb.c	112;"	d	file:
-HDBLOCKMETHOD	tchdb.c	100;"	d	file:
-HDBLOCKRECORD	tchdb.c	104;"	d	file:
-HDBLOCKWAL	tchdb.c	116;"	d	file:
+HDBLOCKALLRECORDS	tchdb.c	113;"	d	file:
+HDBLOCKDB	tchdb.c	117;"	d	file:
+HDBLOCKMETHOD	tchdb.c	105;"	d	file:
+HDBLOCKRECORD	tchdb.c	109;"	d	file:
+HDBLOCKWAL	tchdb.c	121;"	d	file:
 HDBMAGICDATA	tchdb.c	25;"	d	file:
-HDBMAGICFB	tchdb.c	/^  HDBMAGICFB = 0xb0                      \/\/ for free block$/;"	e	enum:__anon43	file:
-HDBMAGICREC	tchdb.c	/^  HDBMAGICREC = 0xc8,                    \/\/ for data block$/;"	e	enum:__anon43	file:
+HDBMAGICFB	tchdb.c	/^  HDBMAGICFB = 0xb0                      \/\/ for free block$/;"	e	enum:__anon97	file:
+HDBMAGICREC	tchdb.c	/^  HDBMAGICREC = 0xc8,                    \/\/ for data block$/;"	e	enum:__anon97	file:
 HDBMAXAPOW	tchdb.c	40;"	d	file:
 HDBMAXFPOW	tchdb.c	42;"	d	file:
 HDBMAXHSIZ	tchdb.c	46;"	d	file:
 HDBMINRUNIT	tchdb.c	45;"	d	file:
-HDBOCREAT	tchdb.h	/^  HDBOCREAT = 1 << 2,                    \/* writer creating *\/$/;"	e	enum:__anon49
-HDBOLCKNB	tchdb.h	/^  HDBOLCKNB = 1 << 5,                    \/* lock without blocking *\/$/;"	e	enum:__anon49
-HDBONOLCK	tchdb.h	/^  HDBONOLCK = 1 << 4,                    \/* open without locking *\/$/;"	e	enum:__anon49
+HDBOCREAT	tchdb.h	/^  HDBOCREAT = 1 << 2,                    \/* writer creating *\/$/;"	e	enum:__anon48
+HDBOLCKNB	tchdb.h	/^  HDBOLCKNB = 1 << 5,                    \/* lock without blocking *\/$/;"	e	enum:__anon48
+HDBONOLCK	tchdb.h	/^  HDBONOLCK = 1 << 4,                    \/* open without locking *\/$/;"	e	enum:__anon48
 HDBOPAQUEOFF	tchdb.c	36;"	d	file:
 HDBOPTSOFF	tchdb.c	31;"	d	file:
-HDBOREADER	tchdb.h	/^  HDBOREADER = 1 << 0,                   \/* open as a reader *\/$/;"	e	enum:__anon49
-HDBOTRUNC	tchdb.h	/^  HDBOTRUNC = 1 << 3,                    \/* writer truncating *\/$/;"	e	enum:__anon49
-HDBOTSYNC	tchdb.h	/^  HDBOTSYNC = 1 << 6                     \/* synchronize every transaction *\/$/;"	e	enum:__anon49
-HDBOWRITER	tchdb.h	/^  HDBOWRITER = 1 << 1,                   \/* open as a writer *\/$/;"	e	enum:__anon49
-HDBPDADDDBL	tchdb.c	/^  HDBPDADDDBL,                           \/\/ add a real number$/;"	e	enum:__anon44	file:
-HDBPDADDINT	tchdb.c	/^  HDBPDADDINT,                           \/\/ add an integer$/;"	e	enum:__anon44	file:
-HDBPDCAT	tchdb.c	/^  HDBPDCAT,                              \/\/ concatenate values$/;"	e	enum:__anon44	file:
-HDBPDKEEP	tchdb.c	/^  HDBPDKEEP,                             \/\/ keep the existing value$/;"	e	enum:__anon44	file:
-HDBPDOVER	tchdb.c	/^  HDBPDOVER,                             \/\/ overwrite an existing value$/;"	e	enum:__anon44	file:
-HDBPDPROC	tchdb.c	/^  HDBPDPROC                              \/\/ process by a callback function$/;"	e	enum:__anon44	file:
-HDBPDPROCOP	tchdb.c	/^} HDBPDPROCOP;$/;"	t	typeref:struct:__anon45	file:
+HDBOREADER	tchdb.h	/^  HDBOREADER = 1 << 0,                   \/* open as a reader *\/$/;"	e	enum:__anon48
+HDBOTRUNC	tchdb.h	/^  HDBOTRUNC = 1 << 3,                    \/* writer truncating *\/$/;"	e	enum:__anon48
+HDBOTSYNC	tchdb.h	/^  HDBOTSYNC = 1 << 6                     \/* synchronize every transaction *\/$/;"	e	enum:__anon48
+HDBOWRITER	tchdb.h	/^  HDBOWRITER = 1 << 1,                   \/* open as a writer *\/$/;"	e	enum:__anon48
+HDBPDADDDBL	tchdb.c	/^  HDBPDADDDBL,                           \/\/ add a real number$/;"	e	enum:__anon98	file:
+HDBPDADDINT	tchdb.c	/^  HDBPDADDINT,                           \/\/ add an integer$/;"	e	enum:__anon98	file:
+HDBPDCAT	tchdb.c	/^  HDBPDCAT,                              \/\/ concatenate values$/;"	e	enum:__anon98	file:
+HDBPDKEEP	tchdb.c	/^  HDBPDKEEP,                             \/\/ keep the existing value$/;"	e	enum:__anon98	file:
+HDBPDOVER	tchdb.c	/^  HDBPDOVER,                             \/\/ overwrite an existing value$/;"	e	enum:__anon98	file:
+HDBPDPROC	tchdb.c	/^  HDBPDPROC                              \/\/ process by a callback function$/;"	e	enum:__anon98	file:
+HDBPDPROCOP	tchdb.c	/^} HDBPDPROCOP;$/;"	t	typeref:struct:__anon99	file:
 HDBRNUMOFF	tchdb.c	33;"	d	file:
-HDBTBZIP	tchdb.h	/^  HDBTBZIP = 1 << 2,                     \/* compress each record with BZIP2 *\/$/;"	e	enum:__anon48
-HDBTDEFLATE	tchdb.h	/^  HDBTDEFLATE = 1 << 1,                  \/* compress each record with Deflate *\/$/;"	e	enum:__anon48
-HDBTEXCODEC	tchdb.h	/^  HDBTEXCODEC = 1 << 4                   \/* compress each record with custom functions *\/$/;"	e	enum:__anon48
-HDBTHREADYIELD	tchdb.c	120;"	d	file:
-HDBTLARGE	tchdb.h	/^  HDBTLARGE = 1 << 0,                    \/* use 64-bit bucket array *\/$/;"	e	enum:__anon48
-HDBTTCBS	tchdb.h	/^  HDBTTCBS = 1 << 3,                     \/* compress each record with TCBS *\/$/;"	e	enum:__anon48
+HDBTBZIP	tchdb.h	/^  HDBTBZIP = 1 << 2,                     \/* compress each record with BZIP2 *\/$/;"	e	enum:__anon47
+HDBTDEFLATE	tchdb.h	/^  HDBTDEFLATE = 1 << 1,                  \/* compress each record with Deflate *\/$/;"	e	enum:__anon47
+HDBTEXCODEC	tchdb.h	/^  HDBTEXCODEC = 1 << 4                   \/* compress each record with custom functions *\/$/;"	e	enum:__anon47
+HDBTHREADYIELD	tchdb.c	125;"	d	file:
+HDBTLARGE	tchdb.h	/^  HDBTLARGE = 1 << 0,                    \/* use 64-bit bucket array *\/$/;"	e	enum:__anon47
+HDBTTCBS	tchdb.h	/^  HDBTTCBS = 1 << 3,                     \/* compress each record with TCBS *\/$/;"	e	enum:__anon47
 HDBTYPEOFF	tchdb.c	27;"	d	file:
-HDBUNLOCKALLRECORDS	tchdb.c	110;"	d	file:
-HDBUNLOCKDB	tchdb.c	114;"	d	file:
-HDBUNLOCKMETHOD	tchdb.c	102;"	d	file:
-HDBUNLOCKRECORD	tchdb.c	106;"	d	file:
-HDBUNLOCKWAL	tchdb.c	118;"	d	file:
+HDBUNLOCKALLRECORDS	tchdb.c	115;"	d	file:
+HDBUNLOCKDB	tchdb.c	119;"	d	file:
+HDBUNLOCKMETHOD	tchdb.c	107;"	d	file:
+HDBUNLOCKRECORD	tchdb.c	111;"	d	file:
+HDBUNLOCKWAL	tchdb.c	123;"	d	file:
 HDBWALSUFFIX	tchdb.c	56;"	d	file:
 HDBXFSIZINC	tchdb.c	44;"	d	file:
 HEADERFILES	Makefile	/^HEADERFILES = tcutil.h tchdb.h tcbdb.h tcfdb.h tctdb.h tcadb.h$/;"	m
@@ -292,7 +292,7 @@ PACKAGE	Makefile	/^PACKAGE = tokyocabinet$/;"	m
 PACKAGEDIR	Makefile	/^PACKAGEDIR = $(PACKAGE)-$(VERSION)$/;"	m
 PACKAGETGZ	Makefile	/^PACKAGETGZ = $(PACKAGE)-$(VERSION).tar.gz$/;"	m
 PAGETITLE	tcawmgr.c	27;"	d	file:
-PARAMS	tcawmgr.c	/^} PARAMS;$/;"	t	typeref:struct:__anon10	file:
+PARAMS	tcawmgr.c	/^} PARAMS;$/;"	t	typeref:struct:__anon22	file:
 PATH_MAX	myconf.h	280;"	d
 PATH_MAX	myconf.h	282;"	d
 PCDIR	Makefile	/^PCDIR = ${exec_prefix}\/lib\/pkgconfig$/;"	m
@@ -411,37 +411,37 @@ T64	md5.c	128;"	d	file:
 T7	md5.c	71;"	d	file:
 T8	md5.c	72;"	d	file:
 T9	md5.c	73;"	d	file:
-TARGCOMBO	tcumttest.c	/^} TARGCOMBO;$/;"	t	typeref:struct:__anon78	file:
-TARGRACE	tcbmttest.c	/^} TARGRACE;$/;"	t	typeref:struct:__anon29	file:
-TARGRACE	tchmttest.c	/^} TARGRACE;$/;"	t	typeref:struct:__anon55	file:
-TARGREAD	tcamttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon8	file:
-TARGREAD	tcbmttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon25	file:
-TARGREAD	tcfmttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon37	file:
-TARGREAD	tchmttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon51	file:
-TARGREAD	tctmttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon74	file:
-TARGREMOVE	tcamttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon9	file:
-TARGREMOVE	tcbmttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon26	file:
-TARGREMOVE	tcfmttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon38	file:
-TARGREMOVE	tchmttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon52	file:
-TARGREMOVE	tctmttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon75	file:
-TARGTYPICAL	tcbmttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon28	file:
-TARGTYPICAL	tcfmttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon40	file:
-TARGTYPICAL	tchmttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon54	file:
-TARGTYPICAL	tctmttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon77	file:
-TARGTYPICAL	tcumttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon79	file:
-TARGWICKED	tcbmttest.c	/^} TARGWICKED;$/;"	t	typeref:struct:__anon27	file:
-TARGWICKED	tcfmttest.c	/^} TARGWICKED;$/;"	t	typeref:struct:__anon39	file:
-TARGWICKED	tchmttest.c	/^} TARGWICKED;$/;"	t	typeref:struct:__anon53	file:
-TARGWICKED	tctmttest.c	/^} TARGWICKED;$/;"	t	typeref:struct:__anon76	file:
-TARGWRITE	tcamttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon7	file:
-TARGWRITE	tcbmttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon24	file:
-TARGWRITE	tcfmttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon36	file:
-TARGWRITE	tchmttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon50	file:
-TARGWRITE	tctmttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon73	file:
-TCADB	tcadb.h	/^} TCADB;$/;"	t	typeref:struct:__anon4
+TARGCOMBO	tcumttest.c	/^} TARGCOMBO;$/;"	t	typeref:struct:__anon24	file:
+TARGRACE	tcbmttest.c	/^} TARGRACE;$/;"	t	typeref:struct:__anon13	file:
+TARGRACE	tchmttest.c	/^} TARGRACE;$/;"	t	typeref:struct:__anon54	file:
+TARGREAD	tcamttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon62	file:
+TARGREAD	tcbmttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon9	file:
+TARGREAD	tcfmttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon91	file:
+TARGREAD	tchmttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon50	file:
+TARGREAD	tctmttest.c	/^} TARGREAD;$/;"	t	typeref:struct:__anon57	file:
+TARGREMOVE	tcamttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon63	file:
+TARGREMOVE	tcbmttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon10	file:
+TARGREMOVE	tcfmttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon92	file:
+TARGREMOVE	tchmttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon51	file:
+TARGREMOVE	tctmttest.c	/^} TARGREMOVE;$/;"	t	typeref:struct:__anon58	file:
+TARGTYPICAL	tcbmttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon12	file:
+TARGTYPICAL	tcfmttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon94	file:
+TARGTYPICAL	tchmttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon53	file:
+TARGTYPICAL	tctmttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon60	file:
+TARGTYPICAL	tcumttest.c	/^} TARGTYPICAL;$/;"	t	typeref:struct:__anon25	file:
+TARGWICKED	tcbmttest.c	/^} TARGWICKED;$/;"	t	typeref:struct:__anon11	file:
+TARGWICKED	tcfmttest.c	/^} TARGWICKED;$/;"	t	typeref:struct:__anon93	file:
+TARGWICKED	tchmttest.c	/^} TARGWICKED;$/;"	t	typeref:struct:__anon52	file:
+TARGWICKED	tctmttest.c	/^} TARGWICKED;$/;"	t	typeref:struct:__anon59	file:
+TARGWRITE	tcamttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon61	file:
+TARGWRITE	tcbmttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon8	file:
+TARGWRITE	tcfmttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon90	file:
+TARGWRITE	tchmttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon49	file:
+TARGWRITE	tctmttest.c	/^} TARGWRITE;$/;"	t	typeref:struct:__anon56	file:
+TCADB	tcadb.h	/^} TCADB;$/;"	t	typeref:struct:__anon68
 TCALIGNOF	tcutil.h	4004;"	d
 TCALIGNPAD	tcutil.h	4010;"	d
-TCBDB	tcbdb.h	/^} TCBDB;$/;"	t	typeref:struct:__anon18
+TCBDB	tcbdb.h	/^} TCBDB;$/;"	t	typeref:struct:__anon71
 TCBIGEND	myconf.h	139;"	d
 TCBIGEND	myconf.h	147;"	d
 TCBITMAP	tcutil.h	/^typedef unsigned char TCBITMAP;          \/* type of a bit map object *\/$/;"	t
@@ -450,7 +450,7 @@ TCBITMAPDEL	tcutil.h	3587;"	d
 TCBITMAPNEW	tcutil.h	3582;"	d
 TCBITMAPOFF	tcutil.h	3601;"	d
 TCBITMAPON	tcutil.h	3594;"	d
-TCBITSTRM	tcutil.h	/^} TCBITSTRM;$/;"	t	typeref:struct:__anon96
+TCBITSTRM	tcutil.h	/^} TCBITSTRM;$/;"	t	typeref:struct:__anon41
 TCBITSTRMCAT	tcutil.h	3624;"	d
 TCBITSTRMINITR	tcutil.h	3654;"	d
 TCBITSTRMINITW	tcutil.h	3613;"	d
@@ -462,56 +462,56 @@ TCBSENCUNIT	tcutil.c	9508;"	d	file:
 TCBWTBUFNUM	tcutil.c	9511;"	d	file:
 TCBWTCNTLV	tcutil.c	9510;"	d	file:
 TCBWTCNTMIN	tcutil.c	9509;"	d	file:
-TCBWTREC	tcutil.c	/^} TCBWTREC;$/;"	t	typeref:struct:__anon80	file:
+TCBWTREC	tcutil.c	/^} TCBWTREC;$/;"	t	typeref:struct:__anon89	file:
 TCCALCVNUMSIZE	myconf.h	526;"	d
 TCCALLOC	tcutil.h	3961;"	d
 TCCALLOC	tcutil.h	3966;"	d
-TCCHIDX	tcutil.h	/^} TCCHIDX;$/;"	t	typeref:struct:__anon93
-TCCHIDXNODE	tcutil.h	/^} TCCHIDXNODE;$/;"	t	typeref:struct:__anon92
+TCCHIDX	tcutil.h	/^} TCCHIDX;$/;"	t	typeref:struct:__anon38
+TCCHIDXNODE	tcutil.h	/^} TCCHIDXNODE;$/;"	t	typeref:struct:__anon37
 TCCHIDXVNNUM	tcutil.c	5714;"	d	file:
 TCCMP	tcutil.h	/^typedef int (*TCCMP)(const char *aptr, int asiz, const char *bptr, int bsiz, void *op);$/;"	t
 TCCMPLEXICAL	myconf.h	531;"	d
 TCCODEC	tcutil.h	/^typedef void *(*TCCODEC)(const void *ptr, int size, int *sp, void *op);$/;"	t
-TCDBTBTREE	tcutil.h	/^  TCDBTBTREE,                            \/* B+ tree *\/$/;"	e	enum:__anon98
-TCDBTFIXED	tcutil.h	/^  TCDBTFIXED,                            \/* fixed-length *\/$/;"	e	enum:__anon98
-TCDBTHASH	tcutil.h	/^  TCDBTHASH,                             \/* hash table *\/$/;"	e	enum:__anon98
-TCDBTTABLE	tcutil.h	/^  TCDBTTABLE                             \/* table *\/$/;"	e	enum:__anon98
+TCDBTBTREE	tcutil.h	/^  TCDBTBTREE,                            \/* B+ tree *\/$/;"	e	enum:__anon43
+TCDBTFIXED	tcutil.h	/^  TCDBTFIXED,                            \/* fixed-length *\/$/;"	e	enum:__anon43
+TCDBTHASH	tcutil.h	/^  TCDBTHASH,                             \/* hash table *\/$/;"	e	enum:__anon43
+TCDBTTABLE	tcutil.h	/^  TCDBTTABLE                             \/* table *\/$/;"	e	enum:__anon43
 TCDISTBUFSIZ	tcutil.c	4689;"	d	file:
 TCDISTMAXLEN	tcutil.c	4688;"	d	file:
 TCDODEBUG	myconf.h	102;"	d
 TCDODEBUG	myconf.h	106;"	d
 TCDPRINTF	tcutil.h	3878;"	d
 TCDPRINTF	tcutil.h	3885;"	d
-TCECLOSE	tcutil.h	/^  TCECLOSE,                              \/* close error *\/$/;"	e	enum:__anon97
-TCEINVALID	tcutil.h	/^  TCEINVALID,                            \/* invalid operation *\/$/;"	e	enum:__anon97
-TCEKEEP	tcutil.h	/^  TCEKEEP,                               \/* existing record *\/$/;"	e	enum:__anon97
-TCELOCK	tcutil.h	/^  TCELOCK,                               \/* lock error *\/$/;"	e	enum:__anon97
-TCEMETA	tcutil.h	/^  TCEMETA,                               \/* invalid meta data *\/$/;"	e	enum:__anon97
-TCEMISC	tcutil.h	/^  TCEMISC = 9999                         \/* miscellaneous error *\/$/;"	e	enum:__anon97
-TCEMKDIR	tcutil.h	/^  TCEMKDIR,                              \/* mkdir error *\/$/;"	e	enum:__anon97
-TCEMMAP	tcutil.h	/^  TCEMMAP,                               \/* mmap error *\/$/;"	e	enum:__anon97
+TCECLOSE	tcutil.h	/^  TCECLOSE,                              \/* close error *\/$/;"	e	enum:__anon42
+TCEINVALID	tcutil.h	/^  TCEINVALID,                            \/* invalid operation *\/$/;"	e	enum:__anon42
+TCEKEEP	tcutil.h	/^  TCEKEEP,                               \/* existing record *\/$/;"	e	enum:__anon42
+TCELOCK	tcutil.h	/^  TCELOCK,                               \/* lock error *\/$/;"	e	enum:__anon42
+TCEMETA	tcutil.h	/^  TCEMETA,                               \/* invalid meta data *\/$/;"	e	enum:__anon42
+TCEMISC	tcutil.h	/^  TCEMISC = 9999                         \/* miscellaneous error *\/$/;"	e	enum:__anon42
+TCEMKDIR	tcutil.h	/^  TCEMKDIR,                              \/* mkdir error *\/$/;"	e	enum:__anon42
+TCEMMAP	tcutil.h	/^  TCEMMAP,                               \/* mmap error *\/$/;"	e	enum:__anon42
 TCENCBUFSIZ	tcutil.c	7238;"	d	file:
-TCENOFILE	tcutil.h	/^  TCENOFILE,                             \/* file not found *\/$/;"	e	enum:__anon97
-TCENOPERM	tcutil.h	/^  TCENOPERM,                             \/* no permission *\/$/;"	e	enum:__anon97
-TCENOREC	tcutil.h	/^  TCENOREC,                              \/* no record found *\/$/;"	e	enum:__anon97
-TCEOPEN	tcutil.h	/^  TCEOPEN,                               \/* open error *\/$/;"	e	enum:__anon97
-TCEREAD	tcutil.h	/^  TCEREAD,                               \/* read error *\/$/;"	e	enum:__anon97
-TCERENAME	tcutil.h	/^  TCERENAME,                             \/* rename error *\/$/;"	e	enum:__anon97
-TCERHEAD	tcutil.h	/^  TCERHEAD,                              \/* invalid record header *\/$/;"	e	enum:__anon97
-TCERMDIR	tcutil.h	/^  TCERMDIR,                              \/* rmdir error *\/$/;"	e	enum:__anon97
-TCESEEK	tcutil.h	/^  TCESEEK,                               \/* seek error *\/$/;"	e	enum:__anon97
-TCESTAT	tcutil.h	/^  TCESTAT,                               \/* stat error *\/$/;"	e	enum:__anon97
-TCESUCCESS	tcutil.h	/^  TCESUCCESS,                            \/* success *\/$/;"	e	enum:__anon97
-TCESYNC	tcutil.h	/^  TCESYNC,                               \/* sync error *\/$/;"	e	enum:__anon97
-TCETHREAD	tcutil.h	/^  TCETHREAD,                             \/* threading error *\/$/;"	e	enum:__anon97
-TCETRUNC	tcutil.h	/^  TCETRUNC,                              \/* trunc error *\/$/;"	e	enum:__anon97
-TCEUNLINK	tcutil.h	/^  TCEUNLINK,                             \/* unlink error *\/$/;"	e	enum:__anon97
-TCEWRITE	tcutil.h	/^  TCEWRITE,                              \/* write error *\/$/;"	e	enum:__anon97
-TCFDB	tcfdb.h	/^} TCFDB;$/;"	t	typeref:struct:__anon32
+TCENOFILE	tcutil.h	/^  TCENOFILE,                             \/* file not found *\/$/;"	e	enum:__anon42
+TCENOPERM	tcutil.h	/^  TCENOPERM,                             \/* no permission *\/$/;"	e	enum:__anon42
+TCENOREC	tcutil.h	/^  TCENOREC,                              \/* no record found *\/$/;"	e	enum:__anon42
+TCEOPEN	tcutil.h	/^  TCEOPEN,                               \/* open error *\/$/;"	e	enum:__anon42
+TCEREAD	tcutil.h	/^  TCEREAD,                               \/* read error *\/$/;"	e	enum:__anon42
+TCERENAME	tcutil.h	/^  TCERENAME,                             \/* rename error *\/$/;"	e	enum:__anon42
+TCERHEAD	tcutil.h	/^  TCERHEAD,                              \/* invalid record header *\/$/;"	e	enum:__anon42
+TCERMDIR	tcutil.h	/^  TCERMDIR,                              \/* rmdir error *\/$/;"	e	enum:__anon42
+TCESEEK	tcutil.h	/^  TCESEEK,                               \/* seek error *\/$/;"	e	enum:__anon42
+TCESTAT	tcutil.h	/^  TCESTAT,                               \/* stat error *\/$/;"	e	enum:__anon42
+TCESUCCESS	tcutil.h	/^  TCESUCCESS,                            \/* success *\/$/;"	e	enum:__anon42
+TCESYNC	tcutil.h	/^  TCESYNC,                               \/* sync error *\/$/;"	e	enum:__anon42
+TCETHREAD	tcutil.h	/^  TCETHREAD,                             \/* threading error *\/$/;"	e	enum:__anon42
+TCETRUNC	tcutil.h	/^  TCETRUNC,                              \/* trunc error *\/$/;"	e	enum:__anon42
+TCEUNLINK	tcutil.h	/^  TCEUNLINK,                             \/* unlink error *\/$/;"	e	enum:__anon42
+TCEWRITE	tcutil.h	/^  TCEWRITE,                              \/* write error *\/$/;"	e	enum:__anon42
+TCFDB	tcfdb.h	/^} TCFDB;$/;"	t	typeref:struct:__anon64
 TCFILEMODE	tcutil.c	6907;"	d	file:
 TCFREE	tcutil.h	3997;"	d
-TCHDB	tchdb.h	/^} TCHDB;$/;"	t	typeref:struct:__anon46
-TCHREC	tchdb.c	/^} TCHREC;$/;"	t	typeref:struct:__anon41	file:
+TCHDB	tchdb.h	/^} TCHDB;$/;"	t	typeref:struct:__anon45
+TCHREC	tchdb.c	/^} TCHREC;$/;"	t	typeref:struct:__anon95	file:
 TCHTOIL	myconf.h	141;"	d
 TCHTOIL	myconf.h	149;"	d
 TCHTOILL	myconf.h	142;"	d
@@ -527,14 +527,14 @@ TCITOHLL	myconf.h	153;"	d
 TCITOHS	myconf.h	143;"	d
 TCITOHS	myconf.h	151;"	d
 TCKEYCMP	tcutil.c	984;"	d	file:
-TCKWMUBRCT	tcutil.h	/^  TCKWMUBRCT = 1 << 2,                   \/* mark up by brackets *\/$/;"	e	enum:__anon91
-TCKWMUCTRL	tcutil.h	/^  TCKWMUCTRL = 1 << 1,                   \/* mark up by control characters *\/$/;"	e	enum:__anon91
-TCKWMUTAB	tcutil.h	/^  TCKWMUTAB = 1 << 0,                    \/* mark up by tabs *\/$/;"	e	enum:__anon91
-TCKWNOOVER	tcutil.h	/^  TCKWNOOVER = 1 << 24,                  \/* no overlap *\/$/;"	e	enum:__anon91
-TCKWPULEAD	tcutil.h	/^  TCKWPULEAD = 1 << 25                   \/* pick up the lead string *\/$/;"	e	enum:__anon91
+TCKWMUBRCT	tcutil.h	/^  TCKWMUBRCT = 1 << 2,                   \/* mark up by brackets *\/$/;"	e	enum:__anon36
+TCKWMUCTRL	tcutil.h	/^  TCKWMUCTRL = 1 << 1,                   \/* mark up by control characters *\/$/;"	e	enum:__anon36
+TCKWMUTAB	tcutil.h	/^  TCKWMUTAB = 1 << 0,                    \/* mark up by tabs *\/$/;"	e	enum:__anon36
+TCKWNOOVER	tcutil.h	/^  TCKWNOOVER = 1 << 24,                  \/* no overlap *\/$/;"	e	enum:__anon36
+TCKWPULEAD	tcutil.h	/^  TCKWPULEAD = 1 << 25                   \/* pick up the lead string *\/$/;"	e	enum:__anon36
 TCLDBLCOLMAX	tcutil.c	4690;"	d	file:
-TCLIST	tcutil.h	/^} TCLIST;$/;"	t	typeref:struct:__anon83
-TCLISTDATUM	tcutil.h	/^} TCLISTDATUM;$/;"	t	typeref:struct:__anon82
+TCLIST	tcutil.h	/^} TCLIST;$/;"	t	typeref:struct:__anon28
+TCLISTDATUM	tcutil.h	/^} TCLISTDATUM;$/;"	t	typeref:struct:__anon27
 TCLISTINSERT	tcutil.h	4085;"	d
 TCLISTNUM	tcutil.h	4043;"	d
 TCLISTPUSH	tcutil.h	4066;"	d
@@ -545,7 +545,7 @@ TCLISTVALPTR	tcutil.h	4056;"	d
 TCLISTVALSIZ	tcutil.h	4061;"	d
 TCMALLOC	tcutil.h	3947;"	d
 TCMALLOC	tcutil.h	3952;"	d
-TCMAP	tcutil.h	/^} TCMAP;$/;"	t	typeref:struct:__anon84
+TCMAP	tcutil.h	/^} TCMAP;$/;"	t	typeref:struct:__anon29
 TCMAPCBUNIT	tcutil.c	960;"	d	file:
 TCMAPCSUNIT	tcutil.c	959;"	d	file:
 TCMAPDEFBNUM	tcutil.c	957;"	d	file:
@@ -556,24 +556,24 @@ TCMAPREC	tcutil.h	/^} TCMAPREC;$/;"	t	typeref:struct:_TCMAPREC
 TCMAPRNUM	tcutil.h	4114;"	d
 TCMAPTINYBNUM	tcutil.c	961;"	d	file:
 TCMAPZMMINSIZ	tcutil.c	958;"	d	file:
-TCMDB	tcutil.h	/^} TCMDB;$/;"	t	typeref:struct:__anon86
+TCMDB	tcutil.h	/^} TCMDB;$/;"	t	typeref:struct:__anon31
 TCMDBDEFBNUM	tcutil.c	3660;"	d	file:
 TCMDBHASH	tcutil.c	3663;"	d	file:
 TCMDBMNUM	tcutil.c	3659;"	d	file:
 TCMEMDUP	tcutil.h	3988;"	d
 TCMICROYIELD	myconf.h	196;"	d
 TCMICROYIELD	myconf.h	198;"	d
-TCMPELEM	tcutil.h	/^} TCMPELEM;$/;"	t	typeref:struct:__anon88
-TCMPOOL	tcutil.h	/^} TCMPOOL;$/;"	t	typeref:struct:__anon89
+TCMPELEM	tcutil.h	/^} TCMPELEM;$/;"	t	typeref:struct:__anon33
+TCMPOOL	tcutil.h	/^} TCMPOOL;$/;"	t	typeref:struct:__anon34
 TCMPOOLUNIT	tcutil.c	4502;"	d	file:
-TCNDB	tcutil.h	/^} TCNDB;$/;"	t	typeref:struct:__anon87
+TCNDB	tcutil.h	/^} TCNDB;$/;"	t	typeref:struct:__anon32
 TCNUMBUFSIZ	myconf.h	443;"	d
 TCPDPROC	tcutil.h	/^typedef void *(*TCPDPROC)(const void *vbuf, int vsiz, int *sp, void *op);$/;"	t
 TCPRINTHEX	tcutil.h	3893;"	d
 TCPRINTLIST	tcutil.h	3912;"	d
 TCPRINTMAP	tcutil.h	3926;"	d
 TCPRINTXSTR	tcutil.h	3904;"	d
-TCPTRLIST	tcutil.h	/^} TCPTRLIST;$/;"	t	typeref:struct:__anon95
+TCPTRLIST	tcutil.h	/^} TCPTRLIST;$/;"	t	typeref:struct:__anon40
 TCPTRLISTINSERT	tcutil.h	4143;"	d
 TCPTRLISTNUM	tcutil.h	4119;"	d
 TCPTRLISTPUSH	tcutil.h	4129;"	d
@@ -602,16 +602,16 @@ TCSYSNAME	myconf.h	75;"	d
 TCSYSNAME	myconf.h	80;"	d
 TCSYSNAME	myconf.h	85;"	d
 TCSYSNAME	myconf.h	90;"	d
-TCTDB	tctdb.h	/^} TCTDB;$/;"	t	typeref:struct:__anon62
+TCTDB	tctdb.h	/^} TCTDB;$/;"	t	typeref:struct:__anon78
 TCTESTYIELD	myconf.h	406;"	d
 TCTESTYIELD	myconf.h	427;"	d
 TCTFILE	bros/cmpsqltctest.c	16;"	d	file:
-TCTMPL	tcutil.h	/^} TCTMPL;$/;"	t	typeref:struct:__anon94
+TCTMPL	tcutil.h	/^} TCTMPL;$/;"	t	typeref:struct:__anon39
 TCTMPLBEGSEP	tcutil.c	8781;"	d	file:
 TCTMPLENDSEP	tcutil.c	8782;"	d	file:
 TCTMPLMAXDEP	tcutil.c	8780;"	d	file:
 TCTMPLUNIT	tcutil.c	8779;"	d	file:
-TCTREE	tcutil.h	/^} TCTREE;$/;"	t	typeref:struct:__anon85
+TCTREE	tcutil.h	/^} TCTREE;$/;"	t	typeref:struct:__anon30
 TCTREECBUNIT	tcutil.c	2328;"	d	file:
 TCTREECSUNIT	tcutil.c	2327;"	d	file:
 TCTREEREC	tcutil.h	/^} TCTREEREC;$/;"	t	typeref:struct:_TCTREEREC
@@ -620,10 +620,10 @@ TCTYPRFXMAP	tcutil.c	8784;"	d	file:
 TCUBCACHE	myconf.h	157;"	d
 TCUBCACHE	myconf.h	160;"	d
 TCUBCACHE	myconf.h	162;"	d
-TCUNLOWER	tcutil.h	/^  TCUNLOWER = 1 << 1,                    \/* lower case normalization *\/$/;"	e	enum:__anon90
-TCUNNOACC	tcutil.h	/^  TCUNNOACC = 1 << 2,                    \/* strip accent marks *\/$/;"	e	enum:__anon90
-TCUNSPACE	tcutil.h	/^  TCUNSPACE = 1 << 0,                    \/* white space normalization *\/$/;"	e	enum:__anon90
-TCUNWIDTH	tcutil.h	/^  TCUNWIDTH = 1 << 3                     \/* half-width normalization *\/$/;"	e	enum:__anon90
+TCUNLOWER	tcutil.h	/^  TCUNLOWER = 1 << 1,                    \/* lower case normalization *\/$/;"	e	enum:__anon35
+TCUNNOACC	tcutil.h	/^  TCUNNOACC = 1 << 2,                    \/* strip accent marks *\/$/;"	e	enum:__anon35
+TCUNSPACE	tcutil.h	/^  TCUNSPACE = 1 << 0,                    \/* white space normalization *\/$/;"	e	enum:__anon35
+TCUNWIDTH	tcutil.h	/^  TCUNWIDTH = 1 << 3                     \/* half-width normalization *\/$/;"	e	enum:__anon35
 TCUSEBZIP	myconf.h	172;"	d
 TCUSEBZIP	myconf.h	174;"	d
 TCUSEEXLZMA	myconf.h	178;"	d
@@ -635,29 +635,29 @@ TCUSEPTHREAD	myconf.h	192;"	d
 TCUSEZLIB	myconf.h	166;"	d
 TCUSEZLIB	myconf.h	168;"	d
 TCXMLATBNUM	tcutil.c	7239;"	d	file:
-TCXSTR	tcutil.h	/^} TCXSTR;$/;"	t	typeref:struct:__anon81
+TCXSTR	tcutil.h	/^} TCXSTR;$/;"	t	typeref:struct:__anon26
 TCXSTRCAT	tcutil.h	4015;"	d
 TCXSTRPTR	tcutil.h	4033;"	d
 TCXSTRSIZE	tcutil.h	4038;"	d
 TCXSTRUNIT	tcutil.c	98;"	d	file:
 TDBCOLBUFSIZ	tctdb.c	45;"	d	file:
-TDBCOND	tctdb.h	/^} TDBCOND;$/;"	t	typeref:struct:__anon67
+TDBCOND	tctdb.h	/^} TDBCOND;$/;"	t	typeref:struct:__anon83
 TDBDEFAPOW	tctdb.c	28;"	d	file:
 TDBDEFBNUM	tctdb.c	27;"	d	file:
 TDBDEFFPOW	tctdb.c	29;"	d	file:
 TDBDEFLCNUM	tctdb.c	30;"	d	file:
 TDBDEFNCNUM	tctdb.c	31;"	d	file:
 TDBDEFXMSIZ	tctdb.c	32;"	d	file:
-TDBFFATAL	tctdb.h	/^  TDBFFATAL = HDBFFATAL                  \/* whether with fatal error *\/$/;"	e	enum:__anon63
-TDBFOPEN	tctdb.h	/^  TDBFOPEN = HDBFOPEN,                   \/* whether opened *\/$/;"	e	enum:__anon63
+TDBFFATAL	tctdb.h	/^  TDBFFATAL = HDBFFATAL                  \/* whether with fatal error *\/$/;"	e	enum:__anon79
+TDBFOPEN	tctdb.h	/^  TDBFOPEN = HDBFOPEN,                   \/* whether opened *\/$/;"	e	enum:__anon79
 TDBFTSBMNUM	tctdb.c	43;"	d	file:
-TDBFTSNUMOCR	tctdb.c	/^} TDBFTSNUMOCR;$/;"	t	typeref:struct:__anon60	file:
+TDBFTSNUMOCR	tctdb.c	/^} TDBFTSNUMOCR;$/;"	t	typeref:struct:__anon7	file:
 TDBFTSOCRUNIT	tctdb.c	42;"	d	file:
-TDBFTSSTROCR	tctdb.c	/^} TDBFTSSTROCR;$/;"	t	typeref:struct:__anon59	file:
-TDBFTSUNIT	tctdb.c	/^} TDBFTSUNIT;$/;"	t	typeref:struct:__anon58	file:
+TDBFTSSTROCR	tctdb.c	/^} TDBFTSSTROCR;$/;"	t	typeref:struct:__anon6	file:
+TDBFTSUNIT	tctdb.c	/^} TDBFTSUNIT;$/;"	t	typeref:struct:__anon5	file:
 TDBFTSUNITMAX	tctdb.c	41;"	d	file:
 TDBHINTUSIZ	tctdb.c	47;"	d	file:
-TDBIDX	tctdb.h	/^} TDBIDX;$/;"	t	typeref:struct:__anon61
+TDBIDX	tctdb.h	/^} TDBIDX;$/;"	t	typeref:struct:__anon77
 TDBIDXICCBNUM	tctdb.c	37;"	d	file:
 TDBIDXICCMAX	tctdb.c	38;"	d	file:
 TDBIDXICCSYNC	tctdb.c	39;"	d	file:
@@ -666,70 +666,70 @@ TDBIDXLSMAX	tctdb.c	36;"	d	file:
 TDBIDXNMEMB	tctdb.c	35;"	d	file:
 TDBIDXQGUNIT	tctdb.c	40;"	d	file:
 TDBIDXSUFFIX	tctdb.c	33;"	d	file:
-TDBITDECIMAL	tctdb.h	/^  TDBITDECIMAL,                          \/* decimal string *\/$/;"	e	enum:__anon66
-TDBITKEEP	tctdb.h	/^  TDBITKEEP = 1 << 24                    \/* keep existing index *\/$/;"	e	enum:__anon66
-TDBITLEXICAL	tctdb.h	/^  TDBITLEXICAL,                          \/* lexical string *\/$/;"	e	enum:__anon66
-TDBITOPT	tctdb.h	/^  TDBITOPT = 9998,                       \/* optimize *\/$/;"	e	enum:__anon66
-TDBITQGRAM	tctdb.h	/^  TDBITQGRAM,                            \/* q-gram inverted index *\/$/;"	e	enum:__anon66
-TDBITTOKEN	tctdb.h	/^  TDBITTOKEN,                            \/* token inverted index *\/$/;"	e	enum:__anon66
-TDBITVOID	tctdb.h	/^  TDBITVOID = 9999,                      \/* void *\/$/;"	e	enum:__anon66
+TDBITDECIMAL	tctdb.h	/^  TDBITDECIMAL,                          \/* decimal string *\/$/;"	e	enum:__anon82
+TDBITKEEP	tctdb.h	/^  TDBITKEEP = 1 << 24                    \/* keep existing index *\/$/;"	e	enum:__anon82
+TDBITLEXICAL	tctdb.h	/^  TDBITLEXICAL,                          \/* lexical string *\/$/;"	e	enum:__anon82
+TDBITOPT	tctdb.h	/^  TDBITOPT = 9998,                       \/* optimize *\/$/;"	e	enum:__anon82
+TDBITQGRAM	tctdb.h	/^  TDBITQGRAM,                            \/* q-gram inverted index *\/$/;"	e	enum:__anon82
+TDBITTOKEN	tctdb.h	/^  TDBITTOKEN,                            \/* token inverted index *\/$/;"	e	enum:__anon82
+TDBITVOID	tctdb.h	/^  TDBITVOID = 9999,                      \/* void *\/$/;"	e	enum:__anon82
 TDBLEFTOPQSIZ	tctdb.c	24;"	d	file:
 TDBLOCKMETHOD	tctdb.c	85;"	d	file:
-TDBMSDIFF	tctdb.h	/^  TDBMSDIFF                              \/* difference *\/$/;"	e	enum:__anon71
-TDBMSISECT	tctdb.h	/^  TDBMSISECT,                            \/* intersection *\/$/;"	e	enum:__anon71
-TDBMSUNION	tctdb.h	/^  TDBMSUNION,                            \/* union *\/$/;"	e	enum:__anon71
+TDBMSDIFF	tctdb.h	/^  TDBMSDIFF                              \/* difference *\/$/;"	e	enum:__anon87
+TDBMSISECT	tctdb.h	/^  TDBMSISECT,                            \/* intersection *\/$/;"	e	enum:__anon87
+TDBMSUNION	tctdb.h	/^  TDBMSUNION,                            \/* union *\/$/;"	e	enum:__anon87
 TDBNUMCNTCOL	tctdb.c	44;"	d	file:
 TDBNUMCOLMAX	tctdb.c	46;"	d	file:
-TDBOCREAT	tctdb.h	/^  TDBOCREAT = 1 << 2,                    \/* writer creating *\/$/;"	e	enum:__anon65
-TDBOLCKNB	tctdb.h	/^  TDBOLCKNB = 1 << 5,                    \/* lock without blocking *\/$/;"	e	enum:__anon65
-TDBONOLCK	tctdb.h	/^  TDBONOLCK = 1 << 4,                    \/* open without locking *\/$/;"	e	enum:__anon65
+TDBOCREAT	tctdb.h	/^  TDBOCREAT = 1 << 2,                    \/* writer creating *\/$/;"	e	enum:__anon81
+TDBOLCKNB	tctdb.h	/^  TDBOLCKNB = 1 << 5,                    \/* lock without blocking *\/$/;"	e	enum:__anon81
+TDBONOLCK	tctdb.h	/^  TDBONOLCK = 1 << 4,                    \/* open without locking *\/$/;"	e	enum:__anon81
 TDBOPAQUESIZ	tctdb.c	23;"	d	file:
 TDBORDRATIO	tctdb.c	48;"	d	file:
-TDBOREADER	tctdb.h	/^  TDBOREADER = 1 << 0,                   \/* open as a reader *\/$/;"	e	enum:__anon65
-TDBOTRUNC	tctdb.h	/^  TDBOTRUNC = 1 << 3,                    \/* writer truncating *\/$/;"	e	enum:__anon65
-TDBOTSYNC	tctdb.h	/^  TDBOTSYNC = 1 << 6                     \/* synchronize every transaction *\/$/;"	e	enum:__anon65
-TDBOWRITER	tctdb.h	/^  TDBOWRITER = 1 << 1,                   \/* open as a writer *\/$/;"	e	enum:__anon65
+TDBOREADER	tctdb.h	/^  TDBOREADER = 1 << 0,                   \/* open as a reader *\/$/;"	e	enum:__anon81
+TDBOTRUNC	tctdb.h	/^  TDBOTRUNC = 1 << 3,                    \/* writer truncating *\/$/;"	e	enum:__anon81
+TDBOTSYNC	tctdb.h	/^  TDBOTSYNC = 1 << 6                     \/* synchronize every transaction *\/$/;"	e	enum:__anon81
+TDBOWRITER	tctdb.h	/^  TDBOWRITER = 1 << 1,                   \/* open as a writer *\/$/;"	e	enum:__anon81
 TDBPAGEBUFSIZ	tctdb.c	25;"	d	file:
-TDBPDCAT	tctdb.c	/^  TDBPDCAT                               \/\/ concatenate values$/;"	e	enum:__anon56	file:
-TDBPDKEEP	tctdb.c	/^  TDBPDKEEP,                             \/\/ keep the existing value$/;"	e	enum:__anon56	file:
-TDBPDOVER	tctdb.c	/^  TDBPDOVER,                             \/\/ overwrite an existing value$/;"	e	enum:__anon56	file:
-TDBQCFTSAND	tctdb.h	/^  TDBQCFTSAND,                           \/* full-text search with all tokens in *\/$/;"	e	enum:__anon69
-TDBQCFTSEX	tctdb.h	/^  TDBQCFTSEX,                            \/* full-text search with the compound expression of *\/$/;"	e	enum:__anon69
-TDBQCFTSOR	tctdb.h	/^  TDBQCFTSOR,                            \/* full-text search with at least one token in *\/$/;"	e	enum:__anon69
-TDBQCFTSPH	tctdb.h	/^  TDBQCFTSPH,                            \/* full-text search with the phrase of *\/$/;"	e	enum:__anon69
-TDBQCNEGATE	tctdb.h	/^  TDBQCNEGATE = 1 << 24,                 \/* negation flag *\/$/;"	e	enum:__anon69
-TDBQCNOIDX	tctdb.h	/^  TDBQCNOIDX = 1 << 25                   \/* no index flag *\/$/;"	e	enum:__anon69
-TDBQCNUMBT	tctdb.h	/^  TDBQCNUMBT,                            \/* number is between two tokens of *\/$/;"	e	enum:__anon69
-TDBQCNUMEQ	tctdb.h	/^  TDBQCNUMEQ,                            \/* number is equal to *\/$/;"	e	enum:__anon69
-TDBQCNUMGE	tctdb.h	/^  TDBQCNUMGE,                            \/* number is greater than or equal to *\/$/;"	e	enum:__anon69
-TDBQCNUMGT	tctdb.h	/^  TDBQCNUMGT,                            \/* number is greater than *\/$/;"	e	enum:__anon69
-TDBQCNUMLE	tctdb.h	/^  TDBQCNUMLE,                            \/* number is less than or equal to *\/$/;"	e	enum:__anon69
-TDBQCNUMLT	tctdb.h	/^  TDBQCNUMLT,                            \/* number is less than *\/$/;"	e	enum:__anon69
-TDBQCNUMOREQ	tctdb.h	/^  TDBQCNUMOREQ,                          \/* number is equal to at least one token in *\/$/;"	e	enum:__anon69
-TDBQCSTRAND	tctdb.h	/^  TDBQCSTRAND,                           \/* string includes all tokens in *\/$/;"	e	enum:__anon69
-TDBQCSTRBW	tctdb.h	/^  TDBQCSTRBW,                            \/* string begins with *\/$/;"	e	enum:__anon69
-TDBQCSTREQ	tctdb.h	/^  TDBQCSTREQ,                            \/* string is equal to *\/$/;"	e	enum:__anon69
-TDBQCSTREW	tctdb.h	/^  TDBQCSTREW,                            \/* string ends with *\/$/;"	e	enum:__anon69
-TDBQCSTRINC	tctdb.h	/^  TDBQCSTRINC,                           \/* string is included in *\/$/;"	e	enum:__anon69
-TDBQCSTROR	tctdb.h	/^  TDBQCSTROR,                            \/* string includes at least one token in *\/$/;"	e	enum:__anon69
-TDBQCSTROREQ	tctdb.h	/^  TDBQCSTROREQ,                          \/* string is equal to at least one token in *\/$/;"	e	enum:__anon69
-TDBQCSTRRX	tctdb.h	/^  TDBQCSTRRX,                            \/* string matches regular expressions of *\/$/;"	e	enum:__anon69
-TDBQONUMASC	tctdb.h	/^  TDBQONUMASC,                           \/* number ascending *\/$/;"	e	enum:__anon70
-TDBQONUMDESC	tctdb.h	/^  TDBQONUMDESC                           \/* number descending *\/$/;"	e	enum:__anon70
-TDBQOSTRASC	tctdb.h	/^  TDBQOSTRASC,                           \/* string ascending *\/$/;"	e	enum:__anon70
-TDBQOSTRDESC	tctdb.h	/^  TDBQOSTRDESC,                          \/* string descending *\/$/;"	e	enum:__anon70
-TDBQPOUT	tctdb.h	/^  TDBQPOUT = 1 << 1,                     \/* remove the record *\/$/;"	e	enum:__anon72
-TDBQPPUT	tctdb.h	/^  TDBQPPUT = 1 << 0,                     \/* modify the record *\/$/;"	e	enum:__anon72
-TDBQPSTOP	tctdb.h	/^  TDBQPSTOP = 1 << 24                    \/* stop the iteration *\/$/;"	e	enum:__anon72
-TDBQRY	tctdb.h	/^} TDBQRY;$/;"	t	typeref:struct:__anon68
+TDBPDCAT	tctdb.c	/^  TDBPDCAT                               \/\/ concatenate values$/;"	e	enum:__anon3	file:
+TDBPDKEEP	tctdb.c	/^  TDBPDKEEP,                             \/\/ keep the existing value$/;"	e	enum:__anon3	file:
+TDBPDOVER	tctdb.c	/^  TDBPDOVER,                             \/\/ overwrite an existing value$/;"	e	enum:__anon3	file:
+TDBQCFTSAND	tctdb.h	/^  TDBQCFTSAND,                           \/* full-text search with all tokens in *\/$/;"	e	enum:__anon85
+TDBQCFTSEX	tctdb.h	/^  TDBQCFTSEX,                            \/* full-text search with the compound expression of *\/$/;"	e	enum:__anon85
+TDBQCFTSOR	tctdb.h	/^  TDBQCFTSOR,                            \/* full-text search with at least one token in *\/$/;"	e	enum:__anon85
+TDBQCFTSPH	tctdb.h	/^  TDBQCFTSPH,                            \/* full-text search with the phrase of *\/$/;"	e	enum:__anon85
+TDBQCNEGATE	tctdb.h	/^  TDBQCNEGATE = 1 << 24,                 \/* negation flag *\/$/;"	e	enum:__anon85
+TDBQCNOIDX	tctdb.h	/^  TDBQCNOIDX = 1 << 25                   \/* no index flag *\/$/;"	e	enum:__anon85
+TDBQCNUMBT	tctdb.h	/^  TDBQCNUMBT,                            \/* number is between two tokens of *\/$/;"	e	enum:__anon85
+TDBQCNUMEQ	tctdb.h	/^  TDBQCNUMEQ,                            \/* number is equal to *\/$/;"	e	enum:__anon85
+TDBQCNUMGE	tctdb.h	/^  TDBQCNUMGE,                            \/* number is greater than or equal to *\/$/;"	e	enum:__anon85
+TDBQCNUMGT	tctdb.h	/^  TDBQCNUMGT,                            \/* number is greater than *\/$/;"	e	enum:__anon85
+TDBQCNUMLE	tctdb.h	/^  TDBQCNUMLE,                            \/* number is less than or equal to *\/$/;"	e	enum:__anon85
+TDBQCNUMLT	tctdb.h	/^  TDBQCNUMLT,                            \/* number is less than *\/$/;"	e	enum:__anon85
+TDBQCNUMOREQ	tctdb.h	/^  TDBQCNUMOREQ,                          \/* number is equal to at least one token in *\/$/;"	e	enum:__anon85
+TDBQCSTRAND	tctdb.h	/^  TDBQCSTRAND,                           \/* string includes all tokens in *\/$/;"	e	enum:__anon85
+TDBQCSTRBW	tctdb.h	/^  TDBQCSTRBW,                            \/* string begins with *\/$/;"	e	enum:__anon85
+TDBQCSTREQ	tctdb.h	/^  TDBQCSTREQ,                            \/* string is equal to *\/$/;"	e	enum:__anon85
+TDBQCSTREW	tctdb.h	/^  TDBQCSTREW,                            \/* string ends with *\/$/;"	e	enum:__anon85
+TDBQCSTRINC	tctdb.h	/^  TDBQCSTRINC,                           \/* string is included in *\/$/;"	e	enum:__anon85
+TDBQCSTROR	tctdb.h	/^  TDBQCSTROR,                            \/* string includes at least one token in *\/$/;"	e	enum:__anon85
+TDBQCSTROREQ	tctdb.h	/^  TDBQCSTROREQ,                          \/* string is equal to at least one token in *\/$/;"	e	enum:__anon85
+TDBQCSTRRX	tctdb.h	/^  TDBQCSTRRX,                            \/* string matches regular expressions of *\/$/;"	e	enum:__anon85
+TDBQONUMASC	tctdb.h	/^  TDBQONUMASC,                           \/* number ascending *\/$/;"	e	enum:__anon86
+TDBQONUMDESC	tctdb.h	/^  TDBQONUMDESC                           \/* number descending *\/$/;"	e	enum:__anon86
+TDBQOSTRASC	tctdb.h	/^  TDBQOSTRASC,                           \/* string ascending *\/$/;"	e	enum:__anon86
+TDBQOSTRDESC	tctdb.h	/^  TDBQOSTRDESC,                          \/* string descending *\/$/;"	e	enum:__anon86
+TDBQPOUT	tctdb.h	/^  TDBQPOUT = 1 << 1,                     \/* remove the record *\/$/;"	e	enum:__anon88
+TDBQPPUT	tctdb.h	/^  TDBQPPUT = 1 << 0,                     \/* modify the record *\/$/;"	e	enum:__anon88
+TDBQPSTOP	tctdb.h	/^  TDBQPSTOP = 1 << 24                    \/* stop the iteration *\/$/;"	e	enum:__anon88
+TDBQRY	tctdb.h	/^} TDBQRY;$/;"	t	typeref:struct:__anon84
 TDBQRYPROC	tctdb.h	/^typedef int (*TDBQRYPROC)(const void *pkbuf, int pksiz, TCMAP *cols, void *op);$/;"	t
-TDBSORTREC	tctdb.c	/^} TDBSORTREC;$/;"	t	typeref:struct:__anon57	file:
-TDBTBZIP	tctdb.h	/^  TDBTBZIP = 1 << 2,                     \/* compress each record with BZIP2 *\/$/;"	e	enum:__anon64
-TDBTDEFLATE	tctdb.h	/^  TDBTDEFLATE = 1 << 1,                  \/* compress each page with Deflate *\/$/;"	e	enum:__anon64
-TDBTEXCODEC	tctdb.h	/^  TDBTEXCODEC = 1 << 4                   \/* compress each record with outer functions *\/$/;"	e	enum:__anon64
+TDBSORTREC	tctdb.c	/^} TDBSORTREC;$/;"	t	typeref:struct:__anon4	file:
+TDBTBZIP	tctdb.h	/^  TDBTBZIP = 1 << 2,                     \/* compress each record with BZIP2 *\/$/;"	e	enum:__anon80
+TDBTDEFLATE	tctdb.h	/^  TDBTDEFLATE = 1 << 1,                  \/* compress each page with Deflate *\/$/;"	e	enum:__anon80
+TDBTEXCODEC	tctdb.h	/^  TDBTEXCODEC = 1 << 4                   \/* compress each record with outer functions *\/$/;"	e	enum:__anon80
 TDBTHREADYIELD	tctdb.c	89;"	d	file:
-TDBTLARGE	tctdb.h	/^  TDBTLARGE = 1 << 0,                    \/* use 64-bit bucket array *\/$/;"	e	enum:__anon64
-TDBTTCBS	tctdb.h	/^  TDBTTCBS = 1 << 3,                     \/* compress each page with TCBS *\/$/;"	e	enum:__anon64
+TDBTLARGE	tctdb.h	/^  TDBTLARGE = 1 << 0,                    \/* use 64-bit bucket array *\/$/;"	e	enum:__anon80
+TDBTTCBS	tctdb.h	/^  TDBTTCBS = 1 << 3,                     \/* compress each page with TCBS *\/$/;"	e	enum:__anon80
 TDBUNLOCKMETHOD	tctdb.c	87;"	d	file:
 TREESTACKNUM	tcutil.c	2326;"	d	file:
 TRUE	bros/bdbtest.c	11;"	d	file:
@@ -778,9 +778,9 @@ _TCMAPREC	tcutil.h	/^typedef struct _TCMAPREC {               \/* type of struct
 _TCTDB_H	tctdb.h	18;"	d
 _TCTREEREC	tcutil.h	/^typedef struct _TCTREEREC {              \/* type of structure for an element of a tree *\/$/;"	s
 _TCUTIL_H	tcutil.h	18;"	d
-_TCZMGZIP	myconf.h	/^  _TCZMGZIP$/;"	e	enum:__anon1
-_TCZMRAW	myconf.h	/^  _TCZMRAW,$/;"	e	enum:__anon1
-_TCZMZLIB	myconf.h	/^  _TCZMZLIB,$/;"	e	enum:__anon1
+_TCZMGZIP	myconf.h	/^  _TCZMGZIP$/;"	e	enum:__anon55
+_TCZMRAW	myconf.h	/^  _TCZMRAW,$/;"	e	enum:__anon55
+_TCZMZLIB	myconf.h	/^  _TCZMZLIB,$/;"	e	enum:__anon55
 _TC_FORMATVER	tcutil.h	3690;"	d
 _TC_LIBVER	tcutil.h	3689;"	d
 _TC_VERSION	tcutil.h	3688;"	d
@@ -840,25 +840,25 @@ ac_fn_c_try_compile	configure	/^ac_fn_c_try_compile ()$/;"	f
 ac_fn_c_try_cpp	configure	/^ac_fn_c_try_cpp ()$/;"	f
 ac_fn_c_try_link	configure	/^ac_fn_c_try_link ()$/;"	f
 ac_fn_c_try_run	configure	/^ac_fn_c_try_run ()$/;"	f
-action	tcawmgr.c	/^  int action;                            \/\/ kind of the action$/;"	m	struct:__anon10	file:
-adb	tcadb.c	/^  TCADB *adb;                            \/\/ source database object$/;"	m	struct:__anon3	file:
-adb	tcamttest.c	/^  TCADB *adb;$/;"	m	struct:__anon7	file:
-adb	tcamttest.c	/^  TCADB *adb;$/;"	m	struct:__anon8	file:
-adb	tcamttest.c	/^  TCADB *adb;$/;"	m	struct:__anon9	file:
-adbs	tcadb.c	/^  TCADB **adbs;                          \/\/ inner database objects$/;"	m	struct:__anon2	file:
-adddouble	tcadb.h	/^  double (*adddouble)(void *, const void *, int, double);$/;"	m	struct:__anon6
-addint	tcadb.h	/^  int (*addint)(void *, const void *, int, int);$/;"	m	struct:__anon6
-align	tchdb.h	/^  uint32_t align;                        \/* record alignment *\/$/;"	m	struct:__anon46
-alive	tctdb.h	/^  bool alive;                            \/* alive flag *\/$/;"	m	struct:__anon67
-amtx	tcfdb.h	/^  void *amtx;                            \/* mutex for attribute *\/$/;"	m	struct:__anon32
-anum	tcutil.h	/^  int anum;                              \/* number of the elements of the array *\/$/;"	m	struct:__anon83
-anum	tcutil.h	/^  int anum;                              \/* number of the elements of the array *\/$/;"	m	struct:__anon89
-anum	tcutil.h	/^  int anum;                              \/* number of the elements of the array *\/$/;"	m	struct:__anon95
-apow	tchdb.h	/^  uint8_t apow;                          \/* power of record alignment *\/$/;"	m	struct:__anon46
-array	tcfdb.h	/^  unsigned char *array;                  \/* pointer to the array region *\/$/;"	m	struct:__anon32
-array	tcutil.h	/^  TCLISTDATUM *array;                    \/* array of data *\/$/;"	m	struct:__anon83
-array	tcutil.h	/^  void **array;                          \/* array of pointers *\/$/;"	m	struct:__anon95
-as	tchmttest.c	/^  bool as;$/;"	m	struct:__anon50	file:
+action	tcawmgr.c	/^  int action;                            \/\/ kind of the action$/;"	m	struct:__anon22	file:
+adb	tcadb.c	/^  TCADB *adb;                            \/\/ source database object$/;"	m	struct:__anon21	file:
+adb	tcamttest.c	/^  TCADB *adb;$/;"	m	struct:__anon61	file:
+adb	tcamttest.c	/^  TCADB *adb;$/;"	m	struct:__anon62	file:
+adb	tcamttest.c	/^  TCADB *adb;$/;"	m	struct:__anon63	file:
+adbs	tcadb.c	/^  TCADB **adbs;                          \/\/ inner database objects$/;"	m	struct:__anon20	file:
+adddouble	tcadb.h	/^  double (*adddouble)(void *, const void *, int, double);$/;"	m	struct:__anon70
+addint	tcadb.h	/^  int (*addint)(void *, const void *, int, int);$/;"	m	struct:__anon70
+align	tchdb.h	/^  uint32_t align;                        \/* record alignment *\/$/;"	m	struct:__anon45
+alive	tctdb.h	/^  bool alive;                            \/* alive flag *\/$/;"	m	struct:__anon83
+amtx	tcfdb.h	/^  void *amtx;                            \/* mutex for attribute *\/$/;"	m	struct:__anon64
+anum	tcutil.h	/^  int anum;                              \/* number of the elements of the array *\/$/;"	m	struct:__anon28
+anum	tcutil.h	/^  int anum;                              \/* number of the elements of the array *\/$/;"	m	struct:__anon34
+anum	tcutil.h	/^  int anum;                              \/* number of the elements of the array *\/$/;"	m	struct:__anon40
+apow	tchdb.h	/^  uint8_t apow;                          \/* power of record alignment *\/$/;"	m	struct:__anon45
+array	tcfdb.h	/^  unsigned char *array;                  \/* pointer to the array region *\/$/;"	m	struct:__anon64
+array	tcutil.h	/^  TCLISTDATUM *array;                    \/* array of data *\/$/;"	m	struct:__anon28
+array	tcutil.h	/^  void **array;                          \/* array of pointers *\/$/;"	m	struct:__anon40
+as	tchmttest.c	/^  bool as;$/;"	m	struct:__anon49	file:
 as_fn_append	config.status	/^  as_fn_append ()$/;"	f
 as_fn_append	configure	/^  as_fn_append ()$/;"	f
 as_fn_arith	config.status	/^  as_fn_arith ()$/;"	f
@@ -877,100 +877,100 @@ as_fn_set_status	configure	/^as_fn_set_status ()$/;"	f
 as_fn_success	configure	/^as_fn_success () { as_fn_return 0; }$/;"	f
 as_fn_unset	config.status	/^as_fn_unset ()$/;"	f
 as_fn_unset	configure	/^as_fn_unset ()$/;"	f
-asize	tcutil.h	/^  int asize;                             \/* size of the allocated region *\/$/;"	m	struct:__anon81
+asize	tcutil.h	/^  int asize;                             \/* size of the allocated region *\/$/;"	m	struct:__anon26
 assert	myconf.h	413;"	d
 assert	myconf.h	414;"	d
-async	tchdb.h	/^  bool async;                            \/* whether asynchronous storing is called *\/$/;"	m	struct:__anon46
-ba32	tchdb.h	/^  uint32_t *ba32;                        \/* 32-bit bucket array *\/$/;"	m	struct:__anon46
-ba64	tchdb.h	/^  uint64_t *ba64;                        \/* 64-bit bucket array *\/$/;"	m	struct:__anon46
-bbuf	tchdb.c	/^  char *bbuf;                            \/\/ buffer of the body$/;"	m	struct:__anon41	file:
-bdb	tcadb.c	/^  TCBDB *bdb;                            \/\/ destination database object$/;"	m	struct:__anon3	file:
-bdb	tcadb.h	/^  TCBDB *bdb;                            \/* B+ tree database object *\/$/;"	m	struct:__anon4
-bdb	tcbdb.h	/^  TCBDB *bdb;                            \/* database object *\/$/;"	m	struct:__anon22
-bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon24	file:
-bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon25	file:
-bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon26	file:
-bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon27	file:
-bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon28	file:
-bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon29	file:
-begsep	tcutil.h	/^  char *begsep;                          \/* beginning separator *\/$/;"	m	struct:__anon94
-bnum	tchdb.h	/^  uint64_t bnum;                         \/* number of the bucket array *\/$/;"	m	struct:__anon46
-bnum	tcutil.h	/^  uint32_t bnum;                         \/* number of buckets *\/$/;"	m	struct:__anon84
-boff	tchdb.c	/^  uint64_t boff;                         \/\/ offset of the body$/;"	m	struct:__anon41	file:
-buckets	tcutil.h	/^  TCMAPREC **buckets;                    \/* bucket array *\/$/;"	m	struct:__anon84
+async	tchdb.h	/^  bool async;                            \/* whether asynchronous storing is called *\/$/;"	m	struct:__anon45
+ba32	tchdb.h	/^  uint32_t *ba32;                        \/* 32-bit bucket array *\/$/;"	m	struct:__anon45
+ba64	tchdb.h	/^  uint64_t *ba64;                        \/* 64-bit bucket array *\/$/;"	m	struct:__anon45
+bbuf	tchdb.c	/^  char *bbuf;                            \/\/ buffer of the body$/;"	m	struct:__anon95	file:
+bdb	tcadb.c	/^  TCBDB *bdb;                            \/\/ destination database object$/;"	m	struct:__anon21	file:
+bdb	tcadb.h	/^  TCBDB *bdb;                            \/* B+ tree database object *\/$/;"	m	struct:__anon68
+bdb	tcbdb.h	/^  TCBDB *bdb;                            \/* database object *\/$/;"	m	struct:__anon75
+bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon10	file:
+bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon11	file:
+bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon12	file:
+bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon13	file:
+bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon8	file:
+bdb	tcbmttest.c	/^  TCBDB *bdb;$/;"	m	struct:__anon9	file:
+begsep	tcutil.h	/^  char *begsep;                          \/* beginning separator *\/$/;"	m	struct:__anon39
+bnum	tchdb.h	/^  uint64_t bnum;                         \/* number of the bucket array *\/$/;"	m	struct:__anon45
+bnum	tcutil.h	/^  uint32_t bnum;                         \/* number of buckets *\/$/;"	m	struct:__anon29
+boff	tchdb.c	/^  uint64_t boff;                         \/\/ offset of the body$/;"	m	struct:__anon95	file:
+buckets	tcutil.h	/^  TCMAPREC **buckets;                    \/* bucket array *\/$/;"	m	struct:__anon29
 buf	md5.h	/^    md5_byte_t buf[64];         \/* accumulate block *\/$/;"	m	struct:md5_state_s
 callback	bros/cmpsqltctest.c	/^static int callback(void *opq, int argc, char **argv, char **colname){$/;"	f	file:
 callback	bros/sqltest.c	/^int callback(void *opq, int argc, char **argv, char **colname){$/;"	f
-capcnt	tcadb.h	/^  uint32_t capcnt;                       \/* count for capacity check *\/$/;"	m	struct:__anon4
-capnum	tcadb.h	/^  int64_t capnum;                        \/* capacity number of records *\/$/;"	m	struct:__anon4
-capnum	tcbdb.h	/^  uint64_t capnum;                       \/* capacity number of records *\/$/;"	m	struct:__anon18
-capsiz	tcadb.h	/^  int64_t capsiz;                        \/* capacity size of using memory *\/$/;"	m	struct:__anon4
-cc	tctdb.h	/^  void *cc;                              \/* internal cache object *\/$/;"	m	struct:__anon61
+capcnt	tcadb.h	/^  uint32_t capcnt;                       \/* count for capacity check *\/$/;"	m	struct:__anon68
+capnum	tcadb.h	/^  int64_t capnum;                        \/* capacity number of records *\/$/;"	m	struct:__anon68
+capnum	tcbdb.h	/^  uint64_t capnum;                       \/* capacity number of records *\/$/;"	m	struct:__anon71
+capsiz	tcadb.h	/^  int64_t capsiz;                        \/* capacity size of using memory *\/$/;"	m	struct:__anon68
+cc	tctdb.h	/^  void *cc;                              \/* internal cache object *\/$/;"	m	struct:__anon77
 checkfile	lab/widthcheck	/^def checkfile(path)$/;"	f
 checkurl	lab/wgettsv	/^def checkurl(url, filters)$/;"	f
-clock	tcbdb.h	/^  uint64_t clock;                        \/* logical clock *\/$/;"	m	struct:__anon22
-clock	tcbdb.h	/^  volatile uint64_t clock;               \/* logical clock *\/$/;"	m	struct:__anon18
-close	tcadb.h	/^  bool (*close)(void *);$/;"	m	struct:__anon6
-cmp	tcbdb.h	/^  TCCMP cmp;                             \/* pointer to the comparison function *\/$/;"	m	struct:__anon18
-cmp	tcutil.h	/^  TCCMP cmp;                             \/* pointer to the comparison function *\/$/;"	m	struct:__anon85
-cmpop	tcbdb.h	/^  void *cmpop;                           \/* opaque object for the comparison function *\/$/;"	m	struct:__anon18
-cmpop	tcutil.h	/^  void *cmpop;                           \/* opaque object for the comparison function *\/$/;"	m	struct:__anon85
-cmtx	tcbdb.h	/^  void *cmtx;                            \/* mutex for cache *\/$/;"	m	struct:__anon18
-cnt_adjleafc	tcbdb.h	/^  volatile int64_t cnt_adjleafc;         \/* tesing counter for node cache adjust times *\/$/;"	m	struct:__anon18
-cnt_adjnodec	tcbdb.h	/^  volatile int64_t cnt_adjnodec;         \/* tesing counter for node cache adjust times *\/$/;"	m	struct:__anon18
-cnt_adjrecc	tchdb.h	/^  volatile int64_t cnt_adjrecc;          \/* tesing counter for record cache adjust times *\/$/;"	m	struct:__anon46
-cnt_appenddrp	tchdb.h	/^  volatile int64_t cnt_appenddrp;        \/* tesing counter for DRP append times *\/$/;"	m	struct:__anon46
-cnt_deferdrp	tchdb.h	/^  volatile int64_t cnt_deferdrp;         \/* tesing counter for DRP defer times *\/$/;"	m	struct:__anon46
-cnt_defrag	tchdb.h	/^  volatile int64_t cnt_defrag;           \/* tesing counter for defragmentation times *\/$/;"	m	struct:__anon46
-cnt_dividefbp	tchdb.h	/^  volatile int64_t cnt_dividefbp;        \/* tesing counter for FBP divide times *\/$/;"	m	struct:__anon46
-cnt_flushdrp	tchdb.h	/^  volatile int64_t cnt_flushdrp;         \/* tesing counter for DRP flush times *\/$/;"	m	struct:__anon46
-cnt_insertfbp	tchdb.h	/^  volatile int64_t cnt_insertfbp;        \/* tesing counter for FBP insert times *\/$/;"	m	struct:__anon46
-cnt_killleaf	tcbdb.h	/^  volatile int64_t cnt_killleaf;         \/* tesing counter for leaf kill times *\/$/;"	m	struct:__anon18
-cnt_loadleaf	tcbdb.h	/^  volatile int64_t cnt_loadleaf;         \/* tesing counter for leaf load times *\/$/;"	m	struct:__anon18
-cnt_loadnode	tcbdb.h	/^  volatile int64_t cnt_loadnode;         \/* tesing counter for node load times *\/$/;"	m	struct:__anon18
-cnt_mergefbp	tchdb.h	/^  volatile int64_t cnt_mergefbp;         \/* tesing counter for FBP merge times *\/$/;"	m	struct:__anon46
-cnt_moverec	tchdb.h	/^  volatile int64_t cnt_moverec;          \/* tesing counter for record move times *\/$/;"	m	struct:__anon46
-cnt_readrec	tcfdb.h	/^  int64_t cnt_readrec;                   \/* tesing counter for record read times *\/$/;"	m	struct:__anon32
-cnt_readrec	tchdb.h	/^  volatile int64_t cnt_readrec;          \/* tesing counter for record read times *\/$/;"	m	struct:__anon46
-cnt_reducefbp	tchdb.h	/^  volatile int64_t cnt_reducefbp;        \/* tesing counter for FBP reduce times *\/$/;"	m	struct:__anon46
-cnt_reuserec	tchdb.h	/^  volatile int64_t cnt_reuserec;         \/* tesing counter for record reuse times *\/$/;"	m	struct:__anon46
-cnt_saveleaf	tcbdb.h	/^  volatile int64_t cnt_saveleaf;         \/* tesing counter for leaf save times *\/$/;"	m	struct:__anon18
-cnt_savenode	tcbdb.h	/^  volatile int64_t cnt_savenode;         \/* tesing counter for node save times *\/$/;"	m	struct:__anon18
-cnt_searchfbp	tchdb.h	/^  volatile int64_t cnt_searchfbp;        \/* tesing counter for FBP search times *\/$/;"	m	struct:__anon46
-cnt_shiftrec	tchdb.h	/^  volatile int64_t cnt_shiftrec;         \/* tesing counter for record shift times *\/$/;"	m	struct:__anon46
-cnt_splicefbp	tchdb.h	/^  volatile int64_t cnt_splicefbp;        \/* tesing counter for FBP splice times *\/$/;"	m	struct:__anon46
-cnt_trunc	tchdb.h	/^  volatile int64_t cnt_trunc;            \/* tesing counter for truncation times *\/$/;"	m	struct:__anon46
-cnt_truncfile	tcfdb.h	/^  int64_t cnt_truncfile;                 \/* tesing counter for file truncate times *\/$/;"	m	struct:__anon32
-cnt_writerec	tcfdb.h	/^  int64_t cnt_writerec;                  \/* tesing counter for record write times *\/$/;"	m	struct:__anon32
-cnt_writerec	tchdb.h	/^  volatile int64_t cnt_writerec;         \/* tesing counter for record write times *\/$/;"	m	struct:__anon46
-cnum	tctdb.h	/^  int cnum;                              \/* number of conditions *\/$/;"	m	struct:__anon68
-conds	tctdb.h	/^  TDBCOND *conds;                        \/* condition objects *\/$/;"	m	struct:__anon68
-conf	tcutil.h	/^  TCMAP *conf;                           \/* configuration variables *\/$/;"	m	struct:__anon94
-copy	tcadb.h	/^  bool (*copy)(void *, const char *);$/;"	m	struct:__anon6
+clock	tcbdb.h	/^  uint64_t clock;                        \/* logical clock *\/$/;"	m	struct:__anon75
+clock	tcbdb.h	/^  volatile uint64_t clock;               \/* logical clock *\/$/;"	m	struct:__anon71
+close	tcadb.h	/^  bool (*close)(void *);$/;"	m	struct:__anon70
+cmp	tcbdb.h	/^  TCCMP cmp;                             \/* pointer to the comparison function *\/$/;"	m	struct:__anon71
+cmp	tcutil.h	/^  TCCMP cmp;                             \/* pointer to the comparison function *\/$/;"	m	struct:__anon30
+cmpop	tcbdb.h	/^  void *cmpop;                           \/* opaque object for the comparison function *\/$/;"	m	struct:__anon71
+cmpop	tcutil.h	/^  void *cmpop;                           \/* opaque object for the comparison function *\/$/;"	m	struct:__anon30
+cmtx	tcbdb.h	/^  void *cmtx;                            \/* mutex for cache *\/$/;"	m	struct:__anon71
+cnt_adjleafc	tcbdb.h	/^  volatile int64_t cnt_adjleafc;         \/* tesing counter for node cache adjust times *\/$/;"	m	struct:__anon71
+cnt_adjnodec	tcbdb.h	/^  volatile int64_t cnt_adjnodec;         \/* tesing counter for node cache adjust times *\/$/;"	m	struct:__anon71
+cnt_adjrecc	tchdb.h	/^  volatile int64_t cnt_adjrecc;          \/* tesing counter for record cache adjust times *\/$/;"	m	struct:__anon45
+cnt_appenddrp	tchdb.h	/^  volatile int64_t cnt_appenddrp;        \/* tesing counter for DRP append times *\/$/;"	m	struct:__anon45
+cnt_deferdrp	tchdb.h	/^  volatile int64_t cnt_deferdrp;         \/* tesing counter for DRP defer times *\/$/;"	m	struct:__anon45
+cnt_defrag	tchdb.h	/^  volatile int64_t cnt_defrag;           \/* tesing counter for defragmentation times *\/$/;"	m	struct:__anon45
+cnt_dividefbp	tchdb.h	/^  volatile int64_t cnt_dividefbp;        \/* tesing counter for FBP divide times *\/$/;"	m	struct:__anon45
+cnt_flushdrp	tchdb.h	/^  volatile int64_t cnt_flushdrp;         \/* tesing counter for DRP flush times *\/$/;"	m	struct:__anon45
+cnt_insertfbp	tchdb.h	/^  volatile int64_t cnt_insertfbp;        \/* tesing counter for FBP insert times *\/$/;"	m	struct:__anon45
+cnt_killleaf	tcbdb.h	/^  volatile int64_t cnt_killleaf;         \/* tesing counter for leaf kill times *\/$/;"	m	struct:__anon71
+cnt_loadleaf	tcbdb.h	/^  volatile int64_t cnt_loadleaf;         \/* tesing counter for leaf load times *\/$/;"	m	struct:__anon71
+cnt_loadnode	tcbdb.h	/^  volatile int64_t cnt_loadnode;         \/* tesing counter for node load times *\/$/;"	m	struct:__anon71
+cnt_mergefbp	tchdb.h	/^  volatile int64_t cnt_mergefbp;         \/* tesing counter for FBP merge times *\/$/;"	m	struct:__anon45
+cnt_moverec	tchdb.h	/^  volatile int64_t cnt_moverec;          \/* tesing counter for record move times *\/$/;"	m	struct:__anon45
+cnt_readrec	tcfdb.h	/^  int64_t cnt_readrec;                   \/* tesing counter for record read times *\/$/;"	m	struct:__anon64
+cnt_readrec	tchdb.h	/^  volatile int64_t cnt_readrec;          \/* tesing counter for record read times *\/$/;"	m	struct:__anon45
+cnt_reducefbp	tchdb.h	/^  volatile int64_t cnt_reducefbp;        \/* tesing counter for FBP reduce times *\/$/;"	m	struct:__anon45
+cnt_reuserec	tchdb.h	/^  volatile int64_t cnt_reuserec;         \/* tesing counter for record reuse times *\/$/;"	m	struct:__anon45
+cnt_saveleaf	tcbdb.h	/^  volatile int64_t cnt_saveleaf;         \/* tesing counter for leaf save times *\/$/;"	m	struct:__anon71
+cnt_savenode	tcbdb.h	/^  volatile int64_t cnt_savenode;         \/* tesing counter for node save times *\/$/;"	m	struct:__anon71
+cnt_searchfbp	tchdb.h	/^  volatile int64_t cnt_searchfbp;        \/* tesing counter for FBP search times *\/$/;"	m	struct:__anon45
+cnt_shiftrec	tchdb.h	/^  volatile int64_t cnt_shiftrec;         \/* tesing counter for record shift times *\/$/;"	m	struct:__anon45
+cnt_splicefbp	tchdb.h	/^  volatile int64_t cnt_splicefbp;        \/* tesing counter for FBP splice times *\/$/;"	m	struct:__anon45
+cnt_trunc	tchdb.h	/^  volatile int64_t cnt_trunc;            \/* tesing counter for truncation times *\/$/;"	m	struct:__anon45
+cnt_truncfile	tcfdb.h	/^  int64_t cnt_truncfile;                 \/* tesing counter for file truncate times *\/$/;"	m	struct:__anon64
+cnt_writerec	tcfdb.h	/^  int64_t cnt_writerec;                  \/* tesing counter for record write times *\/$/;"	m	struct:__anon64
+cnt_writerec	tchdb.h	/^  volatile int64_t cnt_writerec;         \/* tesing counter for record write times *\/$/;"	m	struct:__anon45
+cnum	tctdb.h	/^  int cnum;                              \/* number of conditions *\/$/;"	m	struct:__anon84
+conds	tctdb.h	/^  TDBCOND *conds;                        \/* condition objects *\/$/;"	m	struct:__anon84
+conf	tcutil.h	/^  TCMAP *conf;                           \/* configuration variables *\/$/;"	m	struct:__anon39
+copy	tcadb.h	/^  bool (*copy)(void *, const char *);$/;"	m	struct:__anon70
 count	md5.h	/^    md5_word_t count[2];        \/* message length in bits, lsw first *\/$/;"	m	struct:md5_state_s
-count	tctdb.h	/^  int count;                             \/* count of corresponding records *\/$/;"	m	struct:__anon68
-cp	tcutil.h	/^  uint8_t *cp;                           \/* current pointer *\/$/;"	m	struct:__anon96
-csiz	tcadb.c	/^  int64_t csiz;                          \/\/ capacity of cached records$/;"	m	struct:__anon3	file:
-cur	tcadb.h	/^  BDBCUR *cur;                           \/* cursor of B+ tree *\/$/;"	m	struct:__anon4
-cur	tcutil.h	/^  TCMAPREC *cur;                         \/* pointer to the current element *\/$/;"	m	struct:__anon84
-cur	tcutil.h	/^  TCTREEREC *cur;                        \/* pointer to the current element *\/$/;"	m	struct:__anon85
-d	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon99
+count	tctdb.h	/^  int count;                             \/* count of corresponding records *\/$/;"	m	struct:__anon84
+cp	tcutil.h	/^  uint8_t *cp;                           \/* current pointer *\/$/;"	m	struct:__anon41
+csiz	tcadb.c	/^  int64_t csiz;                          \/\/ capacity of cached records$/;"	m	struct:__anon21	file:
+cur	tcadb.h	/^  BDBCUR *cur;                           \/* cursor of B+ tree *\/$/;"	m	struct:__anon68
+cur	tcutil.h	/^  TCMAPREC *cur;                         \/* pointer to the current element *\/$/;"	m	struct:__anon29
+cur	tcutil.h	/^  TCTREEREC *cur;                        \/* pointer to the current element *\/$/;"	m	struct:__anon30
+d	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon44
 datarootdir	Makefile	/^datarootdir = ${prefix}\/share$/;"	m
-db	tctdb.h	/^  void *db;                              \/* internal database object *\/$/;"	m	struct:__anon61
-dbgfd	tcfdb.h	/^  int dbgfd;                             \/* file descriptor for debugging *\/$/;"	m	struct:__anon32
-dbgfd	tchdb.h	/^  int dbgfd;                             \/* file descriptor for debugging *\/$/;"	m	struct:__anon46
-dead	tcbdb.c	/^  bool dead;                             \/\/ whether to be removed$/;"	m	struct:__anon13	file:
+db	tctdb.h	/^  void *db;                              \/* internal database object *\/$/;"	m	struct:__anon77
+dbgfd	tcfdb.h	/^  int dbgfd;                             \/* file descriptor for debugging *\/$/;"	m	struct:__anon64
+dbgfd	tchdb.h	/^  int dbgfd;                             \/* file descriptor for debugging *\/$/;"	m	struct:__anon45
 dead	tcbdb.c	/^  bool dead;                             \/\/ whether to be removed$/;"	m	struct:__anon15	file:
-dec	tchdb.h	/^  TCCODEC dec;                           \/* pointer to the decoding function *\/$/;"	m	struct:__anon46
-decop	tchdb.h	/^  void *decop;                           \/* opaque object for the decoding functions *\/$/;"	m	struct:__anon46
-del	tcadb.h	/^  void (*del)(void *);                   \/* destructor *\/$/;"	m	struct:__anon6
-del	tcutil.h	/^  void (*del)(void *);                   \/* deleting function *\/$/;"	m	struct:__anon88
-dfcnt	tchdb.h	/^  uint32_t dfcnt;                        \/* counter of auto defragmentation *\/$/;"	m	struct:__anon46
-dfcur	tchdb.h	/^  uint64_t dfcur;                        \/* offset of the cursor for defragmentation *\/$/;"	m	struct:__anon46
-dfunit	tchdb.h	/^  uint32_t dfunit;                       \/* unit step number of auto defragmentation *\/$/;"	m	struct:__anon46
-dirty	tcbdb.c	/^  bool dirty;                            \/\/ whether to be written back$/;"	m	struct:__anon13	file:
+dead	tcbdb.c	/^  bool dead;                             \/\/ whether to be removed$/;"	m	struct:__anon17	file:
+dec	tchdb.h	/^  TCCODEC dec;                           \/* pointer to the decoding function *\/$/;"	m	struct:__anon45
+decop	tchdb.h	/^  void *decop;                           \/* opaque object for the decoding functions *\/$/;"	m	struct:__anon45
+del	tcadb.h	/^  void (*del)(void *);                   \/* destructor *\/$/;"	m	struct:__anon70
+del	tcutil.h	/^  void (*del)(void *);                   \/* deleting function *\/$/;"	m	struct:__anon33
+dfcnt	tchdb.h	/^  uint32_t dfcnt;                        \/* counter of auto defragmentation *\/$/;"	m	struct:__anon45
+dfcur	tchdb.h	/^  uint64_t dfcur;                        \/* offset of the cursor for defragmentation *\/$/;"	m	struct:__anon45
+dfunit	tchdb.h	/^  uint32_t dfunit;                       \/* unit step number of auto defragmentation *\/$/;"	m	struct:__anon45
 dirty	tcbdb.c	/^  bool dirty;                            \/\/ whether to be written back$/;"	m	struct:__anon15	file:
-dmtx	tchdb.h	/^  void *dmtx;                            \/* mutex for the while database *\/$/;"	m	struct:__anon46
+dirty	tcbdb.c	/^  bool dirty;                            \/\/ whether to be written back$/;"	m	struct:__anon17	file:
+dmtx	tchdb.h	/^  void *dmtx;                            \/* mutex for the while database *\/$/;"	m	struct:__anon45
 dobtread	bros/bdbtest.c	/^int dobtread(char *name, int rnum, int rnd){$/;"	f
 dobtread	bros/qdbmtest.c	/^int dobtread(char *name, int rnum, int rnd){$/;"	f
 dobtread	bros/tctest.c	/^int dobtread(char *name, int rnum, int rnd){$/;"	f
@@ -1004,18 +1004,18 @@ dowrite	bros/sdbmtest.c	/^int dowrite(char *name, int rnum){$/;"	f
 dowrite	bros/sqltest.c	/^int dowrite(char *name, int rnum){$/;"	f
 dowrite	bros/tctest.c	/^int dowrite(char *name, int rnum){$/;"	f
 dowrite	bros/tdbtest.c	/^int dowrite(char *name, int rnum){$/;"	f
-drpdef	tchdb.h	/^  TCXSTR *drpdef;                        \/* deferred records of the delayed record pool *\/$/;"	m	struct:__anon46
-drpoff	tchdb.h	/^  uint64_t drpoff;                       \/* offset of the delayed record pool *\/$/;"	m	struct:__anon46
-drpool	tchdb.h	/^  TCXSTR *drpool;                        \/* delayed record pool *\/$/;"	m	struct:__anon46
-eckey	tcfdb.h	/^  void *eckey;                           \/* key for thread specific error code *\/$/;"	m	struct:__anon32
-eckey	tchdb.h	/^  void *eckey;                           \/* key for thread specific error code *\/$/;"	m	struct:__anon46
-ecode	tcfdb.h	/^  int ecode;                             \/* last happened error code *\/$/;"	m	struct:__anon32
-ecode	tchdb.h	/^  int ecode;                             \/* last happened error code *\/$/;"	m	struct:__anon46
-elems	tcutil.h	/^  TCLIST *elems;                         \/* elements separated by the separators *\/$/;"	m	struct:__anon94
-elems	tcutil.h	/^  TCMPELEM *elems;                       \/* array of elements *\/$/;"	m	struct:__anon89
-enc	tchdb.h	/^  TCCODEC enc;                           \/* pointer to the encoding function *\/$/;"	m	struct:__anon46
-encop	tchdb.h	/^  void *encop;                           \/* opaque object for the encoding functions *\/$/;"	m	struct:__anon46
-endsep	tcutil.h	/^  char *endsep;                          \/* ending separator *\/$/;"	m	struct:__anon94
+drpdef	tchdb.h	/^  TCXSTR *drpdef;                        \/* deferred records of the delayed record pool *\/$/;"	m	struct:__anon45
+drpoff	tchdb.h	/^  uint64_t drpoff;                       \/* offset of the delayed record pool *\/$/;"	m	struct:__anon45
+drpool	tchdb.h	/^  TCXSTR *drpool;                        \/* delayed record pool *\/$/;"	m	struct:__anon45
+eckey	tcfdb.h	/^  void *eckey;                           \/* key for thread specific error code *\/$/;"	m	struct:__anon64
+eckey	tchdb.h	/^  void *eckey;                           \/* key for thread specific error code *\/$/;"	m	struct:__anon45
+ecode	tcfdb.h	/^  int ecode;                             \/* last happened error code *\/$/;"	m	struct:__anon64
+ecode	tchdb.h	/^  int ecode;                             \/* last happened error code *\/$/;"	m	struct:__anon45
+elems	tcutil.h	/^  TCLIST *elems;                         \/* elements separated by the separators *\/$/;"	m	struct:__anon39
+elems	tcutil.h	/^  TCMPELEM *elems;                       \/* array of elements *\/$/;"	m	struct:__anon34
+enc	tchdb.h	/^  TCCODEC enc;                           \/* pointer to the encoding function *\/$/;"	m	struct:__anon45
+encop	tchdb.h	/^  void *encop;                           \/* opaque object for the encoding functions *\/$/;"	m	struct:__anon45
+endsep	tcutil.h	/^  char *endsep;                          \/* ending separator *\/$/;"	m	struct:__anon39
 eprint	tcamttest.c	/^static void eprint(TCADB *adb, int line, const char *func){$/;"	f	file:
 eprint	tcatest.c	/^static void eprint(TCADB *adb, int line, const char *func){$/;"	f	file:
 eprint	tcbmttest.c	/^static void eprint(TCBDB *bdb, int line, const char *func){$/;"	f	file:
@@ -1028,37 +1028,37 @@ eprint	tctmttest.c	/^static void eprint(TCTDB *tdb, int line, const char *func){
 eprint	tcttest.c	/^static void eprint(TCTDB *tdb, int line, const char *func){$/;"	f	file:
 eprint	tcumttest.c	/^static void eprint(int line, const char *func){$/;"	f	file:
 eprintf	tcucodec.c	/^static void eprintf(const char *format, ...){$/;"	f	file:
-esiz	tctdb.h	/^  int esiz;                              \/* size of the operand expression *\/$/;"	m	struct:__anon67
+esiz	tctdb.h	/^  int esiz;                              \/* size of the operand expression *\/$/;"	m	struct:__anon83
 exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
-expr	tctdb.h	/^  char *expr;                            \/* operand expression *\/$/;"	m	struct:__anon67
-f	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon99
-fatal	tcfdb.h	/^  bool fatal;                            \/* whether a fatal error occured *\/$/;"	m	struct:__anon32
-fatal	tchdb.h	/^  bool fatal;                            \/* whether a fatal error occured *\/$/;"	m	struct:__anon46
-fbpmax	tchdb.h	/^  int32_t fbpmax;                        \/* maximum number of the free block pool *\/$/;"	m	struct:__anon46
-fbpmis	tchdb.h	/^  int32_t fbpmis;                        \/* number of missing retrieval of the free block pool *\/$/;"	m	struct:__anon46
-fbpnum	tchdb.h	/^  int32_t fbpnum;                        \/* number of the free block pool *\/$/;"	m	struct:__anon46
-fbpool	tchdb.h	/^  void *fbpool;                          \/* free block pool *\/$/;"	m	struct:__anon46
-fchr	tcutil.c	/^  int fchr;                              \/\/ character code of the first character$/;"	m	struct:__anon80	file:
-fd	tcfdb.h	/^  int fd;                                \/* file descriptor of the database file *\/$/;"	m	struct:__anon32
-fd	tchdb.h	/^  int fd;                                \/* file descriptor of the database file *\/$/;"	m	struct:__anon46
-fdb	tcadb.h	/^  TCFDB *fdb;                            \/* fixed-length databae object *\/$/;"	m	struct:__anon4
-fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon36	file:
-fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon37	file:
-fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon38	file:
-fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon39	file:
-fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon40	file:
-first	tcbdb.h	/^  uint64_t first;                        \/* ID number of the first leaf *\/$/;"	m	struct:__anon18
-first	tcutil.h	/^  TCMAPREC *first;                       \/* pointer to the first element *\/$/;"	m	struct:__anon84
-flags	tcfdb.h	/^  uint8_t flags;                         \/* additional flags *\/$/;"	m	struct:__anon32
-flags	tchdb.h	/^  uint8_t flags;                         \/* additional flags *\/$/;"	m	struct:__anon46
-foreach	tcadb.h	/^  bool (*foreach)(void *, TCITER, void *);$/;"	m	struct:__anon6
-fpow	tchdb.h	/^  uint8_t fpow;                          \/* power of free block pool number *\/$/;"	m	struct:__anon46
-frec	tchdb.h	/^  uint64_t frec;                         \/* offset of the first record *\/$/;"	m	struct:__anon46
-fsiz	tcfdb.h	/^  uint64_t fsiz;                         \/* size of the database file *\/$/;"	m	struct:__anon32
-fsiz	tchdb.h	/^  uint64_t fsiz;                         \/* size of the database file *\/$/;"	m	struct:__anon46
-ftsnum	tctdb.h	/^  int ftsnum;                            \/* number of full-text search units *\/$/;"	m	struct:__anon67
-ftsunits	tctdb.h	/^  void *ftsunits;                        \/* full-text search units *\/$/;"	m	struct:__anon67
-fwmkeys	tcadb.h	/^  TCLIST *(*fwmkeys)(void *, const void *, int, int);$/;"	m	struct:__anon6
+expr	tctdb.h	/^  char *expr;                            \/* operand expression *\/$/;"	m	struct:__anon83
+f	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon44
+fatal	tcfdb.h	/^  bool fatal;                            \/* whether a fatal error occured *\/$/;"	m	struct:__anon64
+fatal	tchdb.h	/^  bool fatal;                            \/* whether a fatal error occured *\/$/;"	m	struct:__anon45
+fbpmax	tchdb.h	/^  int32_t fbpmax;                        \/* maximum number of the free block pool *\/$/;"	m	struct:__anon45
+fbpmis	tchdb.h	/^  int32_t fbpmis;                        \/* number of missing retrieval of the free block pool *\/$/;"	m	struct:__anon45
+fbpnum	tchdb.h	/^  int32_t fbpnum;                        \/* number of the free block pool *\/$/;"	m	struct:__anon45
+fbpool	tchdb.h	/^  void *fbpool;                          \/* free block pool *\/$/;"	m	struct:__anon45
+fchr	tcutil.c	/^  int fchr;                              \/\/ character code of the first character$/;"	m	struct:__anon89	file:
+fd	tcfdb.h	/^  int fd;                                \/* file descriptor of the database file *\/$/;"	m	struct:__anon64
+fd	tchdb.h	/^  int fd;                                \/* file descriptor of the database file *\/$/;"	m	struct:__anon45
+fdb	tcadb.h	/^  TCFDB *fdb;                            \/* fixed-length databae object *\/$/;"	m	struct:__anon68
+fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon90	file:
+fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon91	file:
+fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon92	file:
+fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon93	file:
+fdb	tcfmttest.c	/^  TCFDB *fdb;$/;"	m	struct:__anon94	file:
+first	tcbdb.h	/^  uint64_t first;                        \/* ID number of the first leaf *\/$/;"	m	struct:__anon71
+first	tcutil.h	/^  TCMAPREC *first;                       \/* pointer to the first element *\/$/;"	m	struct:__anon29
+flags	tcfdb.h	/^  uint8_t flags;                         \/* additional flags *\/$/;"	m	struct:__anon64
+flags	tchdb.h	/^  uint8_t flags;                         \/* additional flags *\/$/;"	m	struct:__anon45
+foreach	tcadb.h	/^  bool (*foreach)(void *, TCITER, void *);$/;"	m	struct:__anon70
+fpow	tchdb.h	/^  uint8_t fpow;                          \/* power of free block pool number *\/$/;"	m	struct:__anon45
+frec	tchdb.h	/^  uint64_t frec;                         \/* offset of the first record *\/$/;"	m	struct:__anon45
+fsiz	tcfdb.h	/^  uint64_t fsiz;                         \/* size of the database file *\/$/;"	m	struct:__anon64
+fsiz	tchdb.h	/^  uint64_t fsiz;                         \/* size of the database file *\/$/;"	m	struct:__anon45
+ftsnum	tctdb.h	/^  int ftsnum;                            \/* number of full-text search units *\/$/;"	m	struct:__anon83
+ftsunits	tctdb.h	/^  void *ftsunits;                        \/* full-text search units *\/$/;"	m	struct:__anon83
+fwmkeys	tcadb.h	/^  TCLIST *(*fwmkeys)(void *, const void *, int, int);$/;"	m	struct:__anon70
 g_dbgfd	tcamttest.c	/^int g_dbgfd;                             \/\/ debugging output$/;"	v
 g_dbgfd	tcbmgr.c	/^int g_dbgfd;                             \/\/ debugging output$/;"	v
 g_dbgfd	tcbmttest.c	/^int g_dbgfd;                             \/\/ debugging output$/;"	v
@@ -1105,70 +1105,70 @@ g_randseed	tcumttest.c	/^unsigned int g_randseed;                 \/\/ random se
 g_randseed	tcutest.c	/^unsigned int g_randseed;                 \/\/ random seed$/;"	v
 g_scriptname	tcawmgr.c	/^const char *g_scriptname;                \/\/ program name$/;"	v
 g_skeleton	tcatest.c	/^ADBSKEL g_skeleton;                      \/\/ skeleton database$/;"	v
-get	tcadb.h	/^  void *(*get)(void *, const void *, int, int *);$/;"	m	struct:__anon6
+get	tcadb.h	/^  void *(*get)(void *, const void *, int, int *);$/;"	m	struct:__anon70
 ggldh	bros/maptest.cc	/^typedef google::dense_hash_map<string, string, stringhash> ggldh;$/;"	t	file:
 gglsh	bros/maptest.cc	/^typedef google::sparse_hash_map<string, string, stringhash> gglsh;$/;"	t	file:
-hash	tchdb.c	/^  uint8_t hash;                          \/\/ second hash value$/;"	m	struct:__anon41	file:
-hash	tctdb.c	/^  uint16_t hash;                         \/\/ hash value for counting sort$/;"	m	struct:__anon59	file:
-hash	tctdb.c	/^  uint16_t hash;                         \/\/ hash value for counting sort$/;"	m	struct:__anon60	file:
-hash	tcutil.h	/^  uint32_t hash;                         \/* hash value *\/$/;"	m	struct:__anon92
-hdb	tcadb.h	/^  TCHDB *hdb;                            \/* hash database object *\/$/;"	m	struct:__anon4
-hdb	tcbdb.h	/^  TCHDB *hdb;                            \/* internal database object *\/$/;"	m	struct:__anon18
+hash	tchdb.c	/^  uint8_t hash;                          \/\/ second hash value$/;"	m	struct:__anon95	file:
+hash	tctdb.c	/^  uint16_t hash;                         \/\/ hash value for counting sort$/;"	m	struct:__anon6	file:
+hash	tctdb.c	/^  uint16_t hash;                         \/\/ hash value for counting sort$/;"	m	struct:__anon7	file:
+hash	tcutil.h	/^  uint32_t hash;                         \/* hash value *\/$/;"	m	struct:__anon37
+hdb	tcadb.h	/^  TCHDB *hdb;                            \/* hash database object *\/$/;"	m	struct:__anon68
+hdb	tcbdb.h	/^  TCHDB *hdb;                            \/* internal database object *\/$/;"	m	struct:__anon71
+hdb	tchmttest.c	/^  TCHDB *hdb;$/;"	m	struct:__anon49	file:
 hdb	tchmttest.c	/^  TCHDB *hdb;$/;"	m	struct:__anon50	file:
 hdb	tchmttest.c	/^  TCHDB *hdb;$/;"	m	struct:__anon51	file:
 hdb	tchmttest.c	/^  TCHDB *hdb;$/;"	m	struct:__anon52	file:
 hdb	tchmttest.c	/^  TCHDB *hdb;$/;"	m	struct:__anon53	file:
 hdb	tchmttest.c	/^  TCHDB *hdb;$/;"	m	struct:__anon54	file:
-hdb	tchmttest.c	/^  TCHDB *hdb;$/;"	m	struct:__anon55	file:
-hdb	tctdb.h	/^  TCHDB *hdb;                            \/* internal database object *\/$/;"	m	struct:__anon62
-heir	tcbdb.c	/^  uint64_t heir;                         \/\/ ID of the child before the first index$/;"	m	struct:__anon15	file:
-hint	tctdb.h	/^  TCXSTR *hint;                          \/* hint string *\/$/;"	m	struct:__anon68
-hist	tcbdb.h	/^  uint64_t *hist;                        \/* history array of visited nodes *\/$/;"	m	struct:__anon18
-hleaf	tcbdb.h	/^  volatile uint64_t hleaf;               \/* ID number of the leaf referred by the history *\/$/;"	m	struct:__anon18
-hnum	tcbdb.h	/^  int hnum;                              \/* number of element of the history array *\/$/;"	m	struct:__anon18
+hdb	tctdb.h	/^  TCHDB *hdb;                            \/* internal database object *\/$/;"	m	struct:__anon78
+heir	tcbdb.c	/^  uint64_t heir;                         \/\/ ID of the child before the first index$/;"	m	struct:__anon17	file:
+hint	tctdb.h	/^  TCXSTR *hint;                          \/* hint string *\/$/;"	m	struct:__anon84
+hist	tcbdb.h	/^  uint64_t *hist;                        \/* history array of visited nodes *\/$/;"	m	struct:__anon71
+hleaf	tcbdb.h	/^  volatile uint64_t hleaf;               \/* ID number of the leaf referred by the history *\/$/;"	m	struct:__anon71
+hnum	tcbdb.h	/^  int hnum;                              \/* number of element of the history array *\/$/;"	m	struct:__anon71
 htmltotext	lab/wgettsv	/^def htmltotext(str)$/;"	f
-i	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon99
-iccmax	tctdb.h	/^  int64_t iccmax;                        \/* maximum size of the inverted cache *\/$/;"	m	struct:__anon62
-iccsync	tctdb.h	/^  double iccsync;                        \/* synchronization ratio of the inverted cache *\/$/;"	m	struct:__anon62
-id	tcamttest.c	/^  int id;$/;"	m	struct:__anon7	file:
-id	tcamttest.c	/^  int id;$/;"	m	struct:__anon8	file:
-id	tcamttest.c	/^  int id;$/;"	m	struct:__anon9	file:
-id	tcbdb.c	/^  uint64_t id;                           \/\/ ID number of the leaf$/;"	m	struct:__anon13	file:
-id	tcbdb.c	/^  uint64_t id;                           \/\/ ID number of the node$/;"	m	struct:__anon15	file:
-id	tcbdb.h	/^  uint64_t id;                           \/* ID number of the leaf *\/$/;"	m	struct:__anon22
-id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon24	file:
-id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon25	file:
-id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon26	file:
-id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon27	file:
-id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon28	file:
-id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon29	file:
-id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon36	file:
-id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon37	file:
-id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon38	file:
-id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon39	file:
-id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon40	file:
+i	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon44
+iccmax	tctdb.h	/^  int64_t iccmax;                        \/* maximum size of the inverted cache *\/$/;"	m	struct:__anon78
+iccsync	tctdb.h	/^  double iccsync;                        \/* synchronization ratio of the inverted cache *\/$/;"	m	struct:__anon78
+id	tcamttest.c	/^  int id;$/;"	m	struct:__anon61	file:
+id	tcamttest.c	/^  int id;$/;"	m	struct:__anon62	file:
+id	tcamttest.c	/^  int id;$/;"	m	struct:__anon63	file:
+id	tcbdb.c	/^  uint64_t id;                           \/\/ ID number of the leaf$/;"	m	struct:__anon15	file:
+id	tcbdb.c	/^  uint64_t id;                           \/\/ ID number of the node$/;"	m	struct:__anon17	file:
+id	tcbdb.h	/^  uint64_t id;                           \/* ID number of the leaf *\/$/;"	m	struct:__anon75
+id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon10	file:
+id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon11	file:
+id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon12	file:
+id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon13	file:
+id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon8	file:
+id	tcbmttest.c	/^  int id;$/;"	m	struct:__anon9	file:
+id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon90	file:
+id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon91	file:
+id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon92	file:
+id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon93	file:
+id	tcfmttest.c	/^  int id;$/;"	m	struct:__anon94	file:
+id	tchmttest.c	/^  int id;$/;"	m	struct:__anon49	file:
 id	tchmttest.c	/^  int id;$/;"	m	struct:__anon50	file:
 id	tchmttest.c	/^  int id;$/;"	m	struct:__anon51	file:
 id	tchmttest.c	/^  int id;$/;"	m	struct:__anon52	file:
 id	tchmttest.c	/^  int id;$/;"	m	struct:__anon53	file:
 id	tchmttest.c	/^  int id;$/;"	m	struct:__anon54	file:
-id	tchmttest.c	/^  int id;$/;"	m	struct:__anon55	file:
-id	tctmttest.c	/^  int id;$/;"	m	struct:__anon73	file:
-id	tctmttest.c	/^  int id;$/;"	m	struct:__anon74	file:
-id	tctmttest.c	/^  int id;$/;"	m	struct:__anon75	file:
-id	tctmttest.c	/^  int id;$/;"	m	struct:__anon76	file:
-id	tctmttest.c	/^  int id;$/;"	m	struct:__anon77	file:
-id	tcumttest.c	/^  int id;$/;"	m	struct:__anon78	file:
-id	tcumttest.c	/^  int id;$/;"	m	struct:__anon79	file:
-idx	tcutil.h	/^  int idx;                               \/* bit index *\/$/;"	m	struct:__anon96
-idxs	tcbdb.c	/^  TCPTRLIST *idxs;                       \/\/ list of indices$/;"	m	struct:__anon15	file:
-idxs	tctdb.h	/^  TDBIDX *idxs;                          \/* column indices *\/$/;"	m	struct:__anon62
+id	tctmttest.c	/^  int id;$/;"	m	struct:__anon56	file:
+id	tctmttest.c	/^  int id;$/;"	m	struct:__anon57	file:
+id	tctmttest.c	/^  int id;$/;"	m	struct:__anon58	file:
+id	tctmttest.c	/^  int id;$/;"	m	struct:__anon59	file:
+id	tctmttest.c	/^  int id;$/;"	m	struct:__anon60	file:
+id	tcumttest.c	/^  int id;$/;"	m	struct:__anon24	file:
+id	tcumttest.c	/^  int id;$/;"	m	struct:__anon25	file:
+idx	tcutil.h	/^  int idx;                               \/* bit index *\/$/;"	m	struct:__anon41
+idxs	tcbdb.c	/^  TCPTRLIST *idxs;                       \/\/ list of indices$/;"	m	struct:__anon17	file:
+idxs	tctdb.h	/^  TDBIDX *idxs;                          \/* column indices *\/$/;"	m	struct:__anon78
 if	myconf.h	422;"	d
-imtx	tcutil.h	/^  void *imtx;                            \/* mutex for iterator *\/$/;"	m	struct:__anon86
-inode	tcfdb.h	/^  uint64_t inode;                        \/* inode number *\/$/;"	m	struct:__anon32
-inode	tchdb.h	/^  uint64_t inode;                        \/* inode number *\/$/;"	m	struct:__anon46
+imtx	tcutil.h	/^  void *imtx;                            \/* mutex for iterator *\/$/;"	m	struct:__anon31
+inode	tcfdb.h	/^  uint64_t inode;                        \/* inode number *\/$/;"	m	struct:__anon64
+inode	tchdb.h	/^  uint64_t inode;                        \/* inode number *\/$/;"	m	struct:__anon45
 intcompar	tcutest.c	/^static int intcompar(const void *ap, const void *bp){$/;"	f	file:
-inum	tctdb.h	/^  int inum;                              \/* number of column indices *\/$/;"	m	struct:__anon62
+inum	tctdb.h	/^  int inum;                              \/* number of column indices *\/$/;"	m	struct:__anon78
 iprintf	bros/maptest.cc	/^static void iprintf(const char *format, ...){$/;"	f	file:
 iprintf	tcamttest.c	/^static void iprintf(const char *format, ...){$/;"	f	file:
 iprintf	tcatest.c	/^static void iprintf(const char *format, ...){$/;"	f	file:
@@ -1194,10 +1194,10 @@ iputchar	tctmttest.c	/^static void iputchar(int c){$/;"	f	file:
 iputchar	tcttest.c	/^static void iputchar(int c){$/;"	f	file:
 iputchar	tcumttest.c	/^static void iputchar(int c){$/;"	f	file:
 iputchar	tcutest.c	/^static void iputchar(int c){$/;"	f	file:
-iter	tcadb.c	/^  int iter;                              \/\/ index of the iterator$/;"	m	struct:__anon2	file:
-iter	tcfdb.h	/^  uint64_t iter;                         \/* ID number of the iterator *\/$/;"	m	struct:__anon32
-iter	tchdb.h	/^  uint64_t iter;                         \/* offset of the iterator *\/$/;"	m	struct:__anon46
-iter	tcutil.h	/^  int iter;                              \/* index of maps for the iterator *\/$/;"	m	struct:__anon86
+iter	tcadb.c	/^  int iter;                              \/\/ index of the iterator$/;"	m	struct:__anon20	file:
+iter	tcfdb.h	/^  uint64_t iter;                         \/* ID number of the iterator *\/$/;"	m	struct:__anon64
+iter	tchdb.h	/^  uint64_t iter;                         \/* offset of the iterator *\/$/;"	m	struct:__anon45
+iter	tcutil.h	/^  int iter;                              \/* index of maps for the iterator *\/$/;"	m	struct:__anon31
 iterfunc	tcatest.c	/^static bool iterfunc(const void *kbuf, int ksiz, const void *vbuf, int vsiz, void *op){$/;"	f	file:
 iterfunc	tcbmttest.c	/^static bool iterfunc(const void *kbuf, int ksiz, const void *vbuf, int vsiz, void *op){$/;"	f	file:
 iterfunc	tcbtest.c	/^static bool iterfunc(const void *kbuf, int ksiz, const void *vbuf, int vsiz, void *op){$/;"	f	file:
@@ -1207,36 +1207,36 @@ iterfunc	tchmttest.c	/^static bool iterfunc(const void *kbuf, int ksiz, const vo
 iterfunc	tchtest.c	/^static bool iterfunc(const void *kbuf, int ksiz, const void *vbuf, int vsiz, void *op){$/;"	f	file:
 iterfunc	tcttest.c	/^static bool iterfunc(const void *kbuf, int ksiz, const void *vbuf, int vsiz, void *op){$/;"	f	file:
 iterfunc	tcutest.c	/^static bool iterfunc(const void *kbuf, int ksiz, const void *vbuf, int vsiz, void *op){$/;"	f	file:
-iterinit	tcadb.h	/^  bool (*iterinit)(void *);$/;"	m	struct:__anon6
-iternext	tcadb.h	/^  void *(*iternext)(void *, int *);$/;"	m	struct:__anon6
-kbuf	tcawmgr.c	/^  const char *kbuf;                      \/\/ key buffer$/;"	m	struct:__anon10	file:
-kbuf	tchdb.c	/^  const char *kbuf;                      \/\/ pointer to the key$/;"	m	struct:__anon41	file:
-kbuf	tctdb.c	/^  const char *kbuf;                      \/\/ pointer to the primary key$/;"	m	struct:__anon57	file:
-kidx	tcbdb.h	/^  int32_t kidx;                          \/* number of the key *\/$/;"	m	struct:__anon22
-ksiz	tcawmgr.c	/^  int ksiz;                              \/\/ key size$/;"	m	struct:__anon10	file:
-ksiz	tcbdb.c	/^  int ksiz;                              \/\/ size of the key region$/;"	m	struct:__anon12	file:
+iterinit	tcadb.h	/^  bool (*iterinit)(void *);$/;"	m	struct:__anon70
+iternext	tcadb.h	/^  void *(*iternext)(void *, int *);$/;"	m	struct:__anon70
+kbuf	tcawmgr.c	/^  const char *kbuf;                      \/\/ key buffer$/;"	m	struct:__anon22	file:
+kbuf	tchdb.c	/^  const char *kbuf;                      \/\/ pointer to the key$/;"	m	struct:__anon95	file:
+kbuf	tctdb.c	/^  const char *kbuf;                      \/\/ pointer to the primary key$/;"	m	struct:__anon4	file:
+kidx	tcbdb.h	/^  int32_t kidx;                          \/* number of the key *\/$/;"	m	struct:__anon75
+ksiz	tcawmgr.c	/^  int ksiz;                              \/\/ key size$/;"	m	struct:__anon22	file:
 ksiz	tcbdb.c	/^  int ksiz;                              \/\/ size of the key region$/;"	m	struct:__anon14	file:
-ksiz	tchdb.c	/^  uint32_t ksiz;                         \/\/ size of the key$/;"	m	struct:__anon41	file:
-ksiz	tctdb.c	/^  int ksiz;                              \/\/ size of the primary key$/;"	m	struct:__anon57	file:
+ksiz	tcbdb.c	/^  int ksiz;                              \/\/ size of the key region$/;"	m	struct:__anon16	file:
+ksiz	tchdb.c	/^  uint32_t ksiz;                         \/\/ size of the key$/;"	m	struct:__anon95	file:
+ksiz	tctdb.c	/^  int ksiz;                              \/\/ size of the primary key$/;"	m	struct:__anon4	file:
 ksiz	tcutil.h	/^  int32_t ksiz;                          \/* size of the region of the key *\/$/;"	m	struct:_TCMAPREC
 ksiz	tcutil.h	/^  int32_t ksiz;                          \/* size of the region of the key *\/$/;"	m	struct:_TCTREEREC
-l	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon99
-last	tcbdb.h	/^  uint64_t last;                         \/* ID number of the last leaf *\/$/;"	m	struct:__anon18
-last	tcutil.h	/^  TCMAPREC *last;                        \/* pointer to the last element *\/$/;"	m	struct:__anon84
-lcnum	tcbdb.h	/^  uint32_t lcnum;                        \/* maximum number of cached leaves *\/$/;"	m	struct:__anon18
-lcnum	tctdb.h	/^  int32_t lcnum;                         \/* max number of cached leaves *\/$/;"	m	struct:__anon62
-leafc	tcbdb.h	/^  TCMAP *leafc;                          \/* cache for leaves *\/$/;"	m	struct:__anon18
-left	tchdb.c	/^  uint64_t left;                         \/\/ offset of the left child record$/;"	m	struct:__anon41	file:
+l	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon44
+last	tcbdb.h	/^  uint64_t last;                         \/* ID number of the last leaf *\/$/;"	m	struct:__anon71
+last	tcutil.h	/^  TCMAPREC *last;                        \/* pointer to the last element *\/$/;"	m	struct:__anon29
+lcnum	tcbdb.h	/^  uint32_t lcnum;                        \/* maximum number of cached leaves *\/$/;"	m	struct:__anon71
+lcnum	tctdb.h	/^  int32_t lcnum;                         \/* max number of cached leaves *\/$/;"	m	struct:__anon78
+leafc	tcbdb.h	/^  TCMAP *leafc;                          \/* cache for leaves *\/$/;"	m	struct:__anon71
+left	tchdb.c	/^  uint64_t left;                         \/\/ offset of the left child record$/;"	m	struct:__anon95	file:
 left	tcutil.h	/^  struct _TCMAPREC *left;                \/* pointer to the left child *\/$/;"	m	struct:_TCMAPREC	typeref:struct:_TCMAPREC::_TCMAPREC
 left	tcutil.h	/^  struct _TCTREEREC *left;               \/* pointer to the left child *\/$/;"	m	struct:_TCTREEREC	typeref:struct:_TCTREEREC::_TCTREEREC
-limid	tcfdb.h	/^  uint64_t limid;                        \/* limit ID number *\/$/;"	m	struct:__anon32
-limsiz	tcfdb.h	/^  uint64_t limsiz;                       \/* limit size of the file *\/$/;"	m	struct:__anon32
-lleaf	tcbdb.h	/^  volatile uint64_t lleaf;               \/* ID number of the last visited leaf *\/$/;"	m	struct:__anon18
-lmemb	tcbdb.h	/^  uint32_t lmemb;                        \/* number of members in each leaf *\/$/;"	m	struct:__anon18
-lnum	tcbdb.h	/^  uint64_t lnum;                         \/* number of leaves *\/$/;"	m	struct:__anon18
-lschk	tcbdb.h	/^  uint32_t lschk;                        \/* counter for leaf size checking *\/$/;"	m	struct:__anon18
-lsmax	tcbdb.h	/^  uint32_t lsmax;                        \/* maximum size of each leaf *\/$/;"	m	struct:__anon18
-magic	tchdb.c	/^  uint8_t magic;                         \/\/ magic number$/;"	m	struct:__anon41	file:
+limid	tcfdb.h	/^  uint64_t limid;                        \/* limit ID number *\/$/;"	m	struct:__anon64
+limsiz	tcfdb.h	/^  uint64_t limsiz;                       \/* limit size of the file *\/$/;"	m	struct:__anon64
+lleaf	tcbdb.h	/^  volatile uint64_t lleaf;               \/* ID number of the last visited leaf *\/$/;"	m	struct:__anon71
+lmemb	tcbdb.h	/^  uint32_t lmemb;                        \/* number of members in each leaf *\/$/;"	m	struct:__anon71
+lnum	tcbdb.h	/^  uint64_t lnum;                         \/* number of leaves *\/$/;"	m	struct:__anon71
+lschk	tcbdb.h	/^  uint32_t lschk;                        \/* counter for leaf size checking *\/$/;"	m	struct:__anon71
+lsmax	tcbdb.h	/^  uint32_t lsmax;                        \/* maximum size of each leaf *\/$/;"	m	struct:__anon71
+magic	tchdb.c	/^  uint8_t magic;                         \/\/ magic number$/;"	m	struct:__anon95	file:
 main	bros/bdbtest.c	/^int main(int argc, char **argv){$/;"	f
 main	bros/cdbtest.c	/^int main(int argc, char **argv){$/;"	f
 main	bros/cmpsqltctest.c	/^int main(int argc, char **argv){$/;"	f
@@ -1276,15 +1276,15 @@ main	tcttest.c	/^int main(int argc, char **argv){$/;"	f
 main	tcucodec.c	/^int main(int argc, char **argv){$/;"	f
 main	tcumttest.c	/^int main(int argc, char **argv){$/;"	f
 main	tcutest.c	/^int main(int argc, char **argv){$/;"	f
-map	tcbmttest.c	/^  TCMAP *map;$/;"	m	struct:__anon27	file:
-map	tcfdb.h	/^  char *map;                             \/* pointer to the mapped memory *\/$/;"	m	struct:__anon32
-map	tcfmttest.c	/^  TCMAP *map;$/;"	m	struct:__anon39	file:
-map	tchdb.h	/^  char *map;                             \/* pointer to the mapped memory *\/$/;"	m	struct:__anon46
-map	tchmttest.c	/^  TCMAP *map;$/;"	m	struct:__anon53	file:
+map	tcbmttest.c	/^  TCMAP *map;$/;"	m	struct:__anon11	file:
+map	tcfdb.h	/^  char *map;                             \/* pointer to the mapped memory *\/$/;"	m	struct:__anon64
+map	tcfmttest.c	/^  TCMAP *map;$/;"	m	struct:__anon93	file:
+map	tchdb.h	/^  char *map;                             \/* pointer to the mapped memory *\/$/;"	m	struct:__anon45
+map	tchmttest.c	/^  TCMAP *map;$/;"	m	struct:__anon52	file:
 mapbdbproc	tcamgr.c	/^static bool mapbdbproc(void *map, const char *kbuf, int ksiz, const char *vbuf, int vsiz,$/;"	f	file:
-maps	tcutil.h	/^  TCMAP **maps;                          \/* internal map objects *\/$/;"	m	struct:__anon86
-max	tcfdb.h	/^  uint64_t max;                          \/* maximum ID number *\/$/;"	m	struct:__anon32
-max	tctdb.h	/^  int max;                               \/* max number of retrieval *\/$/;"	m	struct:__anon68
+maps	tcutil.h	/^  TCMAP **maps;                          \/* internal map objects *\/$/;"	m	struct:__anon31
+max	tcfdb.h	/^  uint64_t max;                          \/* maximum ID number *\/$/;"	m	struct:__anon64
+max	tctdb.h	/^  int max;                               \/* max number of retrieval *\/$/;"	m	struct:__anon84
 md5_INCLUDED	md5.h	51;"	d
 md5_append	md5.c	/^md5_append(md5_state_t *pms, const md5_byte_t *data, int nbytes)$/;"	f
 md5_append	md5.h	68;"	d
@@ -1297,29 +1297,29 @@ md5_process	md5.c	/^md5_process(md5_state_t *pms, const md5_byte_t *data \/*[64]
 md5_state_s	md5.h	/^typedef struct md5_state_s {$/;"	s
 md5_state_t	md5.h	/^} md5_state_t;$/;"	t	typeref:struct:md5_state_s
 md5_word_t	md5.h	/^typedef unsigned int md5_word_t; \/* 32-bit word *\/$/;"	t
-mdb	tcadb.h	/^  TCMDB *mdb;                            \/* on-memory hash database object *\/$/;"	m	struct:__anon4
-mdb	tcumttest.c	/^  TCMDB *mdb;$/;"	m	struct:__anon78	file:
-mdb	tcumttest.c	/^  TCMDB *mdb;$/;"	m	struct:__anon79	file:
-min	tcfdb.h	/^  uint64_t min;                          \/* minimum ID number *\/$/;"	m	struct:__anon32
-misc	tcadb.h	/^  TCLIST *(*misc)(void *, const char *, const TCLIST *);$/;"	m	struct:__anon6
-mmtx	tcbdb.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon18
-mmtx	tcfdb.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon32
-mmtx	tchdb.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon46
-mmtx	tctdb.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon62
-mmtx	tcutil.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon87
-mmtxs	tcutil.h	/^  void **mmtxs;                          \/* mutexes for method *\/$/;"	m	struct:__anon86
+mdb	tcadb.h	/^  TCMDB *mdb;                            \/* on-memory hash database object *\/$/;"	m	struct:__anon68
+mdb	tcumttest.c	/^  TCMDB *mdb;$/;"	m	struct:__anon24	file:
+mdb	tcumttest.c	/^  TCMDB *mdb;$/;"	m	struct:__anon25	file:
+min	tcfdb.h	/^  uint64_t min;                          \/* minimum ID number *\/$/;"	m	struct:__anon64
+misc	tcadb.h	/^  TCLIST *(*misc)(void *, const char *, const TCLIST *);$/;"	m	struct:__anon70
+mmtx	tcbdb.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon71
+mmtx	tcfdb.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon64
+mmtx	tchdb.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon45
+mmtx	tctdb.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon78
+mmtx	tcutil.h	/^  void *mmtx;                            \/* mutex for method *\/$/;"	m	struct:__anon32
+mmtxs	tcutil.h	/^  void **mmtxs;                          \/* mutexes for method *\/$/;"	m	struct:__anon31
 mprint	tcbmttest.c	/^static void mprint(TCBDB *bdb){$/;"	f	file:
 mprint	tcbtest.c	/^static void mprint(TCBDB *bdb){$/;"	f	file:
 mprint	tcfmttest.c	/^static void mprint(TCFDB *fdb){$/;"	f	file:
 mprint	tcftest.c	/^static void mprint(TCFDB *fdb){$/;"	f	file:
 mprint	tchmttest.c	/^static void mprint(TCHDB *hdb){$/;"	f	file:
 mprint	tchtest.c	/^static void mprint(TCHDB *hdb){$/;"	f	file:
-msiz	tchdb.h	/^  uint64_t msiz;                         \/* size of the mapped memory *\/$/;"	m	struct:__anon46
-msiz	tcutil.h	/^  uint64_t msiz;                         \/* total size of records *\/$/;"	m	struct:__anon84
-msiz	tcutil.h	/^  uint64_t msiz;                         \/* total size of records *\/$/;"	m	struct:__anon85
-mtime	tcfdb.h	/^  time_t mtime;                          \/* modification time *\/$/;"	m	struct:__anon32
-mtime	tchdb.h	/^  time_t mtime;                          \/* modification time *\/$/;"	m	struct:__anon46
-mutex	tcutil.h	/^  void *mutex;                           \/* mutex for operations *\/$/;"	m	struct:__anon89
+msiz	tchdb.h	/^  uint64_t msiz;                         \/* size of the mapped memory *\/$/;"	m	struct:__anon45
+msiz	tcutil.h	/^  uint64_t msiz;                         \/* total size of records *\/$/;"	m	struct:__anon29
+msiz	tcutil.h	/^  uint64_t msiz;                         \/* total size of records *\/$/;"	m	struct:__anon30
+mtime	tcfdb.h	/^  time_t mtime;                          \/* modification time *\/$/;"	m	struct:__anon64
+mtime	tchdb.h	/^  time_t mtime;                          \/* modification time *\/$/;"	m	struct:__anon45
+mutex	tcutil.h	/^  void *mutex;                           \/* mutex for operations *\/$/;"	m	struct:__anon34
 mycmpfunc	tcbmgr.c	/^static int mycmpfunc(const char *aptr, int asiz, const char *bptr, int bsiz, void *op){$/;"	f	file:
 mygetline	tcbmgr.c	/^static char *mygetline(FILE *ifp){$/;"	f	file:
 mygetline	tcfmgr.c	/^static char *mygetline(FILE *ifp){$/;"	f	file:
@@ -1346,79 +1346,79 @@ myrandnd	tcfmttest.c	/^static int myrandnd(int range){$/;"	f	file:
 myrandnd	tchmttest.c	/^static int myrandnd(int range){$/;"	f	file:
 myrandnd	tctmttest.c	/^static int myrandnd(int range){$/;"	f	file:
 myrandnd	tcumttest.c	/^static int myrandnd(int range){$/;"	f	file:
-name	tctdb.h	/^  char *name;                            \/* column name *\/$/;"	m	struct:__anon61
-name	tctdb.h	/^  char *name;                            \/* column name *\/$/;"	m	struct:__anon67
+name	tctdb.h	/^  char *name;                            \/* column name *\/$/;"	m	struct:__anon77
+name	tctdb.h	/^  char *name;                            \/* column name *\/$/;"	m	struct:__anon83
 nan	myconf.h	274;"	d
 nanl	myconf.h	275;"	d
-nc	tcbmttest.c	/^  bool nc;$/;"	m	struct:__anon27	file:
-nc	tcbmttest.c	/^  bool nc;$/;"	m	struct:__anon28	file:
-nc	tcfmttest.c	/^  bool nc;$/;"	m	struct:__anon39	file:
-nc	tcfmttest.c	/^  bool nc;$/;"	m	struct:__anon40	file:
+nc	tcbmttest.c	/^  bool nc;$/;"	m	struct:__anon11	file:
+nc	tcbmttest.c	/^  bool nc;$/;"	m	struct:__anon12	file:
+nc	tcfmttest.c	/^  bool nc;$/;"	m	struct:__anon93	file:
+nc	tcfmttest.c	/^  bool nc;$/;"	m	struct:__anon94	file:
+nc	tchmttest.c	/^  bool nc;$/;"	m	struct:__anon52	file:
 nc	tchmttest.c	/^  bool nc;$/;"	m	struct:__anon53	file:
-nc	tchmttest.c	/^  bool nc;$/;"	m	struct:__anon54	file:
-nc	tcumttest.c	/^  bool nc;$/;"	m	struct:__anon79	file:
-ncnum	tcbdb.h	/^  uint32_t ncnum;                        \/* maximum number of cached nodes *\/$/;"	m	struct:__anon18
-ncnum	tctdb.h	/^  int32_t ncnum;                         \/* max number of cached nodes *\/$/;"	m	struct:__anon62
-ndb	tcadb.h	/^  TCNDB *ndb;                            \/* on-memory tree database object *\/$/;"	m	struct:__anon4
-ndb	tcumttest.c	/^  TCNDB *ndb;$/;"	m	struct:__anon78	file:
-ndb	tcumttest.c	/^  TCNDB *ndb;$/;"	m	struct:__anon79	file:
-next	tcbdb.c	/^  uint64_t next;                         \/\/ ID number of the next leaf$/;"	m	struct:__anon13	file:
+nc	tcumttest.c	/^  bool nc;$/;"	m	struct:__anon25	file:
+ncnum	tcbdb.h	/^  uint32_t ncnum;                        \/* maximum number of cached nodes *\/$/;"	m	struct:__anon71
+ncnum	tctdb.h	/^  int32_t ncnum;                         \/* max number of cached nodes *\/$/;"	m	struct:__anon78
+ndb	tcadb.h	/^  TCNDB *ndb;                            \/* on-memory tree database object *\/$/;"	m	struct:__anon68
+ndb	tcumttest.c	/^  TCNDB *ndb;$/;"	m	struct:__anon24	file:
+ndb	tcumttest.c	/^  TCNDB *ndb;$/;"	m	struct:__anon25	file:
+next	tcbdb.c	/^  uint64_t next;                         \/\/ ID number of the next leaf$/;"	m	struct:__anon15	file:
 next	tcutil.h	/^  struct _TCMAPREC *next;                \/* pointer to the next element *\/$/;"	m	struct:_TCMAPREC	typeref:struct:_TCMAPREC::_TCMAPREC
-nmemb	tcbdb.h	/^  uint32_t nmemb;                        \/* number of members in each node *\/$/;"	m	struct:__anon18
-nnum	tcbdb.h	/^  uint64_t nnum;                         \/* number of nodes *\/$/;"	m	struct:__anon18
-nnum	tcutil.h	/^  int nnum;                              \/* number of the node array *\/$/;"	m	struct:__anon93
-nodec	tcbdb.h	/^  TCMAP *nodec;                          \/* cache for nodes *\/$/;"	m	struct:__anon18
-nodes	tcutil.h	/^  TCCHIDXNODE *nodes;                    \/* node array *\/$/;"	m	struct:__anon93
-noidx	tctdb.h	/^  bool noidx;                            \/* no index flag *\/$/;"	m	struct:__anon67
-nsiz	tctdb.h	/^  int nsiz;                              \/* size of the column name *\/$/;"	m	struct:__anon67
-num	tcadb.c	/^  int num;                               \/\/ number of inner databases$/;"	m	struct:__anon2	file:
-num	tcawmgr.c	/^  int num;                               \/\/ number per page$/;"	m	struct:__anon10	file:
-num	tcutil.h	/^  int num;                               \/* number of used elements *\/$/;"	m	struct:__anon83
-num	tcutil.h	/^  int num;                               \/* number of used elements *\/$/;"	m	struct:__anon89
-num	tcutil.h	/^  int num;                               \/* number of used elements *\/$/;"	m	struct:__anon95
-off	tchdb.c	/^  uint64_t off;                          \/\/ offset of the block$/;"	m	struct:__anon42	file:
-off	tchdb.c	/^  uint64_t off;                          \/\/ offset of the record$/;"	m	struct:__anon41	file:
-off	tctdb.c	/^  int32_t off;                           \/\/ offset of the token$/;"	m	struct:__anon59	file:
-off	tctdb.c	/^  int32_t off;                           \/\/ offset of the token$/;"	m	struct:__anon60	file:
-omode	tcadb.h	/^  int omode;                             \/* open mode *\/$/;"	m	struct:__anon4
-omode	tcfdb.h	/^  uint32_t omode;                        \/* open mode *\/$/;"	m	struct:__anon32
-omode	tchdb.h	/^  uint32_t omode;                        \/* open mode *\/$/;"	m	struct:__anon46
-oname	tctdb.h	/^  char *oname;                           \/* column name for ordering *\/$/;"	m	struct:__anon68
-op	tcadb.c	/^  void *op;                              \/\/ opaque object for the mapping function$/;"	m	struct:__anon3	file:
-op	tcbdb.c	/^  void *op;                              \/\/ opaque pointer$/;"	m	struct:__anon17	file:
-op	tcfdb.c	/^  void *op;                              \/\/ opaque pointer$/;"	m	struct:__anon31	file:
-op	tchdb.c	/^  void *op;                              \/\/ opaque pointer$/;"	m	struct:__anon45	file:
-op	tctdb.h	/^  int op;                                \/* operation type *\/$/;"	m	struct:__anon67
-opaque	tcbdb.h	/^  char *opaque;                          \/* opaque buffer *\/$/;"	m	struct:__anon18
-open	tcadb.h	/^  bool (*open)(void *, const char *);$/;"	m	struct:__anon6
-open	tcbdb.h	/^  bool open;                             \/* whether the internal database is opened *\/$/;"	m	struct:__anon18
-open	tctdb.h	/^  bool open;                             \/* whether the internal database is opened *\/$/;"	m	struct:__anon62
+nmemb	tcbdb.h	/^  uint32_t nmemb;                        \/* number of members in each node *\/$/;"	m	struct:__anon71
+nnum	tcbdb.h	/^  uint64_t nnum;                         \/* number of nodes *\/$/;"	m	struct:__anon71
+nnum	tcutil.h	/^  int nnum;                              \/* number of the node array *\/$/;"	m	struct:__anon38
+nodec	tcbdb.h	/^  TCMAP *nodec;                          \/* cache for nodes *\/$/;"	m	struct:__anon71
+nodes	tcutil.h	/^  TCCHIDXNODE *nodes;                    \/* node array *\/$/;"	m	struct:__anon38
+noidx	tctdb.h	/^  bool noidx;                            \/* no index flag *\/$/;"	m	struct:__anon83
+nsiz	tctdb.h	/^  int nsiz;                              \/* size of the column name *\/$/;"	m	struct:__anon83
+num	tcadb.c	/^  int num;                               \/\/ number of inner databases$/;"	m	struct:__anon20	file:
+num	tcawmgr.c	/^  int num;                               \/\/ number per page$/;"	m	struct:__anon22	file:
+num	tcutil.h	/^  int num;                               \/* number of used elements *\/$/;"	m	struct:__anon28
+num	tcutil.h	/^  int num;                               \/* number of used elements *\/$/;"	m	struct:__anon34
+num	tcutil.h	/^  int num;                               \/* number of used elements *\/$/;"	m	struct:__anon40
+off	tchdb.c	/^  uint64_t off;                          \/\/ offset of the block$/;"	m	struct:__anon96	file:
+off	tchdb.c	/^  uint64_t off;                          \/\/ offset of the record$/;"	m	struct:__anon95	file:
+off	tctdb.c	/^  int32_t off;                           \/\/ offset of the token$/;"	m	struct:__anon6	file:
+off	tctdb.c	/^  int32_t off;                           \/\/ offset of the token$/;"	m	struct:__anon7	file:
+omode	tcadb.h	/^  int omode;                             \/* open mode *\/$/;"	m	struct:__anon68
+omode	tcfdb.h	/^  uint32_t omode;                        \/* open mode *\/$/;"	m	struct:__anon64
+omode	tchdb.h	/^  uint32_t omode;                        \/* open mode *\/$/;"	m	struct:__anon45
+oname	tctdb.h	/^  char *oname;                           \/* column name for ordering *\/$/;"	m	struct:__anon84
+op	tcadb.c	/^  void *op;                              \/\/ opaque object for the mapping function$/;"	m	struct:__anon21	file:
+op	tcbdb.c	/^  void *op;                              \/\/ opaque pointer$/;"	m	struct:__anon19	file:
+op	tcfdb.c	/^  void *op;                              \/\/ opaque pointer$/;"	m	struct:__anon2	file:
+op	tchdb.c	/^  void *op;                              \/\/ opaque pointer$/;"	m	struct:__anon99	file:
+op	tctdb.h	/^  int op;                                \/* operation type *\/$/;"	m	struct:__anon83
+opaque	tcbdb.h	/^  char *opaque;                          \/* opaque buffer *\/$/;"	m	struct:__anon71
+open	tcadb.h	/^  bool (*open)(void *, const char *);$/;"	m	struct:__anon70
+open	tcbdb.h	/^  bool open;                             \/* whether the internal database is opened *\/$/;"	m	struct:__anon71
+open	tctdb.h	/^  bool open;                             \/* whether the internal database is opened *\/$/;"	m	struct:__anon78
 operator ()	bros/maptest.cc	/^  size_t operator()(const string& str) const {$/;"	f	struct:stringhash
-opq	tcadb.h	/^  void *opq;                             \/* opaque pointer *\/$/;"	m	struct:__anon6
-optimize	tcadb.h	/^  bool (*optimize)(void *, const char *);$/;"	m	struct:__anon6
-opts	tcbdb.h	/^  uint8_t opts;                          \/* options *\/$/;"	m	struct:__anon18
-opts	tchdb.h	/^  uint8_t opts;                          \/* options *\/$/;"	m	struct:__anon46
-opts	tctdb.h	/^  uint8_t opts;                          \/* options *\/$/;"	m	struct:__anon62
-otype	tctdb.h	/^  int otype;                             \/* type of order *\/$/;"	m	struct:__anon68
-out	tcadb.h	/^  bool (*out)(void *, const void *, int);$/;"	m	struct:__anon6
-p	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon99
-page	tcawmgr.c	/^  int page;                              \/\/ number of the page$/;"	m	struct:__anon10	file:
-path	tcadb.c	/^  char *path;                            \/\/ path of the base directory$/;"	m	struct:__anon2	file:
-path	tcadb.h	/^  const char *(*path)(void *);$/;"	m	struct:__anon6
-path	tcfdb.h	/^  char *path;                            \/* path of the database file *\/$/;"	m	struct:__anon32
-path	tchdb.h	/^  char *path;                            \/* path of the database file *\/$/;"	m	struct:__anon46
+opq	tcadb.h	/^  void *opq;                             \/* opaque pointer *\/$/;"	m	struct:__anon70
+optimize	tcadb.h	/^  bool (*optimize)(void *, const char *);$/;"	m	struct:__anon70
+opts	tcbdb.h	/^  uint8_t opts;                          \/* options *\/$/;"	m	struct:__anon71
+opts	tchdb.h	/^  uint8_t opts;                          \/* options *\/$/;"	m	struct:__anon45
+opts	tctdb.h	/^  uint8_t opts;                          \/* options *\/$/;"	m	struct:__anon78
+otype	tctdb.h	/^  int otype;                             \/* type of order *\/$/;"	m	struct:__anon84
+out	tcadb.h	/^  bool (*out)(void *, const void *, int);$/;"	m	struct:__anon70
+p	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	m	union:__anon44
+page	tcawmgr.c	/^  int page;                              \/\/ number of the page$/;"	m	struct:__anon22	file:
+path	tcadb.c	/^  char *path;                            \/\/ path of the base directory$/;"	m	struct:__anon20	file:
+path	tcadb.h	/^  const char *(*path)(void *);$/;"	m	struct:__anon70
+path	tcfdb.h	/^  char *path;                            \/* path of the database file *\/$/;"	m	struct:__anon64
+path	tchdb.h	/^  char *path;                            \/* path of the database file *\/$/;"	m	struct:__anon45
 pdprocfunc	tcbtest.c	/^static void *pdprocfunc(const void *vbuf, int vsiz, int *sp, void *op){$/;"	f	file:
 pdprocfunc	tcftest.c	/^static void *pdprocfunc(const void *vbuf, int vsiz, int *sp, void *op){$/;"	f	file:
 pdprocfunc	tchtest.c	/^static void *pdprocfunc(const void *vbuf, int vsiz, int *sp, void *op){$/;"	f	file:
 pdprocfunc	tcttest.c	/^static void *pdprocfunc(const void *vbuf, int vsiz, int *sp, void *op){$/;"	f	file:
 pdprocfunc	tcutest.c	/^static void *pdprocfunc(const void *vbuf, int vsiz, int *sp, void *op){$/;"	f	file:
 pdprocfunccmp	tcatest.c	/^static void *pdprocfunccmp(const void *vbuf, int vsiz, int *sp, void *op){$/;"	f	file:
-pid	tcbdb.c	/^  uint64_t pid;                          \/\/ ID number of the referring page$/;"	m	struct:__anon14	file:
-pkbuf	tctdb.c	/^  const char *pkbuf;                     \/\/ primary key string$/;"	m	struct:__anon59	file:
-pkid	tctdb.c	/^  int64_t pkid;                          \/\/ primery key number$/;"	m	struct:__anon60	file:
-pksiz	tctdb.c	/^  int32_t pksiz;                         \/\/ size of the primary key$/;"	m	struct:__anon59	file:
+pid	tcbdb.c	/^  uint64_t pid;                          \/\/ ID number of the referring page$/;"	m	struct:__anon16	file:
+pkbuf	tctdb.c	/^  const char *pkbuf;                     \/\/ primary key string$/;"	m	struct:__anon6	file:
+pkid	tctdb.c	/^  int64_t pkid;                          \/\/ primery key number$/;"	m	struct:__anon7	file:
+pksiz	tctdb.c	/^  int32_t pksiz;                         \/\/ size of the primary key$/;"	m	struct:__anon6	file:
 prefix	Makefile	/^prefix = \/usr\/local$/;"	m
-prev	tcbdb.c	/^  uint64_t prev;                         \/\/ ID number of the previous leaf$/;"	m	struct:__anon13	file:
+prev	tcbdb.c	/^  uint64_t prev;                         \/\/ ID number of the previous leaf$/;"	m	struct:__anon15	file:
 prev	tcutil.h	/^  struct _TCMAPREC *prev;                \/* pointer to the previous element *\/$/;"	m	struct:_TCMAPREC	typeref:struct:_TCMAPREC::_TCMAPREC
 printdata	tcamgr.c	/^static int printdata(const char *ptr, int size, bool px, int sep){$/;"	f	file:
 printdata	tcbmgr.c	/^static int printdata(const char *ptr, int size, bool px){$/;"	f	file:
@@ -1433,10 +1433,10 @@ printerr	tctmgr.c	/^static void printerr(TCTDB *tdb){$/;"	f	file:
 proc	example/tctchat.c	/^static void proc(TCTMPL *tmpl, TCMPOOL *mpool){$/;"	f	file:
 proc	example/tctsearch.c	/^static void proc(TCTMPL *tmpl, TCMPOOL *mpool){$/;"	f	file:
 proc	lab/wgettsv	/^def proc(seeds, hist, filters, max, lim, wait)$/;"	f
-proc	tcadb.c	/^  ADBMAPPROC proc;                       \/\/ mapping function$/;"	m	struct:__anon3	file:
-proc	tcbdb.c	/^  TCPDPROC proc;                         \/\/ function pointer$/;"	m	struct:__anon17	file:
-proc	tcfdb.c	/^  TCPDPROC proc;                         \/\/ function pointer$/;"	m	struct:__anon31	file:
-proc	tchdb.c	/^  TCPDPROC proc;                         \/\/ function pointer$/;"	m	struct:__anon45	file:
+proc	tcadb.c	/^  ADBMAPPROC proc;                       \/\/ mapping function$/;"	m	struct:__anon21	file:
+proc	tcbdb.c	/^  TCPDPROC proc;                         \/\/ function pointer$/;"	m	struct:__anon19	file:
+proc	tcfdb.c	/^  TCPDPROC proc;                         \/\/ function pointer$/;"	m	struct:__anon2	file:
+proc	tchdb.c	/^  TCPDPROC proc;                         \/\/ function pointer$/;"	m	struct:__anon99	file:
 procbase	tcucodec.c	/^static int procbase(const char *ibuf, int isiz, bool dec){$/;"	f	file:
 procbzip	tcucodec.c	/^static int procbzip(const char *ibuf, int isiz, bool dec){$/;"	f	file:
 proccipher	tcucodec.c	/^static int proccipher(const char *ibuf, int isiz, const char *key){$/;"	f	file:
@@ -1587,7 +1587,7 @@ progname	bros/sqltest.c	/^const char *progname;                    \/* program n
 progname	bros/tctest.c	/^const char *progname;                    \/* program name *\/$/;"	v
 progname	bros/tdbtest.c	/^const char *progname;                    \/* program name *\/$/;"	v
 prototypes	configure	/^   function prototypes and stuff, but not '\\xHH' hex character constants.$/;"	f
-psiz	tchdb.c	/^  uint16_t psiz;                         \/\/ size of the padding$/;"	m	struct:__anon41	file:
+psiz	tchdb.c	/^  uint16_t psiz;                         \/\/ size of the padding$/;"	m	struct:__anon95	file:
 pthread_create	myconf.h	397;"	d
 pthread_detach	myconf.h	400;"	d
 pthread_getspecific	myconf.h	395;"	d
@@ -1614,85 +1614,85 @@ pthread_rwlock_unlock	myconf.h	389;"	d
 pthread_rwlock_wrlock	myconf.h	388;"	d
 pthread_setspecific	myconf.h	394;"	d
 pthread_t	myconf.h	360;"	d
-ptr	tcutil.h	/^  char *ptr;                             \/* pointer to the region *\/$/;"	m	struct:__anon81
-ptr	tcutil.h	/^  char *ptr;                             \/* pointer to the region *\/$/;"	m	struct:__anon82
-ptr	tcutil.h	/^  void *ptr;                             \/* pointer *\/$/;"	m	struct:__anon88
-put	tcadb.h	/^  bool (*put)(void *, const void *, int, const void *, int);$/;"	m	struct:__anon6
-putcat	tcadb.h	/^  bool (*putcat)(void *, const void *, int, const void *, int);$/;"	m	struct:__anon6
-putkeep	tcadb.h	/^  bool (*putkeep)(void *, const void *, int, const void *, int);$/;"	m	struct:__anon6
-putproc	tcadb.h	/^  bool (*putproc)(void *, const void *, int, const void *, int, TCPDPROC, void *);$/;"	m	struct:__anon6
-rbopaque	tcbdb.h	/^  char *rbopaque;                        \/* opaque for rollback *\/$/;"	m	struct:__anon18
-rcnum	tchdb.h	/^  uint32_t rcnum;                        \/* maximum number of cached records *\/$/;"	m	struct:__anon46
+ptr	tcutil.h	/^  char *ptr;                             \/* pointer to the region *\/$/;"	m	struct:__anon26
+ptr	tcutil.h	/^  char *ptr;                             \/* pointer to the region *\/$/;"	m	struct:__anon27
+ptr	tcutil.h	/^  void *ptr;                             \/* pointer *\/$/;"	m	struct:__anon33
+put	tcadb.h	/^  bool (*put)(void *, const void *, int, const void *, int);$/;"	m	struct:__anon70
+putcat	tcadb.h	/^  bool (*putcat)(void *, const void *, int, const void *, int);$/;"	m	struct:__anon70
+putkeep	tcadb.h	/^  bool (*putkeep)(void *, const void *, int, const void *, int);$/;"	m	struct:__anon70
+putproc	tcadb.h	/^  bool (*putproc)(void *, const void *, int, const void *, int, TCPDPROC, void *);$/;"	m	struct:__anon70
+rbopaque	tcbdb.h	/^  char *rbopaque;                        \/* opaque for rollback *\/$/;"	m	struct:__anon71
+rcnum	tchdb.h	/^  uint32_t rcnum;                        \/* maximum number of cached records *\/$/;"	m	struct:__anon45
 readparameters	tcawmgr.c	/^static void readparameters(TCMAP *params){$/;"	f	file:
-recc	tchdb.h	/^  TCMDB *recc;                           \/* cache for records *\/$/;"	m	struct:__anon46
-recs	tcadb.c	/^  TCLIST *recs;                          \/\/ cached records$/;"	m	struct:__anon3	file:
-recs	tcbdb.c	/^  TCPTRLIST *recs;                       \/\/ list of records$/;"	m	struct:__anon13	file:
-regex	tctdb.h	/^  void *regex;                           \/* regular expression object *\/$/;"	m	struct:__anon67
-rest	tcbdb.c	/^  TCLIST *rest;                          \/\/ list of value objects$/;"	m	struct:__anon12	file:
-right	tchdb.c	/^  uint64_t right;                        \/\/ offset of the right child record$/;"	m	struct:__anon41	file:
+recc	tchdb.h	/^  TCMDB *recc;                           \/* cache for records *\/$/;"	m	struct:__anon45
+recs	tcadb.c	/^  TCLIST *recs;                          \/\/ cached records$/;"	m	struct:__anon21	file:
+recs	tcbdb.c	/^  TCPTRLIST *recs;                       \/\/ list of records$/;"	m	struct:__anon15	file:
+regex	tctdb.h	/^  void *regex;                           \/* regular expression object *\/$/;"	m	struct:__anon83
+rest	tcbdb.c	/^  TCLIST *rest;                          \/\/ list of value objects$/;"	m	struct:__anon14	file:
+right	tchdb.c	/^  uint64_t right;                        \/\/ offset of the right child record$/;"	m	struct:__anon95	file:
 right	tcutil.h	/^  struct _TCMAPREC *right;               \/* pointer to the right child *\/$/;"	m	struct:_TCMAPREC	typeref:struct:_TCMAPREC::_TCMAPREC
 right	tcutil.h	/^  struct _TCTREEREC *right;              \/* pointer to the right child *\/$/;"	m	struct:_TCTREEREC	typeref:struct:_TCTREEREC::_TCTREEREC
-rmtxs	tcfdb.h	/^  void *rmtxs;                           \/* mutexes for records *\/$/;"	m	struct:__anon32
-rmtxs	tchdb.h	/^  void *rmtxs;                           \/* mutexes for records *\/$/;"	m	struct:__anon46
-rnd	tcbmttest.c	/^  bool rnd;$/;"	m	struct:__anon24	file:
-rnd	tcbmttest.c	/^  bool rnd;$/;"	m	struct:__anon25	file:
-rnd	tcbmttest.c	/^  bool rnd;$/;"	m	struct:__anon26	file:
-rnd	tcfmttest.c	/^  bool rnd;$/;"	m	struct:__anon36	file:
-rnd	tcfmttest.c	/^  bool rnd;$/;"	m	struct:__anon37	file:
-rnd	tcfmttest.c	/^  bool rnd;$/;"	m	struct:__anon38	file:
+rmtxs	tcfdb.h	/^  void *rmtxs;                           \/* mutexes for records *\/$/;"	m	struct:__anon64
+rmtxs	tchdb.h	/^  void *rmtxs;                           \/* mutexes for records *\/$/;"	m	struct:__anon45
+rnd	tcbmttest.c	/^  bool rnd;$/;"	m	struct:__anon10	file:
+rnd	tcbmttest.c	/^  bool rnd;$/;"	m	struct:__anon8	file:
+rnd	tcbmttest.c	/^  bool rnd;$/;"	m	struct:__anon9	file:
+rnd	tcfmttest.c	/^  bool rnd;$/;"	m	struct:__anon90	file:
+rnd	tcfmttest.c	/^  bool rnd;$/;"	m	struct:__anon91	file:
+rnd	tcfmttest.c	/^  bool rnd;$/;"	m	struct:__anon92	file:
+rnd	tchmttest.c	/^  bool rnd;$/;"	m	struct:__anon49	file:
 rnd	tchmttest.c	/^  bool rnd;$/;"	m	struct:__anon50	file:
 rnd	tchmttest.c	/^  bool rnd;$/;"	m	struct:__anon51	file:
-rnd	tchmttest.c	/^  bool rnd;$/;"	m	struct:__anon52	file:
-rnd	tctmttest.c	/^  bool rnd;$/;"	m	struct:__anon73	file:
-rnd	tctmttest.c	/^  bool rnd;$/;"	m	struct:__anon74	file:
-rnd	tctmttest.c	/^  bool rnd;$/;"	m	struct:__anon75	file:
-rnd	tcumttest.c	/^  bool rnd;$/;"	m	struct:__anon78	file:
-rnum	tcadb.h	/^  uint64_t (*rnum)(void *);$/;"	m	struct:__anon6
-rnum	tcamttest.c	/^  int rnum;$/;"	m	struct:__anon7	file:
-rnum	tcamttest.c	/^  int rnum;$/;"	m	struct:__anon8	file:
-rnum	tcamttest.c	/^  int rnum;$/;"	m	struct:__anon9	file:
-rnum	tcbdb.h	/^  uint64_t rnum;                         \/* number of records *\/$/;"	m	struct:__anon18
-rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon24	file:
-rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon25	file:
-rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon26	file:
-rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon27	file:
-rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon28	file:
-rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon29	file:
-rnum	tcfdb.h	/^  uint64_t rnum;                         \/* number of the records *\/$/;"	m	struct:__anon32
-rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon36	file:
-rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon37	file:
-rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon38	file:
-rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon39	file:
-rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon40	file:
-rnum	tchdb.h	/^  uint64_t rnum;                         \/* number of the records *\/$/;"	m	struct:__anon46
+rnd	tctmttest.c	/^  bool rnd;$/;"	m	struct:__anon56	file:
+rnd	tctmttest.c	/^  bool rnd;$/;"	m	struct:__anon57	file:
+rnd	tctmttest.c	/^  bool rnd;$/;"	m	struct:__anon58	file:
+rnd	tcumttest.c	/^  bool rnd;$/;"	m	struct:__anon24	file:
+rnum	tcadb.h	/^  uint64_t (*rnum)(void *);$/;"	m	struct:__anon70
+rnum	tcamttest.c	/^  int rnum;$/;"	m	struct:__anon61	file:
+rnum	tcamttest.c	/^  int rnum;$/;"	m	struct:__anon62	file:
+rnum	tcamttest.c	/^  int rnum;$/;"	m	struct:__anon63	file:
+rnum	tcbdb.h	/^  uint64_t rnum;                         \/* number of records *\/$/;"	m	struct:__anon71
+rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon10	file:
+rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon11	file:
+rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon12	file:
+rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon13	file:
+rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon8	file:
+rnum	tcbmttest.c	/^  int rnum;$/;"	m	struct:__anon9	file:
+rnum	tcfdb.h	/^  uint64_t rnum;                         \/* number of the records *\/$/;"	m	struct:__anon64
+rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon90	file:
+rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon91	file:
+rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon92	file:
+rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon93	file:
+rnum	tcfmttest.c	/^  int rnum;$/;"	m	struct:__anon94	file:
+rnum	tchdb.h	/^  uint64_t rnum;                         \/* number of the records *\/$/;"	m	struct:__anon45
+rnum	tchmttest.c	/^  int rnum;$/;"	m	struct:__anon49	file:
 rnum	tchmttest.c	/^  int rnum;$/;"	m	struct:__anon50	file:
 rnum	tchmttest.c	/^  int rnum;$/;"	m	struct:__anon51	file:
 rnum	tchmttest.c	/^  int rnum;$/;"	m	struct:__anon52	file:
 rnum	tchmttest.c	/^  int rnum;$/;"	m	struct:__anon53	file:
 rnum	tchmttest.c	/^  int rnum;$/;"	m	struct:__anon54	file:
-rnum	tchmttest.c	/^  int rnum;$/;"	m	struct:__anon55	file:
-rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon73	file:
-rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon74	file:
-rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon75	file:
-rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon76	file:
-rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon77	file:
-rnum	tcumttest.c	/^  int rnum;$/;"	m	struct:__anon78	file:
-rnum	tcumttest.c	/^  int rnum;$/;"	m	struct:__anon79	file:
-rnum	tcutil.h	/^  uint64_t rnum;                         \/* number of records *\/$/;"	m	struct:__anon84
-rnum	tcutil.h	/^  uint64_t rnum;                         \/* number of records *\/$/;"	m	struct:__anon85
-root	tcbdb.h	/^  uint64_t root;                         \/* ID number of the root page *\/$/;"	m	struct:__anon18
-root	tcutil.h	/^  TCTREEREC *root;                       \/* pointer to the root element *\/$/;"	m	struct:__anon85
-rpath	tcfdb.h	/^  char *rpath;                           \/* real path for locking *\/$/;"	m	struct:__anon32
-rpath	tchdb.h	/^  char *rpath;                           \/* real path for locking *\/$/;"	m	struct:__anon46
-rratio	tcbmttest.c	/^  int rratio;$/;"	m	struct:__anon28	file:
-rratio	tcfmttest.c	/^  int rratio;$/;"	m	struct:__anon40	file:
-rratio	tchmttest.c	/^  int rratio;$/;"	m	struct:__anon54	file:
-rratio	tctmttest.c	/^  int rratio;$/;"	m	struct:__anon77	file:
-rratio	tcumttest.c	/^  int rratio;$/;"	m	struct:__anon79	file:
-rsiz	tcadb.c	/^  int64_t rsiz;                          \/\/ total size of cached records$/;"	m	struct:__anon3	file:
-rsiz	tcfdb.h	/^  int rsiz;                              \/* size of each record *\/$/;"	m	struct:__anon32
-rsiz	tchdb.c	/^  uint32_t rsiz;                         \/\/ size of the block$/;"	m	struct:__anon42	file:
-rsiz	tchdb.c	/^  uint32_t rsiz;                         \/\/ size of the whole record$/;"	m	struct:__anon41	file:
+rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon56	file:
+rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon57	file:
+rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon58	file:
+rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon59	file:
+rnum	tctmttest.c	/^  int rnum;$/;"	m	struct:__anon60	file:
+rnum	tcumttest.c	/^  int rnum;$/;"	m	struct:__anon24	file:
+rnum	tcumttest.c	/^  int rnum;$/;"	m	struct:__anon25	file:
+rnum	tcutil.h	/^  uint64_t rnum;                         \/* number of records *\/$/;"	m	struct:__anon29
+rnum	tcutil.h	/^  uint64_t rnum;                         \/* number of records *\/$/;"	m	struct:__anon30
+root	tcbdb.h	/^  uint64_t root;                         \/* ID number of the root page *\/$/;"	m	struct:__anon71
+root	tcutil.h	/^  TCTREEREC *root;                       \/* pointer to the root element *\/$/;"	m	struct:__anon30
+rpath	tcfdb.h	/^  char *rpath;                           \/* real path for locking *\/$/;"	m	struct:__anon64
+rpath	tchdb.h	/^  char *rpath;                           \/* real path for locking *\/$/;"	m	struct:__anon45
+rratio	tcbmttest.c	/^  int rratio;$/;"	m	struct:__anon12	file:
+rratio	tcfmttest.c	/^  int rratio;$/;"	m	struct:__anon94	file:
+rratio	tchmttest.c	/^  int rratio;$/;"	m	struct:__anon53	file:
+rratio	tctmttest.c	/^  int rratio;$/;"	m	struct:__anon60	file:
+rratio	tcumttest.c	/^  int rratio;$/;"	m	struct:__anon25	file:
+rsiz	tcadb.c	/^  int64_t rsiz;                          \/\/ total size of cached records$/;"	m	struct:__anon21	file:
+rsiz	tcfdb.h	/^  int rsiz;                              \/* size of each record *\/$/;"	m	struct:__anon64
+rsiz	tchdb.c	/^  uint32_t rsiz;                         \/\/ size of the block$/;"	m	struct:__anon96	file:
+rsiz	tchdb.c	/^  uint32_t rsiz;                         \/\/ size of the whole record$/;"	m	struct:__anon95	file:
 runbase	tcucodec.c	/^static int runbase(int argc, char **argv){$/;"	f	file:
 runbtread	bros/bdbtest.c	/^int runbtread(int argc, char **argv){$/;"	f
 runbtread	bros/qdbmtest.c	/^int runbtread(int argc, char **argv){$/;"	f
@@ -1732,7 +1732,7 @@ runinform	tcbmgr.c	/^static int runinform(int argc, char **argv){$/;"	f	file:
 runinform	tcfmgr.c	/^static int runinform(int argc, char **argv){$/;"	f	file:
 runinform	tchmgr.c	/^static int runinform(int argc, char **argv){$/;"	f	file:
 runinform	tctmgr.c	/^static int runinform(int argc, char **argv){$/;"	f	file:
-runit	tchdb.h	/^  uint32_t runit;                        \/* record reading unit *\/$/;"	m	struct:__anon46
+runit	tchdb.h	/^  uint32_t runit;                        \/* record reading unit *\/$/;"	m	struct:__anon45
 runlist	tcamgr.c	/^static int runlist(int argc, char **argv){$/;"	f	file:
 runlist	tcbmgr.c	/^static int runlist(int argc, char **argv){$/;"	f	file:
 runlist	tcfmgr.c	/^static int runlist(int argc, char **argv){$/;"	f	file:
@@ -1867,9 +1867,9 @@ runzlib	tcucodec.c	/^static int runzlib(int argc, char **argv){$/;"	f	file:
 sched_yield	myconf.h	401;"	d
 sched_yield	myconf.h	433;"	d
 sepstrtochr	tcamgr.c	/^static int sepstrtochr(const char *str){$/;"	f	file:
-seq	tctdb.c	/^  uint16_t seq;                          \/\/ sequence number$/;"	m	struct:__anon59	file:
-seq	tctdb.c	/^  uint16_t seq;                          \/\/ sequence number$/;"	m	struct:__anon60	file:
-seq	tcutil.h	/^  uint32_t seq;                          \/* sequential number *\/$/;"	m	struct:__anon92
+seq	tctdb.c	/^  uint16_t seq;                          \/\/ sequence number$/;"	m	struct:__anon6	file:
+seq	tctdb.c	/^  uint16_t seq;                          \/\/ sequence number$/;"	m	struct:__anon7	file:
+seq	tcutil.h	/^  uint32_t seq;                          \/* sequential number *\/$/;"	m	struct:__anon37
 sethtmlcomform	tcawmgr.c	/^static void sethtmlcomform(PARAMS *params, TCXSTR *obuf, TCADB *db){$/;"	f	file:
 sethtmlfooter	tcawmgr.c	/^static void sethtmlfooter(PARAMS *params, TCXSTR *obuf, TCADB *db){$/;"	f	file:
 sethtmlheader	tcawmgr.c	/^static void sethtmlheader(PARAMS *params, TCXSTR *obuf, TCADB *db){$/;"	f	file:
@@ -1886,25 +1886,25 @@ showprgr	bros/sdbmtest.c	/^int showprgr;                            \/* whether 
 showprgr	bros/sqltest.c	/^int showprgr;                            \/* whether to show progression *\/$/;"	v
 showprgr	bros/tctest.c	/^int showprgr;                            \/* whether to show progression *\/$/;"	v
 showprgr	bros/tdbtest.c	/^int showprgr;                            \/* whether to show progression *\/$/;"	v
-sign	tctdb.c	/^  bool sign;                             \/\/ positive sign$/;"	m	struct:__anon58	file:
-sign	tctdb.h	/^  bool sign;                             \/* positive sign *\/$/;"	m	struct:__anon67
-size	tcadb.h	/^  uint64_t (*size)(void *);$/;"	m	struct:__anon6
-size	tcbdb.c	/^  int size;                              \/\/ predicted size of serialized buffer$/;"	m	struct:__anon13	file:
-size	tcutil.h	/^  int size;                              \/* size of the effective region *\/$/;"	m	struct:__anon82
-size	tcutil.h	/^  int size;                              \/* size of the region *\/$/;"	m	struct:__anon81
-size	tcutil.h	/^  int size;                              \/* size of used region *\/$/;"	m	struct:__anon96
-skel	tcadb.h	/^  void *skel;                            \/* skeleton database *\/$/;"	m	struct:__anon4
-skip	tctdb.h	/^  int skip;                              \/* skipping number of retrieval *\/$/;"	m	struct:__anon68
-sp	tcutil.h	/^  uint8_t *sp;                           \/* start pointer *\/$/;"	m	struct:__anon96
-start	tcutil.h	/^  int start;                             \/* start index of used elements *\/$/;"	m	struct:__anon83
-start	tcutil.h	/^  int start;                             \/* start index of used elements *\/$/;"	m	struct:__anon95
+sign	tctdb.c	/^  bool sign;                             \/\/ positive sign$/;"	m	struct:__anon5	file:
+sign	tctdb.h	/^  bool sign;                             \/* positive sign *\/$/;"	m	struct:__anon83
+size	tcadb.h	/^  uint64_t (*size)(void *);$/;"	m	struct:__anon70
+size	tcbdb.c	/^  int size;                              \/\/ predicted size of serialized buffer$/;"	m	struct:__anon15	file:
+size	tcutil.h	/^  int size;                              \/* size of the effective region *\/$/;"	m	struct:__anon27
+size	tcutil.h	/^  int size;                              \/* size of the region *\/$/;"	m	struct:__anon26
+size	tcutil.h	/^  int size;                              \/* size of used region *\/$/;"	m	struct:__anon41
+skel	tcadb.h	/^  void *skel;                            \/* skeleton database *\/$/;"	m	struct:__anon68
+skip	tctdb.h	/^  int skip;                              \/* skipping number of retrieval *\/$/;"	m	struct:__anon84
+sp	tcutil.h	/^  uint8_t *sp;                           \/* start pointer *\/$/;"	m	struct:__anon41
+start	tcutil.h	/^  int start;                             \/* start index of used elements *\/$/;"	m	struct:__anon28
+start	tcutil.h	/^  int start;                             \/* start index of used elements *\/$/;"	m	struct:__anon40
 stlmap	bros/maptest.cc	/^typedef map<string, string> stlmap;$/;"	t	file:
 stlmmap	bros/maptest.cc	/^typedef multimap<string, string> stlmmap;$/;"	t	file:
 stlset	bros/maptest.cc	/^typedef set<string> stlset;$/;"	t	file:
 stringhash	bros/maptest.cc	/^struct stringhash {                      \/\/ hash function for string$/;"	s	file:
 strip	man/htmltoman	/^function strip(text){$/;"	f
 strtozsv	tcamgr.c	/^static char *strtozsv(const char *str, int sep, int *sp){$/;"	f	file:
-sync	tcadb.h	/^  bool (*sync)(void *);$/;"	m	struct:__anon6
+sync	tcadb.h	/^  bool (*sync)(void *);$/;"	m	struct:__anon70
 sysprint	tcamttest.c	/^static void sysprint(void){$/;"	f	file:
 sysprint	tcatest.c	/^static void sysprint(void){$/;"	f	file:
 sysprint	tcbmttest.c	/^static void sysprint(void){$/;"	f	file:
@@ -2302,7 +2302,7 @@ tcfdbwidth	tcfdb.c	/^uint32_t tcfdbwidth(TCFDB *fdb){$/;"	f
 tcfree	tcutil.c	/^void tcfree(void *ptr){$/;"	f
 tcgammadecode	tcutil.c	/^static int tcgammadecode(const char *ptr, int size, char *obuf){$/;"	f	file:
 tcgammaencode	tcutil.c	/^static int tcgammaencode(const char *ptr, int size, char *obuf){$/;"	f	file:
-tcgeneric_t	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	t	typeref:union:__anon99
+tcgeneric_t	tcutil.h	/^typedef union { int32_t i; int64_t l; double d; void *p; TCCMP f; } tcgeneric_t;$/;"	t	typeref:union:__anon44
 tcgetcrc	tcutil.c	/^unsigned int tcgetcrc(const char *ptr, int size){$/;"	f
 tcgetprime	tchdb.c	/^static uint64_t tcgetprime(uint64_t num){$/;"	f	file:
 tcglobaldestroy	tcutil.c	/^static void tcglobaldestroy(void){$/;"	f	file:
@@ -2454,7 +2454,7 @@ tchdbwriterec	tchdb.c	/^static bool tchdbwriterec(TCHDB *hdb, TCHREC *rec, uint6
 tchdbxmsiz	tchdb.c	/^uint64_t tchdbxmsiz(TCHDB *hdb){$/;"	f
 tchexdecode	tcutil.c	/^char *tchexdecode(const char *str, int *sp){$/;"	f
 tchexencode	tcutil.c	/^char *tchexencode(const char *ptr, int size){$/;"	f
-tchr	tcutil.c	/^  int tchr;                              \/\/ character code of the last character$/;"	m	struct:__anon80	file:
+tchr	tcutil.c	/^  int tchr;                              \/\/ character code of the last character$/;"	m	struct:__anon89	file:
 tcinflate	tcutil.c	/^char *tcinflate(const char *ptr, int size, int *sp){$/;"	f
 tcjetlag	tcutil.c	/^int tcjetlag(void){$/;"	f
 tcjsonescape	tcutil.c	/^char *tcjsonescape(const char *str){$/;"	f
@@ -2952,13 +2952,13 @@ tcxstrsize	tcutil.c	/^int tcxstrsize(const TCXSTR *xstr){$/;"	f
 tcxstrtomalloc	tcutil.c	/^void *tcxstrtomalloc(TCXSTR *xstr){$/;"	f
 tczeromap	tcutil.c	/^void *tczeromap(uint64_t size){$/;"	f
 tczerounmap	tcutil.c	/^void tczerounmap(void *ptr){$/;"	f
-tdb	tcadb.h	/^  TCTDB *tdb;                            \/* table database object *\/$/;"	m	struct:__anon4
-tdb	tctdb.h	/^  TCTDB *tdb;                            \/* database object *\/$/;"	m	struct:__anon68
-tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon73	file:
-tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon74	file:
-tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon75	file:
-tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon76	file:
-tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon77	file:
+tdb	tcadb.h	/^  TCTDB *tdb;                            \/* table database object *\/$/;"	m	struct:__anon68
+tdb	tctdb.h	/^  TCTDB *tdb;                            \/* database object *\/$/;"	m	struct:__anon84
+tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon56	file:
+tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon57	file:
+tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon58	file:
+tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon59	file:
+tdb	tctmttest.c	/^  TCTDB *tdb;$/;"	m	struct:__anon60	file:
 tdbcmppkeynumasc	tctdb.c	/^static int tdbcmppkeynumasc(const TCLISTDATUM *a, const TCLISTDATUM *b){$/;"	f	file:
 tdbcmppkeynumdesc	tctdb.c	/^static int tdbcmppkeynumdesc(const TCLISTDATUM *a, const TCLISTDATUM *b){$/;"	f	file:
 tdbcmpsortrecnumasc	tctdb.c	/^static int tdbcmpsortrecnumasc(const TDBSORTREC *a, const TDBSORTREC *b){$/;"	f	file:
@@ -2996,21 +2996,21 @@ threadwrite	tcfmttest.c	/^static void *threadwrite(void *targ){$/;"	f	file:
 threadwrite	tchmttest.c	/^static void *threadwrite(void *targ){$/;"	f	file:
 threadwrite	tctmttest.c	/^static void *threadwrite(void *targ){$/;"	f	file:
 threadwrite	tcumttest.c	/^static void *threadwrite(void *targ){$/;"	f	file:
-tmtx	tcfdb.h	/^  void *tmtx;                            \/* mutex for transaction *\/$/;"	m	struct:__anon32
-tokens	tctdb.c	/^  TCLIST *tokens;                        \/\/ q-gram tokens$/;"	m	struct:__anon58	file:
-tran	tcbdb.h	/^  bool tran;                             \/* whether in the transaction *\/$/;"	m	struct:__anon18
-tran	tcfdb.h	/^  bool tran;                             \/* whether in the transaction *\/$/;"	m	struct:__anon32
-tran	tchdb.h	/^  bool tran;                             \/* whether in the transaction *\/$/;"	m	struct:__anon46
-tran	tctdb.h	/^  bool tran;                             \/* whether in the transaction *\/$/;"	m	struct:__anon62
-tranabort	tcadb.h	/^  bool (*tranabort)(void *);$/;"	m	struct:__anon6
-tranbegin	tcadb.h	/^  bool (*tranbegin)(void *);$/;"	m	struct:__anon6
-trancommit	tcadb.h	/^  bool (*trancommit)(void *);$/;"	m	struct:__anon6
-tree	tcutil.h	/^  TCTREE *tree;                          \/* internal tree object *\/$/;"	m	struct:__anon87
+tmtx	tcfdb.h	/^  void *tmtx;                            \/* mutex for transaction *\/$/;"	m	struct:__anon64
+tokens	tctdb.c	/^  TCLIST *tokens;                        \/\/ q-gram tokens$/;"	m	struct:__anon5	file:
+tran	tcbdb.h	/^  bool tran;                             \/* whether in the transaction *\/$/;"	m	struct:__anon71
+tran	tcfdb.h	/^  bool tran;                             \/* whether in the transaction *\/$/;"	m	struct:__anon64
+tran	tchdb.h	/^  bool tran;                             \/* whether in the transaction *\/$/;"	m	struct:__anon45
+tran	tctdb.h	/^  bool tran;                             \/* whether in the transaction *\/$/;"	m	struct:__anon78
+tranabort	tcadb.h	/^  bool (*tranabort)(void *);$/;"	m	struct:__anon70
+tranbegin	tcadb.h	/^  bool (*tranbegin)(void *);$/;"	m	struct:__anon70
+trancommit	tcadb.h	/^  bool (*trancommit)(void *);$/;"	m	struct:__anon70
+tree	tcutil.h	/^  TCTREE *tree;                          \/* internal tree object *\/$/;"	m	struct:__anon32
 trhash	bros/maptest.cc	/^typedef tr1::unordered_map<string, string, stringhash> trhash;$/;"	t	file:
 trimhtml	lab/htmltotsv	/^sub trimhtml {$/;"	s
-type	tcfdb.h	/^  uint8_t type;                          \/* database type *\/$/;"	m	struct:__anon32
-type	tchdb.h	/^  uint8_t type;                          \/* database type *\/$/;"	m	struct:__anon46
-type	tctdb.h	/^  int type;                              \/* data type *\/$/;"	m	struct:__anon61
+type	tcfdb.h	/^  uint8_t type;                          \/* database type *\/$/;"	m	struct:__anon64
+type	tchdb.h	/^  uint8_t type;                          \/* database type *\/$/;"	m	struct:__anon45
+type	tctdb.h	/^  int type;                              \/* data type *\/$/;"	m	struct:__anon77
 unescape	man/htmltoman	/^function unescape(text){$/;"	f
 usage	bros/bdbtest.c	/^void usage(void){$/;"	f
 usage	bros/cdbtest.c	/^void usage(void){$/;"	f
@@ -3041,32 +3041,32 @@ usage	tcttest.c	/^static void usage(void){$/;"	f	file:
 usage	tcucodec.c	/^static void usage(void){$/;"	f	file:
 usage	tcumttest.c	/^static void usage(void){$/;"	f	file:
 usage	tcutest.c	/^static void usage(void){$/;"	f	file:
-vanish	tcadb.h	/^  bool (*vanish)(void *);$/;"	m	struct:__anon6
-vbuf	tcawmgr.c	/^  const char *vbuf;                      \/\/ value buffer$/;"	m	struct:__anon10	file:
-vbuf	tchdb.c	/^  const char *vbuf;                      \/\/ pointer to the value$/;"	m	struct:__anon41	file:
-vbuf	tctdb.c	/^  char *vbuf;                            \/\/ pointer to the value$/;"	m	struct:__anon57	file:
-vidx	tcbdb.h	/^  int32_t vidx;                          \/* number of the value *\/$/;"	m	struct:__anon22
-vsiz	tcadb.h	/^  int (*vsiz)(void *, const void *, int);$/;"	m	struct:__anon6
-vsiz	tcawmgr.c	/^  int vsiz;                              \/\/ value size$/;"	m	struct:__anon10	file:
-vsiz	tcbdb.c	/^  int vsiz;                              \/\/ size of the value region$/;"	m	struct:__anon12	file:
-vsiz	tchdb.c	/^  uint32_t vsiz;                         \/\/ size of the value$/;"	m	struct:__anon41	file:
-vsiz	tctdb.c	/^  int vsiz;                              \/\/ size of the value$/;"	m	struct:__anon57	file:
+vanish	tcadb.h	/^  bool (*vanish)(void *);$/;"	m	struct:__anon70
+vbuf	tcawmgr.c	/^  const char *vbuf;                      \/\/ value buffer$/;"	m	struct:__anon22	file:
+vbuf	tchdb.c	/^  const char *vbuf;                      \/\/ pointer to the value$/;"	m	struct:__anon95	file:
+vbuf	tctdb.c	/^  char *vbuf;                            \/\/ pointer to the value$/;"	m	struct:__anon4	file:
+vidx	tcbdb.h	/^  int32_t vidx;                          \/* number of the value *\/$/;"	m	struct:__anon75
+vsiz	tcadb.h	/^  int (*vsiz)(void *, const void *, int);$/;"	m	struct:__anon70
+vsiz	tcawmgr.c	/^  int vsiz;                              \/\/ value size$/;"	m	struct:__anon22	file:
+vsiz	tcbdb.c	/^  int vsiz;                              \/\/ size of the value region$/;"	m	struct:__anon14	file:
+vsiz	tchdb.c	/^  uint32_t vsiz;                         \/\/ size of the value$/;"	m	struct:__anon95	file:
+vsiz	tctdb.c	/^  int vsiz;                              \/\/ size of the value$/;"	m	struct:__anon4	file:
 vsiz	tcutil.h	/^  int32_t vsiz;                          \/* size of the region of the value *\/$/;"	m	struct:_TCMAPREC
 vsiz	tcutil.h	/^  int32_t vsiz;                          \/* size of the region of the value *\/$/;"	m	struct:_TCTREEREC
-walend	tcfdb.h	/^  uint64_t walend;                       \/* end offset of write ahead logging *\/$/;"	m	struct:__anon32
-walend	tchdb.h	/^  uint64_t walend;                       \/* end offset of write ahead logging *\/$/;"	m	struct:__anon46
-walfd	tcfdb.h	/^  int walfd;                             \/* file descriptor of write ahead logging *\/$/;"	m	struct:__anon32
-walfd	tchdb.h	/^  int walfd;                             \/* file descriptor of write ahead logging *\/$/;"	m	struct:__anon46
-wb	tcbmttest.c	/^  bool wb;$/;"	m	struct:__anon25	file:
-wb	tcfmttest.c	/^  bool wb;$/;"	m	struct:__anon37	file:
-wb	tchmttest.c	/^  bool wb;$/;"	m	struct:__anon51	file:
+walend	tcfdb.h	/^  uint64_t walend;                       \/* end offset of write ahead logging *\/$/;"	m	struct:__anon64
+walend	tchdb.h	/^  uint64_t walend;                       \/* end offset of write ahead logging *\/$/;"	m	struct:__anon45
+walfd	tcfdb.h	/^  int walfd;                             \/* file descriptor of write ahead logging *\/$/;"	m	struct:__anon64
+walfd	tchdb.h	/^  int walfd;                             \/* file descriptor of write ahead logging *\/$/;"	m	struct:__anon45
+wb	tcbmttest.c	/^  bool wb;$/;"	m	struct:__anon9	file:
+wb	tcfmttest.c	/^  bool wb;$/;"	m	struct:__anon91	file:
+wb	tchmttest.c	/^  bool wb;$/;"	m	struct:__anon50	file:
 while	myconf.h	424;"	d
-width	tcfdb.h	/^  uint32_t width;                        \/* width of the value of each record *\/$/;"	m	struct:__anon32
-wmode	tcbdb.h	/^  bool wmode;                            \/* whether to be writable *\/$/;"	m	struct:__anon18
-wmode	tctdb.h	/^  bool wmode;                            \/* whether to be writable *\/$/;"	m	struct:__anon62
-wmtx	tcfdb.h	/^  void *wmtx;                            \/* mutex for write ahead logging *\/$/;"	m	struct:__anon32
-wmtx	tchdb.h	/^  void *wmtx;                            \/* mutex for write ahead logging *\/$/;"	m	struct:__anon46
-wsiz	tcfdb.h	/^  int wsiz;                              \/* size of the width region *\/$/;"	m	struct:__anon32
-xfsiz	tchdb.h	/^  uint64_t xfsiz;                        \/* extra size of the file for mapped memory *\/$/;"	m	struct:__anon46
-xmsiz	tchdb.h	/^  uint64_t xmsiz;                        \/* size of the extra mapped memory *\/$/;"	m	struct:__anon46
-zmode	tchdb.h	/^  bool zmode;                            \/* whether compression is used *\/$/;"	m	struct:__anon46
+width	tcfdb.h	/^  uint32_t width;                        \/* width of the value of each record *\/$/;"	m	struct:__anon64
+wmode	tcbdb.h	/^  bool wmode;                            \/* whether to be writable *\/$/;"	m	struct:__anon71
+wmode	tctdb.h	/^  bool wmode;                            \/* whether to be writable *\/$/;"	m	struct:__anon78
+wmtx	tcfdb.h	/^  void *wmtx;                            \/* mutex for write ahead logging *\/$/;"	m	struct:__anon64
+wmtx	tchdb.h	/^  void *wmtx;                            \/* mutex for write ahead logging *\/$/;"	m	struct:__anon45
+wsiz	tcfdb.h	/^  int wsiz;                              \/* size of the width region *\/$/;"	m	struct:__anon64
+xfsiz	tchdb.h	/^  uint64_t xfsiz;                        \/* extra size of the file for mapped memory *\/$/;"	m	struct:__anon45
+xmsiz	tchdb.h	/^  uint64_t xmsiz;                        \/* size of the extra mapped memory *\/$/;"	m	struct:__anon45
+zmode	tchdb.h	/^  bool zmode;                            \/* whether compression is used *\/$/;"	m	struct:__anon45

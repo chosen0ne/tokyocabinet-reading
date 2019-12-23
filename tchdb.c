@@ -358,6 +358,9 @@ bool tchdbopen(TCHDB *hdb, const char *path, int omode){
   // 方法级加锁，写锁
   // </MM>
   if(!HDBLOCKMETHOD(hdb, true)) return false;
+  // <MM>
+  // 要open的hdb对应的fd应是0，否则hdb已经被打开
+  // </MM>
   if(hdb->fd >= 0){
     tchdbsetecode(hdb, TCEINVALID, __FILE__, __LINE__, __func__);
     HDBUNLOCKMETHOD(hdb);
@@ -380,6 +383,12 @@ bool tchdbopen(TCHDB *hdb, const char *path, int omode){
   }
   // <MM>
   // 将数据文件全路径放入map中，判断是否重复，用来解决什么问题？
+  //
+  // 避免多线程打开hdb。打开hdb的进程会持有一个map，用于存放打开的hdb路径，如果rpath在这个map中
+  // 认为已经有线程打开这个hdb，返回错误
+  //
+  // 为什么不采用文件锁的方式，从而避免多进程同时打开？
+  //
   // </MM>
   if(!tcpathlock(rpath)){
     tchdbsetecode(hdb, TCETHREAD, __FILE__, __LINE__, __func__);
@@ -632,6 +641,9 @@ bool tchdbputcat2(TCHDB *hdb, const char *kstr, const char *vstr){
 /* Store a record into a hash database object in asynchronous fashion. */
 bool tchdbputasync(TCHDB *hdb, const void *kbuf, int ksiz, const void *vbuf, int vsiz){
   assert(hdb && kbuf && ksiz >= 0 && vbuf && vsiz >= 0);
+  // <MM>
+  // 加method写锁
+  // </MM>
   if(!HDBLOCKMETHOD(hdb, true)) return false;
   uint8_t hash;
   uint64_t bidx = tchdbbidx(hdb, kbuf, ksiz, &hash);
@@ -1138,6 +1150,9 @@ bool tchdbcopy(TCHDB *hdb, const char *path){
 /* Begin the transaction of a hash database object. */
 bool tchdbtranbegin(TCHDB *hdb){
   assert(hdb);
+  // <MM>
+  // 尝试等待tran为false，即没有其他transaction进行
+  // </MM>
   for(double wsec = 1.0 / sysconf(_SC_CLK_TCK); true; wsec *= 2){
     if(!HDBLOCKMETHOD(hdb, true)) return false;
     if(hdb->fd < 0 || !(hdb->omode & HDBOWRITER) || hdb->fatal){
@@ -1158,11 +1173,17 @@ bool tchdbtranbegin(TCHDB *hdb){
     HDBUNLOCKMETHOD(hdb);
     return false;
   }
+  // <MW>
+  // sync模式下，不应该在每次写操作后进行sync?为什么这里需要sync
+  // </MW>
   if((hdb->omode & HDBOTSYNC) && fsync(hdb->fd) == -1){
     tchdbsetecode(hdb, TCESYNC, __FILE__, __LINE__, __func__);
     return false;
   }
   if(hdb->walfd < 0){
+    // <MM>
+    // 创建wal文件
+    // </MM>
     char *tpath = tcsprintf("%s%c%s", hdb->path, MYEXTCHR, HDBWALSUFFIX);
     int walfd = open(tpath, O_RDWR | O_CREAT | O_TRUNC, HDBFILEMODE);
     TCFREE(tpath);
@@ -1179,7 +1200,15 @@ bool tchdbtranbegin(TCHDB *hdb){
     }
     hdb->walfd = walfd;
   }
+  // <MW>
+  // 为什么要将HDBFOPEN置为false，此时已经打开了呀?
+  //
+  // 应该是为了禁止db操作，但是没有发现操作的地方校验
+  // </MW>
   tchdbsetflag(hdb, HDBFOPEN, false);
+  // <MM>
+  // 每次开启transaction都进行init
+  // </MM>
   if(!tchdbwalinit(hdb)){
     tchdbsetflag(hdb, HDBFOPEN, true);
     HDBUNLOCKMETHOD(hdb);
@@ -1204,6 +1233,9 @@ bool tchdbtrancommit(TCHDB *hdb){
   bool err = false;
   if(hdb->async && !tchdbflushdrp(hdb)) err = true;
   if(!tchdbmemsync(hdb, hdb->omode & HDBOTSYNC)) err = true;
+  // <MM>
+  // 事务提交，主要的操作是清空wal文件，即不需要进行回滚
+  // </MM>
   if(!err && ftruncate(hdb->walfd, 0) == -1){
     tchdbsetecode(hdb, TCETRUNC, __FILE__, __LINE__, __func__);
     err = true;
@@ -1366,14 +1398,23 @@ bool tchdbmemsync(TCHDB *hdb, bool phys){
   }
   bool err = false;
   char hbuf[HDBHEADSIZ];
+  // <MW>
+  // db header部分不是即时更新的么？此处为什么要重新序列化
+  // </MW>
   tchdbdumpmeta(hdb, hbuf);
   memcpy(hdb->map, hbuf, HDBOPAQUEOFF);
   if(phys){
     size_t xmsiz = (hdb->xmsiz > hdb->msiz) ? hdb->xmsiz : hdb->msiz;
+    // <MM>
+    // 更新mmap部分的db文件
+    // </MM>
     if(msync(hdb->map, xmsiz, MS_SYNC) == -1){
       tchdbsetecode(hdb, TCEMMAP, __FILE__, __LINE__, __func__);
       err = true;
     }
+    // <MM>
+    // 将page cache刷新到磁盘
+    // </MM>
     if(fsync(hdb->fd) == -1){
       tchdbsetecode(hdb, TCESYNC, __FILE__, __LINE__, __func__);
       err = true;
@@ -1899,6 +1940,9 @@ static uint64_t tcgetprime(uint64_t num){
    The return value is true if successful, else, it is false. */
 static bool tchdbseekwrite(TCHDB *hdb, off_t off, const void *buf, size_t size){
   assert(hdb && off >= 0 && buf && size >= 0);
+  // <MM>
+  // 事务中，记录wal日志，以便后续回滚时进行撤销
+  // </MM>
   if(hdb->tran && !tchdbwalwrite(hdb, off, size)) return false;
   off_t end = off + size;
   if(end <= hdb->xmsiz){
@@ -1961,6 +2005,9 @@ static bool tchdbseekwrite(TCHDB *hdb, off_t off, const void *buf, size_t size){
 static bool tchdbseekread(TCHDB *hdb, off_t off, void *buf, size_t size){
   assert(hdb && off >= 0 && buf && size >= 0);
   if(off + size <= hdb->xmsiz){
+    // <MM>
+    // 待读的文件块命中mmap区域，直接copy
+    // </MM>
     memcpy(buf, hdb->map + off, size);
     return true;
   }
@@ -2016,6 +2063,9 @@ static bool tchdbseekreadtry(TCHDB *hdb, off_t off, void *buf, size_t size){
     buf = (char *)buf + head;
     size -= head;
   }
+  // <MM>
+  // 原子读取偏移量处的数据
+  // </MM>
   int rb = pread(hdb->fd, buf, size, off);
   if(rb == size) return true;
   if(rb == -1) tchdbsetecode(hdb, TCEREAD, __FILE__, __LINE__, __func__);
@@ -2212,8 +2262,13 @@ static uint64_t tchdbbidx(TCHDB *hdb, const char *kbuf, int ksiz, uint8_t *hp){
     idx = idx * 37 + *(uint8_t *)kbuf++;
     // <MM>
     // 不仅可以取得签名的效果，而且保留顺序信息
-    // 后续磁盘文件上的hash查找时，可以先通过hash的比对
+    // 后续磁盘文件上的hash查找时，可以先通过hash的大小比较，进行二叉树的查找
     // 减少磁盘读写
+    //
+    // 并没有保留顺序信息:
+    // 'sjkdfja': 20573446376046
+    // 'cjfsjke': 20576510083273
+    //
     // </MM>
     hash = (hash * 31) ^ *(uint8_t *)--rp;
   }
@@ -2233,6 +2288,9 @@ static off_t tchdbgetbucket(TCHDB *hdb, uint64_t bidx){
   assert(hdb && bidx >= 0);
   if(hdb->ba64){
     uint64_t llnum = hdb->ba64[bidx];
+    // <MW>
+    // 为什么要左移4bit
+    // </MW>
     return TCITOHLL(llnum) << hdb->apow;
   }
   uint32_t lnum = hdb->ba32[bidx];
@@ -2275,6 +2333,11 @@ static bool tchdbsavefbp(TCHDB *hdb){
   HDBFB *end = cur + hdb->fbpnum;
   uint64_t base = 0;
   bsiz -= sizeof(HDBFB) + sizeof(uint8_t) + sizeof(uint8_t);
+  // <MM>
+  // free block存入磁盘时，按照block的offset从小到大排序
+  // 在写入磁盘时，为了压缩空间，将offset写成基于前驱block的
+  // offset的增量，由于offset采用可变整数编码可以减少字节大小
+  // </MM>
   while(cur < end && bsiz > 0){
     uint64_t noff = cur->off >> hdb->apow;
     int step;
@@ -2312,25 +2375,33 @@ static bool tchdbloadfbp(TCHDB *hdb){
   int bsiz = hdb->frec - hdb->msiz;
   char *buf;
   TCMALLOC(buf, bsiz);
+  // <MM>
+  // 命中mmap时，不需要copy buffer，不过本身free block pool
+  // 占用内存应该不是很大
+  // </MM>
   if(!tchdbseekread(hdb, hdb->msiz, buf, bsiz)){
     TCFREE(buf);
     return false;
   }
   const char *rp = buf;
   // <MM>
-  // 从数据文件中加载file block pool，并填充到内存数据结构
-  // hdb->fbpool
+  // 从数据文件中加载free block pool，并填充到内存数据结构hdb->fbpool
   // </MM>
   HDBFB *cur = hdb->fbpool;
   HDBFB *end = cur + hdb->fbpmax * HDBFBPALWRAT;
   uint64_t base = 0;
   // <MM>
-  // 初始情况下，文件中的file block pool被清零
+  // 初始情况下，文件中的free block pool被清零
   // </MM>
   while(cur < end && *rp != '\0'){
     int step;
     uint64_t llnum;
     TCREADVNUMBUF64(rp, llnum, step);
+    // <MW>
+    // 为什么需要基于base从0累加
+    //
+    // fbp dump时时按照free block的offset从小到大排序，从而通过变长整数编码减少存储占用量？
+    // </MW>
     base += llnum << hdb->apow;
     cur->off = base;
     rp += step;
@@ -2443,6 +2514,9 @@ static void tchdbfbpmerge(TCHDB *hdb){
   while(cur < end){
     if(cur->off > 0){
       HDBFB *next = cur + 1;
+      // <MM>
+      // free block间连续
+      // </MM>
       if(cur->off + cur->rsiz == next->off && cur->rsiz + next->rsiz <= HDBFBMAXSIZ){
         if(hdb->dfcur == next->off) hdb->dfcur += next->rsiz;
         if(hdb->iter == next->off) hdb->iter += next->rsiz;
@@ -2555,10 +2629,7 @@ static bool tchdbfbpsearch(TCHDB *hdb, TCHREC *rec){
     // </MM>
     pv += cand;
     // <MM>
-    // 只有在该block剩余空间大于记录大小（包括padding）的2倍
-    // 才认为这个block合适
-    // 为什么要大于2倍？
-    //      - 是为了避免由于记录增长，导致的记录拷贝么？
+    // 在free block大小大于记录大小的2倍时，会将该block分裂
     // </MM>
     if(pv->rsiz > rsiz * 2){
       uint32_t psiz = tchdbpadsize(hdb, pv->off + rsiz);
@@ -2574,6 +2645,10 @@ static bool tchdbfbpsearch(TCHDB *hdb, TCHREC *rec){
     }
     rec->off = pv->off;
     rec->rsiz = pv->rsiz;
+    // <MM>
+    // 更新free block pool
+    // 大数组的copy
+    // </MM>
     memmove(pv, pv + 1, sizeof(*pv) * (num - cand - 1));
     hdb->fbpnum--;
     return true;
@@ -2585,6 +2660,10 @@ static bool tchdbfbpsearch(TCHDB *hdb, TCHREC *rec){
   rec->rsiz = 0;
   hdb->fbpmis++;
   if(hdb->fbpmis >= HDBFBPMGFREQ){
+    // <MM>
+    // 当查找free block pool miss超过4096次时，会尝试将free block pool
+    // 中相邻的block合并
+    // </MM>
     tchdbfbpmerge(hdb);
     tcfbpsortbyrsiz(hdb->fbpool, hdb->fbpnum);
   }
@@ -2764,11 +2843,21 @@ static bool tchdbwritefb(TCHDB *hdb, uint64_t off, uint32_t rsiz){
    `entoff' specifies the offset of the tree entry.
    The return value is true if successful, else, it is false. */
 static bool tchdbwriterec(TCHDB *hdb, TCHREC *rec, uint64_t bidx, off_t entoff){
+  // <MM>
+  // 对于记录部分重用没有优化，比如key覆盖时header和key不变，只有value变化，
+  // 在写磁盘时，应该只更新value部分
+  //
+  // 实际上，为了统一化处理，放弃了这部分优化。同时，由于header加key的大小应该
+  // 不会很大，所以io量比较小，优化的提升也就比较小
+  // </MM>
   assert(hdb && rec);
   TCDODEBUG(hdb->cnt_writerec++);
   char stack[HDBIOBUFSIZ];
   int bsiz = (rec->rsiz > 0) ? rec->rsiz : HDBMAXHSIZ + rec->ksiz + rec->vsiz + hdb->align;
   char *rbuf;
+  // <MM>
+  // 通过栈上分配内存，以避免动态在堆上内存分配的开销
+  // </MM>
   if(bsiz <= HDBIOBUFSIZ){
     rbuf = stack;
   } else {
@@ -2780,6 +2869,9 @@ static bool tchdbwriterec(TCHDB *hdb, TCHREC *rec, uint64_t bidx, off_t entoff){
   // </MM>
   *(uint8_t *)(wp++) = HDBMAGICREC;
   *(uint8_t *)(wp++) = rec->hash;
+  // <MM>
+  // 序列化left、right
+  // </MM>
   if(hdb->ba64){
     uint64_t llnum;
     llnum = rec->left >> hdb->apow;
@@ -2803,6 +2895,9 @@ static bool tchdbwriterec(TCHDB *hdb, TCHREC *rec, uint64_t bidx, off_t entoff){
   }
   uint16_t snum;
   char *pwp = wp;
+  // <MM>
+  // padding size，即文件块中record没有使用的部分
+  // </MM>
   wp += sizeof(snum);
   int step;
   TCSETVNUMBUF(step, wp, rec->ksiz);
@@ -2821,6 +2916,8 @@ static bool tchdbwriterec(TCHDB *hdb, TCHREC *rec, uint64_t bidx, off_t entoff){
   if(rec->rsiz < 1){
     // <MW>
     // 什么情况下，走这个分支？
+    //
+    // free block?
     // </MW>
     uint16_t psiz = tchdbpadsize(hdb, hdb->fsiz + rsiz);
     rec->rsiz = rsiz + psiz;
@@ -2829,6 +2926,7 @@ static bool tchdbwriterec(TCHDB *hdb, TCHREC *rec, uint64_t bidx, off_t entoff){
   } else if(rsiz > rec->rsiz){
     // <MM>
     // 当需要对现有key进行追加时，走此分支，会导致记录大小变大
+    // overwrite时，记录的value比现有记录大
     // </MM>
     if(rbuf != stack) TCFREE(rbuf);
     if(!HDBLOCKDB(hdb)) return false;
@@ -2873,7 +2971,7 @@ static bool tchdbwriterec(TCHDB *hdb, TCHREC *rec, uint64_t bidx, off_t entoff){
     return rv;
   } else {
     // <MM>
-    // record当前文件块可以容纳整调记录的情况
+    // record当前文件块可以容纳整条记录的情况
     // </MM>
     TCDODEBUG(hdb->cnt_reuserec++);
     uint32_t psiz = rec->rsiz - rsiz;
@@ -2927,10 +3025,16 @@ static bool tchdbwriterec(TCHDB *hdb, TCHREC *rec, uint64_t bidx, off_t entoff){
   }
   if(rbuf != stack) TCFREE(rbuf);
   // <MM>
-  // entry offset > 0表明对应的bucket已经存在
+  // entry offset是新增记录的前驱记录对应的left或right指针偏移量，需要更新为记录的偏移量
+  // 即新增记录parent node的left或right的指针偏移量
   // </MM>
   if(entoff > 0){
     if(hdb->ba64){
+      // <MW>
+      // 为什么需要将offset右移4bit
+      //
+      // 记录的offset都是按照16Byte对齐的，在读取时会进行左移4bit
+      // </MW>
       uint64_t llnum = rec->off >> hdb->apow;
       llnum = TCHTOILL(llnum);
       if(!tchdbseekwrite(hdb, entoff, &llnum, sizeof(uint64_t))) return false;
@@ -2974,6 +3078,9 @@ static bool tchdbreadrec(TCHDB *hdb, TCHREC *rec, char *rbuf){
     }
     HDBUNLOCKDB(hdb);
   }
+  // <MM>
+  // 完成record header读取
+  // </MM>
   const char *rp = rbuf;
   rec->magic = *(uint8_t *)(rp++);
   if(rec->magic == HDBMAGICFB){
@@ -3028,6 +3135,10 @@ static bool tchdbreadrec(TCHDB *hdb, TCHREC *rec, char *rbuf){
   rec->boff = rec->off + hsiz;
   rec->bbuf = NULL;
   rsiz -= hsiz;
+  // <MM>
+  // 优化：针对record整体大小小于48B。
+  //    如果已读取buf的剩余大小大于key size或value size，则顺便更新record的kbuf和vbuf
+  // </MM>
   if(rsiz >= rec->ksiz){
     rec->kbuf = rp;
     rsiz -= rec->ksiz;
@@ -3328,6 +3439,11 @@ static bool tchdbwalinit(TCHDB *hdb){
    `size' specifies the size of the region.
    If successful, the return value is true, else, it is false. */
 static bool tchdbwalwrite(TCHDB *hdb, uint64_t off, int64_t size){
+    // <MM>
+    // wal日志格式：|-- offset(8B) --|-- size(8B) --|-- content(size Bytes) --|
+    //  offset和size: 指定了db文件的一个文件块
+    //  content: 文件块的内容
+    // </MM>
   assert(hdb && off >= 0 && size >= 0);
   if(off + size > hdb->walend) size = hdb->walend - off;
   if(size < 1) return true;
@@ -3339,12 +3455,20 @@ static bool tchdbwalwrite(TCHDB *hdb, uint64_t off, int64_t size){
     TCMALLOC(buf, size + sizeof(off) + sizeof(size));
   }
   char *wp = buf;
-  uint64_t llnum = TCHTOILL(off);
+  int64_t llnum = TCHTOILL(off);
   memcpy(wp, &llnum, sizeof(llnum));
   wp += sizeof(llnum);
   uint32_t lnum = TCHTOIL(size);
   memcpy(wp, &lnum, sizeof(lnum));
   wp += sizeof(lnum);
+  // <MW>
+  // 为什么要再读一次文件?
+  //
+  // 虽然刚写磁盘，很大概率命中page cache
+  //
+  // --> 想错了，wal中存的是记录添加前的内容，以便回滚，删除该记录时可以恢复
+  //
+  // </MW>
   if(!tchdbseekread(hdb, off, wp, size)){
     if(buf != stack) TCFREE(buf);
     return false;
@@ -3376,12 +3500,19 @@ static int tchdbwalrestore(TCHDB *hdb, const char *path){
   assert(hdb && path);
   // <MM>
   // wal的文件路径
+  //
+  // 作为hdb的一个属性岂不是更好
   // </MM>
   char *tpath = tcsprintf("%s%c%s", path, MYEXTCHR, HDBWALSUFFIX);
+  // <MM>
+  // walfd不是已经存在，并打开了么?
+  //
+  // 打开hdb文件时，也会恢复wal，那时wal文件还没有打开
+  // </MM>
   int walfd = open(tpath, O_RDONLY, HDBFILEMODE);
   TCFREE(tpath);
   // <MM>
-  // 不存在wal
+  // wal文件打开失败
   // </MM>
   if(walfd < 0) return false;
   bool err = false;
@@ -3417,6 +3548,8 @@ static int tchdbwalrestore(TCHDB *hdb, const char *path){
     // <MM>
     // WAL文件格式：
     // | DB数据文件的大小 | log1 | log2 | ... | logn|
+    //
+    // log的内容为新增记录在文件中的文件块的位置及内容
     // </MM>
     uint64_t fsiz = 0;
     if(tcread(walfd, &fsiz, sizeof(fsiz))){
@@ -3463,7 +3596,7 @@ static int tchdbwalrestore(TCHDB *hdb, const char *path){
     if(hdb->fd >= 0 && hdb->map) xmsiz = (hdb->xmsiz > hdb->msiz) ? hdb->xmsiz : hdb->msiz;
     // <MM>
     // 遍历list，对每条记录写入DB文件
-    // WAL日志记录格式：
+    // list中每条WAL日志记录格式：
     //      | 记录在DB文件中的offset | 具体数据记录内容 |
     // </MM>
     for(int i = TCLISTNUM(list) - 1; i >= 0; i--){
@@ -3574,11 +3707,17 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
       close(fd);
       return false;
     }
+    // <MM>
+    // 截断数据文件，同时清空wal
+    // </MM>
     if(!tchdbwalremove(hdb, path)){
       close(fd);
       return false;
     }
   }
+  // <MM>
+  // 确保是普通文件，用于数据存储
+  // </MM>
   struct stat sbuf;
   if(fstat(fd, &sbuf) == -1 || !S_ISREG(sbuf.st_mode)){
     tchdbsetecode(hdb, TCESTAT, __FILE__, __LINE__, __func__);
@@ -3593,20 +3732,32 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
     hdb->flags = 0;
     hdb->rnum = 0;
     // <MM>
-    // fpow默认为10，则fbpmax=1 << 10 = 1024
+    // fpow默认为10，则fbpmax = 1 << 10 = 1024
+    // 设置free block pool的最大值
     // </MM>
     uint32_t fbpmax = 1 << hdb->fpow;
     // <MM>
-    // free block pool大小
+    // 初始情况下，free block pool占用内存大小
+    // free block pool中每个free block元数据通过变长编码offset和size
     // </MM>
     uint32_t fbpsiz = HDBFBPBSIZ + fbpmax * HDBFBPESIZ;
+    // <MM>
+    // bucket element的大小
+    // </MM>
     int besiz = (hdb->opts & HDBTLARGE) ? sizeof(int64_t) : sizeof(int32_t);
+    // <MM>
+    // apow默认是4，则align = 1 << 4 = 16
+    // 即record按照16Byte对齐
+    // </MM>
     hdb->align = 1 << hdb->apow;
     // <MM>
     // 计算数据文件大小，目前是文件的头部
     // 包括：Header + bucket array + free block pool
     // </MM>
     hdb->fsiz = HDBHEADSIZ + besiz * hdb->bnum + fbpsiz;
+    // <MM>
+    // 按照hdb->align（默认是16Bytes）将文件对齐，即文件大小是16n
+    // </MM>
     hdb->fsiz += tchdbpadsize(hdb, hdb->fsiz);
     // <MM>
     // 接下来初始化第一条记录的offset
@@ -3663,7 +3814,6 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
   }
   int type = hdb->type;
   // <MM>
-  //
   // 将header中元数据加载到内存数据结构，读取options
   // </MM>
   tchdbloadmeta(hdb, hbuf);
@@ -3684,6 +3834,8 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
     // <MW>
     // 为什么需要在恢复WAL文件后，再次加载元数据？
     // 貌似在WAL文件恢复时，并没有修改元数据
+    //
+    // 加载WAL会改变数据文件的大小
     // </MW>
     tchdbloadmeta(hdb, hbuf);
     if(!tchdbwalremove(hdb, path)){
@@ -3693,7 +3845,7 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
   }
   int besiz = (hdb->opts & HDBTLARGE) ? sizeof(int64_t) : sizeof(int32_t);
   // <MM>
-  // 默认情况下，只会讲header和bucket array放入mmap
+  // 默认情况下，只会将header和bucket array放入mmap
   // </MM>
   size_t msiz = HDBHEADSIZ + hdb->bnum * besiz;
   if(!(omode & HDBONOLCK)){
@@ -3718,14 +3870,21 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
   }
   // <MM>
   // 默认情况下，hdb->xmsiz=64<<20 = 2 << 26 = 64MB
+  //
+  // hdb->xmsiz和hdb->msiz的关系
+  // miz：header + bucket array的内存大小
+  // xmiz：固定为64MB
+  //
+  // mmap时取max(miz, xmiz)进行
   // </MM>
   size_t xmsiz = (hdb->xmsiz > msiz) ? hdb->xmsiz : msiz;
   // <MM>
   // 在只读模式下，mmap最大为数据文件大小
+  // 此时，数据完全走page cache
   // </MM>
   if(!(omode & HDBOWRITER) && xmsiz > hdb->fsiz) xmsiz = hdb->fsiz;
   // <MM>
-  // 进行mmap
+  // 进行mmap，map的范围是[0, xmsiz)
   // </MM>
   void *map = mmap(0, xmsiz, PROT_READ | ((omode & HDBOWRITER) ? PROT_WRITE : 0),
                    MAP_SHARED, fd, 0);
@@ -3740,8 +3899,10 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
   hdb->fbpmax = 1 << hdb->fpow;
   if(omode & HDBOWRITER){
     // <MM>
-    // 只有在写时，才需file block pool
-    // 分配file block pool需要的内存
+    // 只有在写时，才需free block pool
+    // 分配free block pool需要的内存
+    //
+    // 只读时不会修改文件，所有不会存在free block的操作
     // </MM>
     TCMALLOC(hdb->fbpool, hdb->fbpmax * HDBFBPALWRAT * sizeof(HDBFB));
   } else {
@@ -3764,6 +3925,8 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
   hdb->xfsiz = 0;
   // <MM>
   // 初始化bucket array，在mmap下
+  //
+  // 在数据文件中，bucket array跟随在header之后
   // </MM>
   if(hdb->opts & HDBTLARGE){
     hdb->ba32 = NULL;
@@ -3773,6 +3936,10 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
     hdb->ba64 = NULL;
   }
   hdb->align = 1 << hdb->apow;
+  // <MM>
+  // 默认apow = 4，则align = 16
+  // runit默认应该等于48
+  // </MM>
   hdb->runit = tclmin(tclmax(hdb->align, HDBMINRUNIT), HDBIOBUFSIZ);
   hdb->zmode = (hdb->opts & HDBTDEFLATE) || (hdb->opts & HDBTBZIP) ||
     (hdb->opts & HDBTTCBS) || (hdb->opts & HDBTEXCODEC);
@@ -3785,12 +3952,18 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
   hdb->walfd = -1;
   hdb->walend = 0;
   // <MM>
-  // 写模式下，加载file block pool
+  // 写模式下，加载free block pool
   // </MM>
   if(hdb->omode & HDBOWRITER){
     bool err = false;
+    // <MM>
+    // 新创建的hdb，free block pool为空
+    // </MM>
     if(!(hdb->flags & HDBFOPEN) && !tchdbloadfbp(hdb)) err = true;
     memset(hbuf, 0, 2);
+    // <MW>
+    // 为什么要在bucket array后写2个0?
+    // </MW>
     if(!tchdbseekwrite(hdb, hdb->msiz, hbuf, 2)) err = true;
     if(err){
       TCFREE(hdb->path);
@@ -3800,6 +3973,9 @@ static bool tchdbopenimpl(TCHDB *hdb, const char *path, int omode){
       hdb->fd = -1;
       return false;
     }
+    // <MM>
+    // 将hdb设置为打开状态
+    // </MM>
     tchdbsetflag(hdb, HDBFOPEN, true);
   }
   return true;
@@ -3872,15 +4048,23 @@ static bool tchdbputimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t bidx, 
   assert(hdb && kbuf && ksiz >= 0);
   // <MM>
   // 从内存cache删除该记录
+  //
+  // 为什么不直接put，进行覆盖
   // </MM>
   if(hdb->recc) tcmdbout(hdb->recc, kbuf, ksiz);
   // <MW>
   // bucket array何时初始化的？
   //
   // 在第一次创建DB时，会将所有的bucket清零，即当前所有bucket为空
+  //
+  // 第一次创建后，off应该等于0，即该bucket为空
   // </MW>
   off_t off = tchdbgetbucket(hdb, bidx);
   // <MM>
+  // entry offset
+  //
+  // 指向要加入的记录的前一个记录的left或right，用于对其进行更新
+  //
   // 在bucket插入节点时，用于指向已有节点的指针的偏移量
   // 会将插入节点的offset赋值给entoff
   // </MM>
@@ -3889,29 +4073,54 @@ static bool tchdbputimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t bidx, 
   char rbuf[HDBIOBUFSIZ];
   // <MM>
   // bucket指向第一个元素在磁盘的偏移量，该bucket在磁盘上存在
+  //
+  // bucket被组织为二叉搜索树，根据hash值进行组织
+  // 相对于链表解决冲突，二叉树搜索的复杂度会低一些
   // </MM>
   while(off > 0){
     rec.off = off;
     // <MM>
     // 只读取record的header，不包括key，value
     // 此时的rsiz是由各种属性字段计算得到
+    //
+    // 在record大小小于48B时，可能包括key、value
+    //
     // </MM>
     if(!tchdbreadrec(hdb, &rec, rbuf)) return false;
     // <MW>
     // hash值也可以比较？
     //
     // hash值主要用于对key比较的简化，以免产生大量key的读取
+    //
+    // => 将同一个bucket中的节点组织成二叉搜索树，按照hash+key进行排序比较（从left->right，从大到小）
+    // => 所以这里先查找hash，hash相等后再查找key
+    // => 并不是hash值反应了key的顺序
+    //
     // </MW>
     if(hash > rec.hash){
+      // <MM>
+      // off为rec的left节点的偏移量
+      // </MM>
       off = rec.left;
+      // <MM>
+      // entry offset为rec.left的偏移量
+      //
+      // 两个uint8_t分别针对的是record序列化后的magic num和hash
+      // </MM>
       entoff = rec.off + (sizeof(uint8_t) + sizeof(uint8_t));
     } else if(hash < rec.hash){
       off = rec.right;
       entoff = rec.off + (sizeof(uint8_t) + sizeof(uint8_t)) +
         (hdb->ba64 ? sizeof(uint64_t) : sizeof(uint32_t));
     } else {
+      // <MM>
+      // kuf为null时，尝试读取record body
+      // </MM>
       if(!rec.kbuf && !tchdbreadrecbody(hdb, &rec)) return false;
       int kcmp = tcreckeycmp(kbuf, ksiz, rec.kbuf, rec.ksiz);
+      // <MM>
+      // key的内容不相等时，继续查找左右子树
+      // </MM>
       if(kcmp > 0){
         off = rec.left;
         TCFREE(rec.bbuf);
@@ -3943,11 +4152,18 @@ static bool tchdbputimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t bidx, 
               TCFREE(rec.bbuf);
               return true;
             }
+            // <MM>
+            // vbuf为null，尝试读取record body
+            // </MM>
             if(!rec.vbuf && !tchdbreadrecbody(hdb, &rec)){
               TCFREE(rec.bbuf);
               return false;
             }
             nvsiz = rec.vsiz + vsiz;
+            // <MW>
+            // 这里为什么不确认一下，磁盘上record剩余空间是否可以存放下待拼接的
+            // value，避免record移动?
+            // </MW>
             if(rec.bbuf){
               TCREALLOC(rec.bbuf, rec.bbuf, rec.ksiz + nvsiz);
               memcpy(rec.bbuf + rec.ksiz + rec.vsiz, vbuf, vsiz);
@@ -4044,9 +4260,7 @@ static bool tchdbputimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t bidx, 
     }
   }
   // <MM>
-  // 对bucket初始化
-  //
-  // 此key不在bucket中，申请新的磁盘空间
+  // 新增节点的情况，即在二叉树中没有找到key对应的节点
   // </MM>
   if(!vbuf){
     tchdbsetecode(hdb, TCENOREC, __FILE__, __LINE__, __func__);
@@ -4054,6 +4268,9 @@ static bool tchdbputimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t bidx, 
   }
   // <MM>
   // 加DB锁
+  //
+  // 可以在向后推迟下，在search fbp前
+  //    - 不能推迟，fbp也要互斥访问
   // </MM>
   if(!HDBLOCKDB(hdb)) return false;
   // <MM>
@@ -4061,6 +4278,9 @@ static bool tchdbputimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t bidx, 
   // </MM>
   rec.rsiz = hdb->ba64 ? sizeof(uint8_t) * 2 + sizeof(uint64_t) * 2 + sizeof(uint16_t) :
     sizeof(uint8_t) * 2 + sizeof(uint32_t) * 2 + sizeof(uint16_t);
+  // <MM>
+  // ksiz和vsiz的处理代码重复，可以提取为函数
+  // </MM>
   if(ksiz < (1U << 7)){
     rec.rsiz += 1;
   } else if(ksiz < (1U << 14)){
@@ -4084,7 +4304,7 @@ static bool tchdbputimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t bidx, 
     rec.rsiz += 5;
   }
   // <MM>
-  // 根据记录大小查找合适的free block pool
+  // 根据记录大小rec.rsiz查找合适的free block pool
   // </MM>
   if(!tchdbfbpsearch(hdb, &rec)){
     HDBUNLOCKDB(hdb);
@@ -4191,6 +4411,9 @@ static bool tchdbputasyncimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t b
     // <MM>
     // 在数据文件中最后的runit文件块内
     // </MM>
+    // <MW>
+    // 这么做肯定是优化io，但是如何实现优化的?
+    // </MW>
     if(off >= hdb->drpoff - hdb->runit){
       TCDODEBUG(hdb->cnt_deferdrp++);
       TCXSTR *drpdef = hdb->drpdef;
@@ -4214,6 +4437,11 @@ static bool tchdbputasyncimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t b
       entoff = rec.off + (sizeof(uint8_t) + sizeof(uint8_t)) +
         (hdb->ba64 ? sizeof(uint64_t) : sizeof(uint32_t));
     } else {
+      // <MW>
+      // 为什么不进行key的相等判断?
+      //
+      // 如果不等，会有更多节点进行delayed record pool中，从而提升async操作性能
+      // </MW>
       TCDODEBUG(hdb->cnt_deferdrp++);
       TCXSTR *drpdef = hdb->drpdef;
       TCXSTRCAT(drpdef, &ksiz, sizeof(ksiz));
@@ -4224,11 +4452,19 @@ static bool tchdbputasyncimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t b
       return true;
     }
   }
+  // <MM>
+  // 没有在bucket二叉树中找到包含key的节点，需要新增节点
+  // </MM>
   if(entoff > 0){
-      // <MM>
-      // entoff > 0意味着在bucket链表中有前驱节点
-      // 此处将前驱节点的指针更新为hdb->fsiz
-      // </MM>
+    // <MM>
+    // entoff > 0意味着在bucket链表中有前驱节点
+    // 此处将前驱节点的指针更新为hdb->fsiz
+    //
+    // 针对delayed record pool被flush之前，新增多天record的情况。如果hbd->fsiz
+    // 不随着record的新增，同时变化的话，在查找时，record不能被正确的找到。
+    // 为解决这个问题，后续在tchdbdrpappend中，将record序列化后，会根据序列化后
+    // 大小更新hdb->fsiz
+    // </MM>
     if(hdb->ba64){
       uint64_t llnum = hdb->fsiz >> hdb->apow;
       llnum = TCHTOILL(llnum);
@@ -4243,7 +4479,7 @@ static bool tchdbputasyncimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t b
   }
   // <MM>
   // 此处会按照record在磁盘上的序列化格式进行格式化
-  // 并追加奥hdb->drpool
+  // 并追加到hdb->drpool
   // </MM>
   tchdbdrpappend(hdb, kbuf, ksiz, vbuf, vsiz, hash);
   hdb->rnum++;

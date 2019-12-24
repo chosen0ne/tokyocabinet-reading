@@ -62,7 +62,14 @@ typedef struct {                         /* type of structure for a B+ tree data
   uint32_t lsmax;                        /* maximum size of each leaf */
   uint32_t lschk;                        /* counter for leaf size checking */
   uint64_t capnum;                       /* capacity number of records */
+  // <MM>
+  // 记录一次查找过程中，从root node到leaf node的节点路径
+  // 每次查找会重置，在tcbdbsearchleaf中设置
+  // </MM>
   uint64_t *hist;                        /* history array of visited nodes */
+  // <MM>
+  // 记录一次查找的节点路径中节点的个数
+  // </MM>
   int hnum;                              /* number of element of the history array */
   volatile uint64_t hleaf;               /* ID number of the leaf referred by the history */
   volatile uint64_t lleaf;               /* ID number of the last visited leaf */

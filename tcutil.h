@@ -584,6 +584,10 @@ typedef struct _TCMAPREC {               /* type of structure for an element of 
   int32_t vsiz;                          /* size of the region of the value */
   struct _TCMAPREC *left;                /* pointer to the left child */
   struct _TCMAPREC *right;               /* pointer to the right child */
+  // <MM>
+  // prev和next维护了entry的lru顺序
+  // 通过tcmapget3调用，可以维护lru
+  // </MM>
   struct _TCMAPREC *prev;                /* pointer to the previous element */
   struct _TCMAPREC *next;                /* pointer to the next element */
 } TCMAPREC;

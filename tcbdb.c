@@ -22,6 +22,9 @@
 #define BDBOPAQUESIZ   64                // size of using opaque field
 #define BDBLEFTOPQSIZ  64                // size of left opaque field
 #define BDBPAGEBUFSIZ  32768             // size of a buffer to read each page
+// <MM>
+// 内部节点的id的起始值
+// </MM>
 #define BDBNODEIDBASE  ((1LL<<48)+1)     // base number of node ID
 #define BDBLEVELMAX    64                // max level of B+ tree
 #define BDBCACHEOUT    8                 // number of pages in a process of cacheout
@@ -1876,6 +1879,9 @@ static void tcbdbloadmeta(TCBDB *bdb){
 static BDBLEAF *tcbdbleafnew(TCBDB *bdb, uint64_t prev, uint64_t next){
   assert(bdb);
   BDBLEAF lent;
+  // <MM>
+  // leaf node的序号从1开始，lnum描述当前有多少leaf node
+  // </MM>
   lent.id = ++bdb->lnum;
   lent.recs = tcptrlistnew2(bdb->lmemb + 1);
   lent.size = 0;
@@ -2003,6 +2009,9 @@ static BDBLEAF *tcbdbleafload(TCBDB *bdb, uint64_t id){
   assert(bdb && id > 0);
   bool clk = BDBLOCKCACHE(bdb);
   int rsiz;
+  // <MM>
+  // 先尝试从leaf cache中加载
+  // </MM>
   BDBLEAF *leaf = (BDBLEAF *)tcmapget3(bdb->leafc, &id, sizeof(id), &rsiz);
   if(leaf){
     if(clk) BDBUNLOCKCACHE(bdb);
@@ -2010,12 +2019,18 @@ static BDBLEAF *tcbdbleafload(TCBDB *bdb, uint64_t id){
   }
   if(clk) BDBUNLOCKCACHE(bdb);
   TCDODEBUG(bdb->cnt_loadleaf++);
+  // <MM>
+  // 临时缓冲区，为什么设置成这个大小？
+  // </MM>
   char hbuf[(sizeof(uint64_t)+1)*3];
   int step;
   step = sprintf(hbuf, "%llx", (unsigned long long)id);
   char *rbuf = NULL;
   char wbuf[BDBPAGEBUFSIZ];
   const char *rp = NULL;
+  // <MM>
+  // 从hdb中，根据page id读取该leaf node。先尝试读取到32kb的缓冲区中
+  // </MM>
   rsiz = tchdbget3(bdb->hdb, hbuf, step, wbuf, BDBPAGEBUFSIZ);
   if(rsiz < 1){
     tcbdbsetecode(bdb, TCEMISC, __FILE__, __LINE__, __func__);
@@ -2104,6 +2119,9 @@ static BDBLEAF *tcbdbleafload(TCBDB *bdb, uint64_t id){
     return NULL;
   }
   clk = BDBLOCKCACHE(bdb);
+  // <MM>
+  // 添加到leaf cache
+  // </MM>
   if(!tcmapputkeep(bdb->leafc, &(lent.id), sizeof(lent.id), &lent, sizeof(lent))){
     int ln = TCPTRLISTNUM(lent.recs);
     for(int i = 0; i < ln; i++){
@@ -2144,10 +2162,16 @@ static bool tcbdbleafcheck(TCBDB *bdb, uint64_t id){
    If successful, the return value is the pointer to the leaf, else, it is `NULL'. */
 static BDBLEAF *tcbdbgethistleaf(TCBDB *bdb, const char *kbuf, int ksiz, uint64_t id){
   assert(bdb && kbuf && ksiz >= 0 && id > 0);
+  // <MM>
+  // 加载leaf node
+  // </MM>
   BDBLEAF *leaf = tcbdbleafload(bdb, id);
   if(!leaf) return NULL;
   int ln = TCPTRLISTNUM(leaf->recs);
   if(ln < 2) return NULL;
+  // <MM>
+  // 查看key是否在leaf node的第一个记录和最后一个记录之间
+  // </MM>
   BDBREC *rec = TCPTRLISTVAL(leaf->recs, 0);
   char *dbuf = (char *)rec + sizeof(*rec);
   int rv;
@@ -2189,6 +2213,9 @@ static bool tcbdbleafaddrec(TCBDB *bdb, BDBLEAF *leaf, int dmode,
   int left = 0;
   int right = ln;
   int i = (left + right) / 2;
+  // <MM>
+  // 二分查找key的位置
+  // </MM>
   while(right >= left && i < ln){
     BDBREC *rec = TCPTRLISTVAL(recs, i);
     char *dbuf = (char *)rec + sizeof(*rec);
@@ -2378,8 +2405,14 @@ static BDBLEAF *tcbdbleafdivide(TCBDB *bdb, BDBLEAF *leaf){
   bdb->hleaf = 0;
   TCPTRLIST *recs = leaf->recs;
   int mid = TCPTRLISTNUM(recs) / 2;
+  // <MM>
+  // 将当前leaf node一分为二，记录数折半
+  // </MM>
   BDBLEAF *newleaf = tcbdbleafnew(bdb, leaf->id, leaf->next);
   if(newleaf->next > 0){
+    // <MM>
+    // 更新下一个leaf node的prev前向指针
+    // </MM>
     BDBLEAF *nextleaf = tcbdbleafload(bdb, newleaf->next);
     if(!nextleaf) return NULL;
     nextleaf->prev = newleaf->id;
@@ -2390,6 +2423,9 @@ static BDBLEAF *tcbdbleafdivide(TCBDB *bdb, BDBLEAF *leaf){
   int ln = TCPTRLISTNUM(recs);
   TCPTRLIST *newrecs = newleaf->recs;
   int nsiz = 0;
+  // <MM>
+  // 将剩余一半的记录拷贝至新的leaf node
+  // </MM>
   for(int i = mid; i < ln; i++){
     BDBREC *rec = TCPTRLISTVAL(recs, i);
     nsiz += rec->ksiz + rec->vsiz;
@@ -2448,6 +2484,9 @@ static bool tcbdbleafkill(TCBDB *bdb, BDBLEAF *leaf){
 static BDBNODE *tcbdbnodenew(TCBDB *bdb, uint64_t heir){
   assert(bdb && heir > 0);
   BDBNODE nent;
+  // <MM>
+  // node内部节点的id从BDBNODEIDBASE + 1开始
+  // </MM>
   nent.id = ++bdb->nnum + BDBNODEIDBASE;
   nent.idxs = tcptrlistnew2(bdb->nmemb + 1);
   nent.heir = heir;
@@ -2762,6 +2801,8 @@ static uint64_t tcbdbsearchleaf(TCBDB *bdb, const char *kbuf, int ksiz){
   // <MM>
   // BDBNODEIDBASE大于所有leaf节点的id
   // 当pid < BDBNODEIDBASE时，节点为叶节点
+  //
+  // pid > BDBNODEIDBASE意味着节点是内节点
   // </MM>
   while(pid > BDBNODEIDBASE){
     // <MM>
@@ -2772,6 +2813,9 @@ static uint64_t tcbdbsearchleaf(TCBDB *bdb, const char *kbuf, int ksiz){
       tcbdbsetecode(bdb, TCEMISC, __FILE__, __LINE__, __func__);
       return 0;
     }
+    // <MM>
+    // 记录历史查找路径
+    // </MM>
     hist[hnum++] = node->id;
     TCPTRLIST *idxs = node->idxs;
     int ln = TCPTRLISTNUM(idxs);
@@ -2827,6 +2871,11 @@ static uint64_t tcbdbsearchleaf(TCBDB *bdb, const char *kbuf, int ksiz){
       pid = node->heir;
     }
   }
+  // <MM>
+  // 只有在连续两次访问同一个leaf node时，才设置bdb->hleaf
+  //
+  // 为什么这么做？
+  // </MM>
   if(bdb->lleaf == pid) bdb->hleaf = pid;
   bdb->lleaf = pid;
   bdb->hnum = hnum;
@@ -3037,6 +3086,9 @@ static bool tcbdbopenimpl(TCBDB *bdb, const char *path, int omode){
     // 新建一个叶节点，并将其放入leaf cache
     // </MM>
     BDBLEAF *leaf = tcbdbleafnew(bdb, 0, 0);
+    // <MM>
+    // 此时，root节点就是该leaf node
+    // </MM>
     bdb->root = leaf->id;
     bdb->first = leaf->id;
     bdb->last = leaf->id;
@@ -3150,32 +3202,58 @@ static bool tcbdbputimpl(TCBDB *bdb, const void *kbuf, int ksiz, const void *vbu
   assert(bdb && kbuf && ksiz >= 0);
   BDBLEAF *leaf = NULL;
   uint64_t hlid = bdb->hleaf;
+  // <MM>
+  // 查找key应该添加到的leaf node
+  // bdb->hleaf记录被访问历史引用的leaf，根据时间局部性原理，最近访问过的节点有更高的概率再次
+  // 被访问。这里，先尝试看下添加的key是否在hleaf的范围内
+  // </MM>
   if(hlid < 1 || !(leaf = tcbdbgethistleaf(bdb, kbuf, ksiz, hlid))){
+    // <MM>
+    // 没有历史leaf node或者key不在bdb->hleaf节点内，则尝试搜索该key应添加的leaf node
+    // </MM>
     uint64_t pid = tcbdbsearchleaf(bdb, kbuf, ksiz);
     if(pid < 1) return false;
     if(!(leaf = tcbdbleafload(bdb, pid))) return false;
     hlid = 0;
   }
+  // <MM>
+  // 将记录添加到leaf的内存数据结构中
+  // </MM>
   if(!tcbdbleafaddrec(bdb, leaf, dmode, kbuf, ksiz, vbuf, vsiz)){
     if(!bdb->tran) tcbdbcacheadjust(bdb);
     return false;
   }
   int rnum = TCPTRLISTNUM(leaf->recs);
+  // <MM>
+  // 记录个数或者leaf node占用的空间超过阈值，leaf node进行分裂
+  // </MM>
   if(rnum > bdb->lmemb || (rnum > 1 && leaf->size > bdb->lsmax)){
     if(hlid > 0 && hlid != tcbdbsearchleaf(bdb, kbuf, ksiz)) return false;
     bdb->lschk = 0;
     BDBLEAF *newleaf = tcbdbleafdivide(bdb, leaf);
     if(!newleaf) return false;
+    // <MM>
+    // 当前leaf node是最后一个，则更新
+    // </MM>
     if(leaf->id == bdb->last) bdb->last = newleaf->id;
     uint64_t heir = leaf->id;
     uint64_t pid = newleaf->id;
+    // <MM>
+    // 取新分裂出的leaf节点的第一个记录作为node的索引
+    // </MM>
     BDBREC *rec = TCPTRLISTVAL(newleaf->recs, 0);
     char *dbuf = (char *)rec + sizeof(*rec);
     int ksiz = rec->ksiz;
     char *kbuf;
     TCMEMDUP(kbuf, dbuf, ksiz);
+    // <MM>
+    // 向父节点添加索引，可能会导致父节点分裂，所以需要向祖先方向分裂
+    // </MM>
     while(true){
       BDBNODE *node;
+      // <MM>
+      // hnum < 1意味着当前只有root node
+      // </MM>
       if(bdb->hnum < 1){
         node = tcbdbnodenew(bdb, heir);
         tcbdbnodeaddidx(bdb, node, true, pid, kbuf, ksiz);
@@ -3183,6 +3261,9 @@ static bool tcbdbputimpl(TCBDB *bdb, const void *kbuf, int ksiz, const void *vbu
         TCFREE(kbuf);
         break;
       }
+      // <MM>
+      // 从历史访问路径获取父节点
+      // </MM>
       uint64_t parent = bdb->hist[--bdb->hnum];
       if(!(node = tcbdbnodeload(bdb, parent))){
         TCFREE(kbuf);
@@ -3193,6 +3274,9 @@ static bool tcbdbputimpl(TCBDB *bdb, const void *kbuf, int ksiz, const void *vbu
       TCPTRLIST *idxs = node->idxs;
       int ln = TCPTRLISTNUM(idxs);
       if(ln <= bdb->nmemb) break;
+      // <MM>
+      // node添加新的索引导致node的index数超过阈值，需要对node进行分裂
+      // </MM>
       int mid = ln / 2;
       BDBIDX *idx = TCPTRLISTVAL(idxs, mid);
       BDBNODE *newnode = tcbdbnodenew(bdb, idx->pid);
@@ -3213,6 +3297,9 @@ static bool tcbdbputimpl(TCBDB *bdb, const void *kbuf, int ksiz, const void *vbu
       }
       node->dirty = true;
     }
+    // <MW>
+    // 可以设置容量，超过容量会踢出掉一些节点，踢出的策略是什么？
+    // </MW>
     if(bdb->capnum > 0 && bdb->rnum > bdb->capnum){
       uint64_t xnum = bdb->rnum - bdb->capnum;
       BDBCUR *cur = tcbdbcurnew(bdb);
@@ -3232,6 +3319,9 @@ static bool tcbdbputimpl(TCBDB *bdb, const void *kbuf, int ksiz, const void *vbu
     if(hlid > 0 && hlid != tcbdbsearchleaf(bdb, kbuf, ksiz)) return false;
     if(bdb->hnum > 0 && !tcbdbleafkill(bdb, leaf)) return false;
   }
+  // <MM>
+  // 控制cache的大小，根据entry的个数
+  // </MM>
   if(!bdb->tran && !tcbdbcacheadjust(bdb)) return false;
   return true;
 }

@@ -106,7 +106,13 @@ typedef struct {                         /* type of structure for a hash databas
   uint32_t dfunit;                       /* unit step number of auto defragmentation */
   uint32_t dfcnt;                        /* counter of auto defragmentation */
   bool tran;                             /* whether in the transaction */
+  // <MM>
+  // wal - write ahead log相当于是undo log，用于事务回滚
+  // </MM>
   int walfd;                             /* file descriptor of write ahead logging */
+  // <MM>
+  // 指定当前wal对应的数据文件的末尾的offset，应该等于当前数据文件大小
+  // </MM>
   uint64_t walend;                       /* end offset of write ahead logging */
   int dbgfd;                             /* file descriptor for debugging */
   volatile int64_t cnt_writerec;         /* tesing counter for record write times */

@@ -66,9 +66,6 @@ typedef struct {                         /* type of structure for a fixed-length
   uint64_t inode;                        /* inode number */
   time_t mtime;                          /* modification time */
   bool tran;                             /* whether in the transaction */
-  // <MM>
-  // wal - write ahead log相当于是undo log，用于事务回滚
-  // </MM>
   int walfd;                             /* file descriptor of write ahead logging */
   uint64_t walend;                       /* end offset of write ahead logging */
   int dbgfd;                             /* file descriptor for debugging */

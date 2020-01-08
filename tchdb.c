@@ -1169,12 +1169,15 @@ bool tchdbtranbegin(TCHDB *hdb){
     HDBUNLOCKMETHOD(hdb);
     return false;
   }
+  // <MM>
+  // 开始transaction前，将内存中的改动落地
+  // </MM>
   if(!tchdbmemsync(hdb, false)){
     HDBUNLOCKMETHOD(hdb);
     return false;
   }
   // <MW>
-  // sync模式下，不应该在每次写操作后进行sync?为什么这里需要sync
+  // sync模式下，不是应该在每次写操作后进行sync?为什么这里需要sync
   // </MW>
   if((hdb->omode & HDBOTSYNC) && fsync(hdb->fd) == -1){
     tchdbsetecode(hdb, TCESYNC, __FILE__, __LINE__, __func__);
@@ -3348,6 +3351,7 @@ static bool tchdbflushdrp(TCHDB *hdb){
   // <MM>
   // hdb->drpool中存储的是已经按照正确格式序列化后的结果
   // 所以此处直接拷贝
+  // hdb->drpoff是初次执行async put时的file size。这里直接将drpool中的内容拷贝至对应的文件块
   // </MM>
   if(!tchdbseekwrite(hdb, hdb->drpoff, TCXSTRPTR(hdb->drpool), TCXSTRSIZE(hdb->drpool))){
     HDBUNLOCKDB(hdb);
@@ -3384,6 +3388,9 @@ static bool tchdbflushdrp(TCHDB *hdb){
   }
   tcxstrdel(hdb->drpdef);
   tcxstrdel(hdb->drpool);
+  // <MM>
+  // 每次flush之后会重置delayed record pool
+  // </MM>
   hdb->drpool = NULL;
   hdb->drpdef = NULL;
   hdb->drpoff = 0;
@@ -3433,17 +3440,20 @@ static bool tchdbwalinit(TCHDB *hdb){
 }
 
 
+// <MM>
+// 将db数据文件的一个文件块写入wal日志，用于transaction回滚时，恢复数据文件
+// </MM>
 /* Write an event into the write ahead logging file.
    `hdb' specifies the hash database object.
    `off' specifies the offset of the region to be updated.
    `size' specifies the size of the region.
    If successful, the return value is true, else, it is false. */
 static bool tchdbwalwrite(TCHDB *hdb, uint64_t off, int64_t size){
-    // <MM>
-    // wal日志格式：|-- offset(8B) --|-- size(8B) --|-- content(size Bytes) --|
-    //  offset和size: 指定了db文件的一个文件块
-    //  content: 文件块的内容
-    // </MM>
+  // <MM>
+  // wal日志格式：|-- offset(8B) --|-- size(8B) --|-- content(size Bytes) --|
+  //  offset和size: 指定了db文件的一个文件块
+  //  content: 文件块的内容
+  // </MM>
   assert(hdb && off >= 0 && size >= 0);
   if(off + size > hdb->walend) size = hdb->walend - off;
   if(size < 1) return true;
@@ -3602,6 +3612,8 @@ static int tchdbwalrestore(TCHDB *hdb, const char *path){
     for(int i = TCLISTNUM(list) - 1; i >= 0; i--){
       // <MW>
       // 为什么采用WAL文件倒序进行插入
+      //
+      // 事务恢复时，应该按照FILO顺序恢复单个操作，即倒序将操作的undo log恢复
       // </MW>
       const char *rec;
       int size;
@@ -4199,6 +4211,9 @@ static bool tchdbputimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t bidx, 
             }
             lnum += *(int *)vbuf;
             rec.vbuf = (char *)&lnum;
+            // <MM>
+            // 持久化，没有处理大小端的问题
+            // </MM>
             *(int *)vbuf = lnum;
             rv = tchdbwriterec(hdb, &rec, bidx, entoff);
             TCFREE(rec.bbuf);
@@ -4407,12 +4422,16 @@ static bool tchdbputasyncimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t b
   off_t entoff = 0;
   TCHREC rec;
   char rbuf[HDBIOBUFSIZ];
+  // <MM>
+  // 查找bucket的二叉树，看是否需要新增节点
+  // </MM>
   while(off > 0){
     // <MM>
-    // 在数据文件中最后的runit文件块内
+    // 待读取的记录落在数据文件中最后的大小为runit文件块（48Byte）内
     // </MM>
     // <MW>
     // 这么做肯定是优化io，但是如何实现优化的?
+    // 说明记录小于hdb->runit（默认是48Byte），这种情况为什么直接延迟插入？
     // </MW>
     if(off >= hdb->drpoff - hdb->runit){
       TCDODEBUG(hdb->cnt_deferdrp++);
@@ -4440,7 +4459,8 @@ static bool tchdbputasyncimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t b
       // <MW>
       // 为什么不进行key的相等判断?
       //
-      // 如果不等，会有更多节点进行delayed record pool中，从而提升async操作性能
+      // 仅仅hash值相等，而key不等，这种情况也需要新增节点。所以判断key相等，会有更多节点进行
+      // delayed record pool中，从而提升async操作性能
       // </MW>
       TCDODEBUG(hdb->cnt_deferdrp++);
       TCXSTR *drpdef = hdb->drpdef;
@@ -4460,7 +4480,7 @@ static bool tchdbputasyncimpl(TCHDB *hdb, const char *kbuf, int ksiz, uint64_t b
     // entoff > 0意味着在bucket链表中有前驱节点
     // 此处将前驱节点的指针更新为hdb->fsiz
     //
-    // 针对delayed record pool被flush之前，新增多天record的情况。如果hbd->fsiz
+    // 针对delayed record pool被flush之前，新增多条record的情况。如果hbd->fsiz
     // 不随着record的新增，同时变化的话，在查找时，record不能被正确的找到。
     // 为解决这个问题，后续在tchdbdrpappend中，将record序列化后，会根据序列化后
     // 大小更新hdb->fsiz
@@ -5288,6 +5308,9 @@ static bool tchdbdefragimpl(TCHDB *hdb, int64_t step){
   hdb->dfcnt = 0;
   TCHREC rec;
   char rbuf[HDBIOBUFSIZ];
+  // <MM>
+  // 查找free block
+  // </MM>
   while(true){
     if(hdb->dfcur >= hdb->fsiz){
       hdb->dfcur = hdb->frec;
@@ -5300,6 +5323,9 @@ static bool tchdbdefragimpl(TCHDB *hdb, int64_t step){
     hdb->dfcur += rec.rsiz;
   }
   uint32_t align = hdb->align;
+  // <MM>
+  // 指向第一个free block
+  // </MM>
   uint64_t base = hdb->dfcur;
   uint64_t dest = base;
   uint64_t cur = base;
